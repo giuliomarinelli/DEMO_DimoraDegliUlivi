@@ -20,7 +20,7 @@ export const SiteFooter = component$(() => (
             {item.label}
           </Link>
         ))}
-        <Link href="/disponibilita/">Disponibilità · in preparazione</Link>
+        <Link href="/disponibilita/">Disponibilità · Simulatore demo</Link>
       </nav>
       <div class="max-w-sm">
         <p class="eyebrow">Una nota di trasparenza</p>

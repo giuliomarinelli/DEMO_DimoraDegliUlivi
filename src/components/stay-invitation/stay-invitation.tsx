@@ -17,7 +17,7 @@ export const StayInvitation = component$(() => (
           Scopri la disponibilità <span aria-hidden="true">↗</span>
         </Link>
         <p>
-          Ricerca demo in preparazione.
+          Calendario e prezzi simulati.
           <br />
           Nessuna prenotazione reale.
         </p>

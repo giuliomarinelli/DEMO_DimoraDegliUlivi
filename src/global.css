@@ -610,3 +610,175 @@
     transition: none !important;
   }
 }
+
+@layer components {
+  .stay-search {
+    @apply pb-8;
+  }
+  .search-panel {
+    @apply border-olive/30 border bg-white/60 p-5 sm:p-8 lg:p-10;
+  }
+  .search-heading {
+    @apply mb-8 flex flex-wrap items-end justify-between gap-5;
+  }
+  .search-heading h2 {
+    @apply mt-3 text-[clamp(2rem,3.4vw,3rem)];
+  }
+  .search-heading > p {
+    @apply text-muted text-[12px] leading-6;
+  }
+  .search-fields {
+    @apply grid gap-5 sm:grid-cols-2 lg:grid-cols-[1.2fr_1.2fr_0.8fr_0.8fr];
+  }
+  .search-field {
+    @apply min-w-0;
+  }
+  .search-field label {
+    @apply mb-2 block text-[13px] font-bold;
+  }
+  .search-field input,
+  .search-field select {
+    @apply border-olive bg-paper text-ink block min-h-12 w-full min-w-0 rounded-none border px-3 py-3 text-[14px];
+  }
+  .search-field [aria-invalid="true"] {
+    border-color: #8a3327;
+  }
+  .search-field .field-error {
+    @apply mt-2 text-[12px] leading-6;
+    color: #8a3327;
+  }
+  .search-help {
+    @apply text-muted mt-5 grid gap-2 text-[11px] leading-6 md:grid-cols-2 md:gap-8;
+  }
+  .search-actions {
+    @apply mt-7 flex flex-wrap items-center gap-x-7 gap-y-4;
+  }
+  .stay-search button {
+    @apply cursor-pointer;
+  }
+  .search-feedback {
+    @apply pt-8;
+  }
+  .search-status {
+    @apply border-water border-l-2 py-2 pl-4 text-sm leading-7;
+  }
+  .search-error-summary {
+    @apply mt-5 border p-5;
+    border-color: #8a3327;
+    background: #fbf0e9;
+  }
+  .search-error-summary h3 {
+    @apply mb-3 text-2xl;
+  }
+  .search-error-summary ul {
+    @apply grid gap-3 text-sm leading-6;
+  }
+  .search-error-summary a {
+    @apply underline;
+    color: #8a3327;
+  }
+  .search-summary {
+    @apply border-olive/25 my-7 flex flex-wrap items-center justify-between gap-4 border-b pb-6 text-[13px] leading-7;
+  }
+  .empty-stay {
+    @apply bg-water/25 mt-7 p-6 sm:p-10;
+  }
+  .empty-stay h2 {
+    @apply my-5;
+  }
+  .empty-stay > p:not(.eyebrow) {
+    @apply text-muted mb-5 max-w-2xl text-sm leading-8;
+  }
+  .empty-stay .button {
+    @apply mt-2;
+  }
+  .stay-offers {
+    @apply grid gap-8;
+  }
+  .stay-offer {
+    @apply border-olive/25 border bg-white/50 p-5 sm:p-8;
+  }
+  .offer-heading {
+    @apply border-olive/25 mb-7 flex flex-wrap items-end justify-between gap-5 border-b pb-6;
+  }
+  .offer-heading h2 {
+    @apply my-2 text-3xl;
+  }
+  .offer-heading > div > p:not(.eyebrow) {
+    @apply text-muted text-[12px] leading-6;
+  }
+  .offer-heading .eyebrow {
+    @apply text-[9px];
+  }
+  .offer-price {
+    @apply flex max-w-xs flex-col gap-2;
+  }
+  .offer-price strong {
+    @apply font-serif text-4xl leading-tight font-normal;
+  }
+  .offer-price span {
+    @apply text-muted text-[11px] leading-6;
+  }
+  .offer-rooms {
+    @apply grid gap-7;
+  }
+  .offer-room {
+    @apply grid gap-5 md:grid-cols-[180px_1fr] md:gap-7;
+  }
+  .offer-room > img {
+    @apply aspect-[4/3] max-h-64 w-full md:aspect-[3/4] md:max-h-72;
+  }
+  .offer-room h3 {
+    @apply my-3 text-2xl;
+  }
+  .offer-room .eyebrow {
+    @apply text-[9px];
+  }
+  .offer-room p:not(.eyebrow) {
+    @apply text-muted max-w-3xl text-[13px] leading-7;
+  }
+  .room-allocation {
+    @apply text-ink my-4 text-[12px] leading-7 font-bold;
+  }
+  .offer-room details {
+    @apply border-olive/25 mt-3 border-t;
+  }
+  .offer-room summary,
+  .price-breakdown summary {
+    @apply cursor-pointer py-4 text-[13px] leading-7 font-bold;
+  }
+  .offer-room details ul {
+    @apply text-muted mb-4 list-inside list-disc text-[12px] leading-7;
+  }
+  .price-breakdown {
+    @apply border-olive/25 my-6 border-y;
+  }
+  .price-breakdown > p {
+    @apply text-muted mb-5 max-w-3xl text-[12px] leading-7;
+  }
+  .table-scroll {
+    @apply mb-6 max-w-full overflow-x-auto;
+  }
+  .price-breakdown table {
+    @apply w-full border-collapse text-left text-[12px] leading-7;
+  }
+  .price-breakdown caption {
+    @apply text-muted mb-3 text-left text-[11px];
+  }
+  .price-breakdown th,
+  .price-breakdown td {
+    @apply border-olive/25 border-b px-3 py-2;
+  }
+  .price-breakdown td {
+    @apply text-right;
+  }
+  .price-breakdown tfoot {
+    @apply bg-water/35 font-bold;
+  }
+  .search-idle {
+    @apply text-muted pt-6 text-sm leading-8;
+  }
+  .search-idle .text-link {
+    @apply text-ink mt-4;
+  }
+}

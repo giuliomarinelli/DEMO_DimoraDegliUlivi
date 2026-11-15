@@ -18,7 +18,7 @@ const ignores = [
   "**/bazel-testlogs",
   "**/dist",
   "**/dist-dev",
-  "**/lib",
+  "lib/**",
   "**/lib-types",
   "**/etc",
   "**/external",

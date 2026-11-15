@@ -30,10 +30,9 @@ export default component$(() => (
           prenotazioni.
         </p>
         <p>
-          Per questo non trovi una mappa o un modulo da compilare. Puoi
-          conoscere gli ambienti immaginati, esplorare gli spunti di viaggio e
-          prepararti alla futura ricerca dimostrativa, senza inserire dati
-          personali.
+          Per questo non trovi una mappa o un modulo di contatto. Puoi conoscere
+          gli ambienti immaginati, esplorare gli spunti di viaggio e provare la
+          ricerca dimostrativa, senza inserire dati personali.
         </p>
         <Link href="/camere/" class="text-link">
           Conosci le camere <span aria-hidden="true">↗</span>
@@ -58,8 +57,8 @@ export default component$(() => (
           <summary>Posso prenotare un soggiorno?</summary>
           <p>
             No. Il sito è una demo e non effettua prenotazioni, pagamenti o
-            richieste a una struttura. La ricerca simulata delle camere è ancora
-            in preparazione.
+            richieste a una struttura. Puoi confrontare disponibilità e importi
+            esclusivamente simulati, senza bloccare camere.
           </p>
           <Link href="/disponibilita/" class="text-link">
             Stato della disponibilità demo <span aria-hidden="true">↗</span>
@@ -109,7 +108,7 @@ export const head: DocumentHead = {
     {
       name: "description",
       content:
-        "Tutte le informazioni sulla demo: struttura fittizia, servizi immaginati, fotografie illustrative e ricerca in preparazione. Nessun invio di richieste o prenotazione.",
+        "Tutte le informazioni sulla demo: struttura fittizia, servizi immaginati, fotografie illustrative e simulatore disponibilità. Nessun invio di richieste o prenotazione.",
     },
   ],
 };

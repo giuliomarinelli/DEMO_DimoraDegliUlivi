@@ -1,8 +1,9 @@
 import type { PhotoKey } from "./photos";
+import type { RoomId } from "../lib/availability";
 
-// Editorial room concepts only. No availability, quantity, capacity, rate or booking inventory.
+// Editorial presentation; fictitious quantities, capacities and rates live in lib/availability.
 export const rooms: {
-  id: string;
+  id: RoomId;
   name: string;
   mood: string;
   image: PhotoKey;

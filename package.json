@@ -14,10 +14,12 @@
     "build.types": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src adapters vite.config.ts",
-    "test": "node --test tests/*.test.mjs",
+    "test": "npm run test.unit && npm run test.ssr",
     "preview": "wrangler pages dev ./dist --ip 127.0.0.1 --port 8947",
     "fmt": "prettier --write src adapters tests vite.config.ts eslint.config.js package.json tsconfig.json wrangler.jsonc",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "test.unit": "tsc -p tests/tsconfig.json && node --test tests/availability.test.mjs",
+    "test.ssr": "node --test tests/ssr.test.mjs"
   },
   "devDependencies": {
     "@builder.io/qwik": "1.20.4",

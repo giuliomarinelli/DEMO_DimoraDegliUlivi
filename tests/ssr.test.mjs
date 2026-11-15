@@ -51,11 +51,12 @@ for (const [path, heading] of routes) {
     titles.add(title);
     descriptions.add(description);
     assert.match(raw, /q:render="ssr"/);
-    assert.doesNotMatch(
-      html,
-      /<(?:form|input|select)\b/,
-      "no search, calendar or contact submission in milestone 2",
-    );
+    if (path !== "/disponibilita/")
+      assert.doesNotMatch(
+        html,
+        /<(?:form|input|select)\b/,
+        "search controls are limited to the availability simulator",
+      );
     for (const [, href] of html.matchAll(/<a\b[^>]*href="(\/[^"#?]*)"/g))
       localLinks.add(href);
     for (const [, src] of html.matchAll(
@@ -122,11 +123,111 @@ test("room narratives, photo credits and FAQ content are complete without bookin
     assert.ok(gallery.includes(author), author);
   assert.match(gallery, /fotografie di una struttura esistente/);
   assert.match(pageHtml.get("/contatti/"), /<details\b/);
-  assert.match(pageHtml.get("/disponibilita/"), /Non ancora attiva/);
-  assert.match(
-    pageHtml.get("/disponibilita/"),
-    /calendario e i risultati dimostrativi non sono ancora disponibili/,
+  assert.match(pageHtml.get("/disponibilita/"), /Simulatore attivo/);
+  assert.match(pageHtml.get("/disponibilita/"), /name="checkIn"/);
+});
+
+test("availability form is server rendered with labels, native dates and GET fallback", () => {
+  const html = pageHtml.get("/disponibilita/");
+  assert.match(html, /<form\b[^>]*action="\/disponibilita\/"[^>]*method="get"/);
+  for (const field of ["checkIn", "checkOut", "guests", "rooms"]) {
+    assert.ok(html.includes('for="stay-' + field + '"'));
+    assert.ok(html.includes('name="' + field + '"'));
+  }
+  assert.equal((html.match(/type="date"/g) ?? []).length, 2);
+  assert.match(html, /role="status"/);
+  assert.match(html, /nessuna prenotazione/i);
+});
+
+test("direct GET renders complete result, capacity and full-stay price without JavaScript", async () => {
+  const response = await fetchLocal(
+    "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=2&rooms=1",
   );
+  assert.equal(response.status, 200);
+  const html = (await response.text()).replace(
+    /<script\b[^>]*>[\s\S]*?<\/script>/gi,
+    "",
+  );
+  assert.match(html, /3 soluzioni trovate/);
+  assert.match(html, /405,00/);
+  assert.match(html, /Camera Lino/);
+  assert.match(html, /Capienza totale/);
+  assert.match(html, /Totale indicativo/);
+  assert.match(html, /Modifica la ricerca/);
+});
+
+test("SSR handles mixed-room occupancy, invalid dates and no availability distinctly", async () => {
+  const mixed = await (
+    await fetchLocal(
+      "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=5&rooms=2",
+    )
+  ).text();
+  assert.match(mixed, /960,00/);
+  assert.match(mixed, /5 ospiti in 2 camere/);
+  assert.match(mixed, /Ospiti assegnati/);
+  const invalid = await (
+    await fetchLocal(
+      "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-09&guests=2&rooms=1",
+    )
+  ).text();
+  assert.match(invalid, /Il check-out deve essere successivo/);
+  assert.match(invalid, /aria-invalid="true"/);
+  assert.match(invalid, /role="alert"/);
+  assert.doesNotMatch(invalid, /class="stay-offer"/);
+  const empty = await (
+    await fetchLocal(
+      "/disponibilita/?checkIn=2027-11-05&checkOut=2027-11-08&guests=2&rooms=1",
+    )
+  ).text();
+  assert.match(empty, /Nessuna soluzione disponibile/);
+  assert.match(empty, /chiusura dimostrativa/);
+  assert.doesNotMatch(empty, /class="stay-offer"/);
+  const unavailable = await (
+    await fetchLocal(
+      "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=5&rooms=5",
+    )
+  ).text();
+  assert.match(unavailable, /Non ci sono camere libere per l’intero soggiorno/);
+  assert.doesNotMatch(unavailable, /class="stay-offer"/);
+});
+
+test("search accessibility associations survive validation and server-rendered results", async () => {
+  const errorHtml = await (
+    await fetchLocal(
+      "/disponibilita/?checkIn=2027-02-30&checkOut=bad&guests=0&rooms=0",
+    )
+  ).text();
+  for (const html of [pageHtml.get("/disponibilita/"), errorHtml]) {
+    const ids = new Set(
+      [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]),
+    );
+    for (const [, references] of html.matchAll(/aria-describedby="([^"]+)"/g))
+      for (const id of references.split(/\s+/))
+        assert.ok(ids.has(id), "Missing description: " + id);
+    assert.match(html, /<fieldset>/);
+    assert.match(html, /<legend\b/);
+    assert.match(html, /aria-live="polite"/);
+    for (const id of [
+      "stay-checkIn",
+      "stay-checkOut",
+      "stay-guests",
+      "stay-rooms",
+    ])
+      assert.match(html, new RegExp('<label for="' + id + '"'));
+  }
+  assert.equal((errorHtml.match(/aria-invalid="true"/g) ?? []).length, 4);
+  const results = await (
+    await fetchLocal(
+      "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=2&rooms=1",
+    )
+  ).text();
+  assert.match(
+    results,
+    /tabindex="-1"[^>]*aria-label="Esito della ricerca"|aria-label="Esito della ricerca"[^>]*tabindex="-1"/i,
+  );
+  assert.match(results, /<caption>/);
+  assert.match(results, /scope="col"/);
+  assert.match(results, /scope="row"/);
 });
 
 test("unknown paths return a real 404 with a way home", async () => {

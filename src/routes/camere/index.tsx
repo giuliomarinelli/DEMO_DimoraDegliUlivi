@@ -4,6 +4,7 @@ import { PageIntro } from "~/components/page-intro/page-intro";
 import { Photo } from "~/components/photo/photo";
 import { StayInvitation } from "~/components/stay-invitation/stay-invitation";
 import { rooms } from "~/data/editorial";
+import { ROOM_TYPES, ROOM_UNITS, formatMoney } from "~/lib/availability";
 
 export default component$(() => (
   <>
@@ -13,8 +14,8 @@ export default component$(() => (
       description="Tre atmosfere, una stessa idea di accoglienza. Colori naturali, tessuti leggeri e dettagli pensati per il piacere di fermarsi: scegli la camera in cui immaginare il tuo soggiorno."
     >
       <p class="editorial-note">
-        Presentazioni editoriali della demo, senza inventario, tariffe o camere
-        prenotabili. Le fotografie sono illustrative.
+        Ambienti illustrativi con inventario e tariffe esclusivamente simulati.
+        Puoi confrontare le disponibilità demo, senza prenotare.
       </p>
     </PageIntro>
     <div class="shell rooms-editorial">
@@ -32,6 +33,19 @@ export default component$(() => (
             <p class="eyebrow">{room.mood}</p>
             <h2>{room.name}</h2>
             <p>{room.description}</p>
+            <p class="room-allocation mt-4">
+              Fino a {ROOM_TYPES.find((type) => type.id === room.id)!.capacity}{" "}
+              ospiti ·{" "}
+              {ROOM_UNITS.filter((unit) => unit.type === room.id).length}{" "}
+              {ROOM_UNITS.filter((unit) => unit.type === room.id).length === 1
+                ? "camera simulata"
+                : "camere simulate"}{" "}
+              · Base{" "}
+              {formatMoney(
+                ROOM_TYPES.find((type) => type.id === room.id)!.baseCents,
+              )}{" "}
+              per camera/notte
+            </p>
             <ul class="detail-list">
               {room.details.map((detail) => (
                 <li key={detail}>{detail}</li>
