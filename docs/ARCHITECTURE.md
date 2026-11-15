@@ -1,4 +1,4 @@
-# Architettura — milestone 1
+# Architettura — milestone 2
 
 ## Rendering
 
@@ -18,10 +18,14 @@ src/
   components/
     brand/             Marchio originale e ramo d’ulivo
     page-intro/        Impaginazione delle introduzioni interne, con Slot
+    photo/             Immagini locali, dimensioni, srcset e caricamento
+    stay-invitation/   Invito condiviso alla disponibilità demo
     router-head/       Metadati DocumentHead, robots e canonical opzionale
     site-header/       Navigazione desktop e menu mobile
     site-footer/       Navigazione secondaria, avviso demo e attribuzioni
   data/site.ts         Link e dichiarazione condivisa della demo
+  data/editorial.ts    Concetti editoriali di camere ed esperienze
+  data/photos.ts       Registro tipizzato delle foto e dei crediti
   routes/
     layout.tsx         Header, main, footer
     index.tsx          Homepage editoriale
@@ -49,9 +53,11 @@ L’header marca la pagina corrente con `aria-current`. Il layout offre salto al
 
 ## Stile e contenuti
 
-Tailwind CSS 4 via plugin ufficiale Vite, token `@theme` e componenti `@layer` con `@apply`. Poche regole CSS specifiche gestiscono ritaglio, focus e preferenze di movimento. Palette avorio/oliva/terracotta, serif di sistema, fotografie locali e marchio originale. Componenti riutilizzati solo dove c’è ripetizione concreta.
+Tailwind CSS 4 via plugin ufficiale Vite, token `@theme` e componenti `@layer` con `@apply`. Poche regole CSS specifiche gestiscono ritaglio, focus e preferenze di movimento. Palette acqua `#A7C6C6`, lino `#FAF4E7`, miele `#B9834E` e verde ulivo `#65765B`, con colori scuri di supporto per la leggibilità. Hero a tutta larghezza, serif di sistema, fotografie locali e marchio originale conservato. Direzione e contrasti documentati in BRAND_DIRECTION.
 
-Tutti i testi sono locali e identificano l’azienda come immaginaria. Nessun inventario camere, calendario, prezzo, API business, database, autenticazione, modulo di contatto, pagamento o analytics. Le pagine interne costituiscono struttura iniziale: il loro sviluppo editoriale completo resta alla milestone 2.
+Tutti i testi sono locali e identificano l’azienda come immaginaria. Le pagine sono complete sul piano editoriale. `editorial.ts` contiene tre concetti di camera e idee di esperienza, senza quantità, capienza, prezzi o disponibilità: non è un inventario. Nessun calendario, API business, database, autenticazione, modulo di contatto, pagamento o analytics. La ricerca resta alla milestone 3.
+
+`Photo` legge un registro tipizzato delle otto fotografie: sorgente locale, dimensioni, testo alternativo, autore, fonte e provenienza. La hero usa due varianti locali tramite `srcset`; l’immagine principale ha priorità alta, le altre caricamento differito. Nessuna trasformazione immagini o richiesta terza a runtime. La Galleria espone crediti e provenienze, comprese le ispirazioni di interni fuori Toscana. `StayInvitation` unifica il richiamo alla futura ricerca, con stato dichiarato. FAQ e categorie della galleria usano rispettivamente `details/summary` e ancore native, senza JavaScript aggiuntivo.
 
 ## SEO e ambiente
 
@@ -61,6 +67,6 @@ Ogni pagina esporta `DocumentHead` con titolo e descrizione distinti. Lingua HTM
 
 npm unico package manager; lockfile committato. Le librerie Qwik rimangono in devDependencies secondo lo scaffold: Vite le incorpora nell’artefatto server e nel client; l’ambiente di build deve installare anche le devDependencies. TypeScript strict include sorgenti, configurazioni e adapter. ESLint 9 applica regole TypeScript e Qwik.
 
-Test runner nativo Node per smoke test su HTTP reale di Wrangler locale: non richiede framework unit test né simula servizi inesistenti. Controlla HTML privo degli script, contenuti, metadati, link, asset, status 404 e presenza del worker senza pagine prerenderizzate. Copertura funzionale della ricerca rimandata alla sua implementazione.
+Test runner nativo Node per 12 smoke test su HTTP reale di Wrangler locale: non richiede framework unit test né simula servizi inesistenti. Controlla HTML privo degli script, contenuti, metadati, link e ancore, crediti, asset anche da srcset, status 404 e presenza del worker senza pagine prerenderizzate. Verifica inoltre l’assenza di controlli di ricerca/invio e lo stato non attivo della disponibilità. Copertura funzionale della ricerca rimandata alla sua implementazione. Nessuna dipendenza o configurazione di hosting aggiunta nella milestone 2.
 
 Riferimenti consultati: [adapter Qwik City](https://qwik.dev/docs/deployments/cloudflare-pages/), [Tailwind per Qwik](https://qwik.dev/docs/integrations/tailwind/), [Pages locale](https://developers.cloudflare.com/pages/functions/local-development/). Le configurazioni effettive sono quelle versionate; non usare i vecchi esempi Node delle guide come requisito del progetto.

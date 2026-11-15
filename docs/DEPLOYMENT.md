@@ -68,3 +68,9 @@ Non è configurato un dominio pubblico. Dopo approvazione del proprietario, `PUB
 Prima di qualsiasi ripristino verificare `git status --short` e salvare eventuali modifiche locali. Per annullare in seguito un commit della milestone, usare `git revert <SHA>` sul branch che lo contiene, previa richiesta del proprietario per operazioni su branch diversi da quello di lavoro. Il revert crea un nuovo commit e non riscrive la storia; non sono necessari reset, force push, merge o rebase. Eseguire di nuovo installazione, verifiche e build dopo il ripristino. Nessun rollback remoto è necessario oggi, perché non c’è stato un deploy.
 
 Riferimenti: [Qwik City Cloudflare Pages](https://qwik.dev/docs/deployments/cloudflare-pages/), [runtime Pages locale](https://developers.cloudflare.com/pages/functions/local-development/), [Pages advanced mode](https://developers.cloudflare.com/pages/functions/advanced-mode/).
+
+## Aggiornamento milestone 2
+
+Comandi, adapter, runtime e confini di deployment invariati. Nessuna modifica a package.json, lockfile, configurazione Wrangler, DNS, Access, CI o secrets. La build include le nuove fotografie locali e le sette pagine editoriali; il test HTTP verifica anche crediti, ancore e srcset. Non servono servizi di prenotazione né configurazioni aggiuntive. Per la verifica visiva scorrere le pagine, attendere le immagini lazy e provare header/Disponibilità, menu e FAQ da tastiera. La milestone non introduce calendario o ricerca.
+
+Il rollback della milestone 2 segue la procedura di revert sopra, iniziando dai commit della milestone più recenti e rispettando le modifiche successive. Gli SHA effettivi sono nel log di `feature/mvp-foundation`; non usare reset o force push. Non è previsto un rollback remoto Cloudflare perché non è stato eseguito un deployment.

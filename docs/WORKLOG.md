@@ -116,3 +116,91 @@ git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
 ```
 
 I messaggi e gli SHA effettivi sono consultabili con `git log --oneline develop..feature/mvp-foundation` e riportati nella consegna. Restano alle fasi successive i contenuti interni completi, la ricerca simulata e il consolidamento finale. Nessun test CI remoto dichiarato, nessuna pubblicazione.
+
+# Milestone 2 — identità boutique e contenuti editoriali
+
+Data: 15 novembre 2026. Richiesta esplicita di proseguire sul branch esistente `feature/mvp-foundation`, senza merge, rebase o deploy. Milestone 3 non avviata.
+
+## Verifiche iniziali e ambito
+
+Letti integralmente AGENTS, MVP e documentazione foundation (README, ARCHITECTURE, DEPLOYMENT, CASE_STUDY, ASSETS e WORKLOG). Working tree pulito, HEAD `cad54ee3cdcdd1116c85901dcae81e8bda1990d7`. Dopo `git fetch origin`, confronto con `origin/feature/mvp-foundation`: `0 0`. Nessun cambio branch, worktree o subagente; lavoro esclusivo in questa repository.
+
+```powershell
+git status --short
+git branch --show-current
+git fetch origin
+git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
+```
+
+Preservati Qwik City, SSR, routing, adapter Cloudflare Pages, dipendenze, lockfile e configurazioni di hosting. Non modificati AGENTS.md o docs/MVP.md. Nessun backend aggiuntivo, servizio di prenotazione, form di invio o autenticazione.
+
+## Direzione e implementazione
+
+- Palette richiesta acqua `#A7C6C6`, lino `#FAF4E7`, miele `#B9834E`, ulivo `#65765B`; colori scuri di supporto per i testi. Marchio originale conservato e favicon adattata alla palette.
+- Hero fotografica a tutta larghezza; invito al soggiorno, camere, finestra sul paesaggio, territorio e album. Impaginazione più orientata al viaggio e agli ambienti, con ampio spazio e carattere luminoso.
+- CTA Disponibilità nell’header anche a 320 px, nella hero, nelle presentazioni delle camere e negli inviti di fine pagina. Nessuna finta interazione con date o ricerca.
+- Camere complete sul piano editoriale: Ulivo, Acqua e Lino. Non sono un inventario: mancano quantità, capienza, tariffe, regole di disponibilità e azioni di prenotazione.
+- Esperienze: passeggiata tra gli ulivi, pomeriggio d’estate, tramonto. Idee narrative, senza guida prenotabile o calendario.
+- Territorio: taccuino di Pienza, San Quirico d’Orcia e Bagno Vignoni, stagioni e rimando alla fonte ufficiale Visit Tuscany. Nessuna posizione, distanza o tragitto attribuito alla struttura fittizia.
+- Galleria con otto fotografie distinte, categorie ad ancore native, autori, fonti e provenienze; i riferimenti fuori Toscana sono dichiarati.
+- Contatti trasformata in pagina informativa completa con cinque FAQ native `details/summary`. Nessun recapito inventato, mappa, raccolta dati o invio.
+- Disponibilità: pagina progettata con stato “Non ancora attiva”, spiegazione, fotografia e percorsi verso camere, territorio e FAQ. Calendario, inventario e ricerca restano assenti.
+
+Riutilizzo concreto: `Photo` centralizza dimensioni, testo alternativo, priorità, srcset e caricamento; `StayInvitation` unifica l’invito alla disponibilità; `PageIntro` conserva breadcrumb, titolo, introduzione e Slot. `photos.ts` è il registro tipizzato delle foto; `editorial.ts` contiene esclusivamente il racconto delle camere e delle esperienze.
+
+## Fotografie, fonti e riproduzione
+
+Verificate pagine originali gratuite e licenze Unsplash/Pexels, scaricate immagini locali e ispezionate le candidate. Scartate immagini troppo scure, una foto in bianco e nero e una camera non coerente. Solo gli asset selezionati sono nella consegna. URL, autori, licenze, provenienze, parametri e comando riproducibile in ASSETS; crediti anche in Galleria.
+
+Hero con varianti 2200 e 900 px; nuovi WebP per camere/panorama e JPEG per tenuta/dettaglio. Dimensioni WebP verificate anche leggendo gli header binari con Node e senza modificare i file: 2200×1467, 900×600, camere 1200×800 e 1200×1800, panorama 1800×1200, finestra 1200×1800. Nessun CDN immagini o font esterno richiesto a runtime. Il file podere della foundation è conservato; la hero usa nuove varianti della stessa fotografia.
+
+Fonte geografica consultata: https://www.visittuscany.com/it/territori/val-dorcia/ . Testi originali sintetici; nessuna immagine di Visit Tuscany riutilizzata. Le foto di Clay Banks (Stati Uniti) e Alessandro Guarino (Umbria) sono ispirazioni di interni/ospitalità, non prove di una struttura toscana esistente.
+
+Contrasti calcolati con luminanza relativa sRGB e documentati in BRAND_DIRECTION: inchiostro/lino 10,24:1, corpo/lino 5,95:1, inchiostro/acqua 6,17:1, bianco/ulivo 4,89:1. Il colore ulivo su lino è riservato a titoli grandi e grafica; miele non viene usato per piccoli testi bianchi.
+
+## Verifiche tecniche
+
+```powershell
+npm run fmt
+npm run typecheck
+npm run lint
+npm run build
+npm run preview
+# Secondo terminale, produzione locale già avviata:
+npm test
+git diff --check
+git diff -- AGENTS.md docs/MVP.md
+```
+
+Dipendenze già presenti dalla foundation e input npm invariati: nessuna installazione o modifica al lockfile necessaria in questa milestone. Primo typecheck: rilevato `srcSet` non valido per i tipi Qwik; corretto in `srcset`. Rimosso inoltre un eslint-disable risultato non necessario sul componente Photo. Typecheck e prima build completati; successivo lint senza errori né warning.
+
+Ampliati i test HTTP della foundation a 12: sette rotte con contenuti/SEO nell’HTML grezzo, asset e varianti srcset, tutte le ancore interne, narrazioni delle camere, autori della galleria, FAQ, stato ricerca assente, HTTP 404 e worker/manifest senza HTML prerenderizzati. Sulla produzione locale Wrangler `http://127.0.0.1:8947`: **12 passati, 0 falliti, 0 saltati**. Nessun mock di rete o test CI remoto dichiarato.
+
+Controllo finale dopo formattazione: typecheck, lint e build produzione con exit code 0; lint senza errori né warning. Ricostruito il worker e riavviato Wrangler locale: 12 test HTTP nuovamente passati, 0 falliti, 0 saltati. Il controllo degli asset legge ora interamente le risposte, verifica corpo non vuoto e firma/formato sia WebP sia JPEG. Client, server, `_worker.js` e `_routes.json` presenti, nessuna pagina prerenderizzata; configurazione dell’adapter invariata. `git diff --check` riuscito e nessuna differenza su specifiche, dipendenze, lockfile o configurazioni di hosting. Log locale della build in `.cache/milestone-2-build.log` (non versionato).
+
+## Browser: evidenze e limiti
+
+Playwright MCP, Chromium, worker produzione locale. Conclusa una serie di 28 visite: tutte le sette pagine a 1440, 768, 390 e 320 px. Per ciascuna: nessun overflow orizzontale, un solo H1, CTA header visibile e nessuna immagine completata con errore. Questo controllo distingue immagini ancora lazy da immagini rotte.
+
+Acquisite e ispezionate Home desktop estesa e viewport mobile. Fotografie principali e camere verificate anche nel DOM dopo scorrimento. Alcune catture estese mostrano immagini ancora fuori dall’area di caricamento o pittura: non sono state usate come prova di caricamento completo di tutte le foto. Gli asset referenziati e i loro formati sono stati verificati via HTTP.
+
+Sequenze browser aggiuntive per scorrimento completo, tastiera e FAQ si sono bloccate e sono state interrotte: non conteggiate come test superati. Anche un tentativo successivo con azioni mirate e chiusura della sola scheda creata per questa milestone non ha restituito un risultato entro l’attesa. Non sono stati riavviati browser condivisi né toccati altri progetti. Menu e focus della foundation sono conservati; FAQ e ancore sono native. Resta una verifica manuale completa da tastiera della milestone 2, distinta dal controllo già concluso sui viewport. Nessuna equivalenza con Safari o audit WCAG completo.
+
+Riproduzione manuale: avviare preview; usare Tab/Enter per skip link, menu e FAQ; Escape per chiudere il menu; seguire Disponibilità e gli inviti alle camere; scorrere e attendere le foto; aprire categorie/crediti della galleria. Verificare anche ricariche dirette alle rotte e preferenza di movimento ridotto.
+
+## Documentazione e rischi residui
+
+Creato BRAND_DIRECTION.md; aggiornati README, ARCHITECTURE, DEPLOYMENT, CASE_STUDY, ASSETS e questo worklog. Nessuna credenziale nei documenti. Procedure e rollback della foundation restano applicabili.
+
+`npm audit --json` ripetuto: 12 segnalazioni (8 moderate, 4 high), come nella foundation. Nessun aggiornamento forzato, override o downgrade. Rischio da riesaminare prima del deploy. Nessun nuovo pacchetto introdotto; i warning ambiente colore e la nota adapter sui cache header sono distinti da errori di compilazione.
+
+Consegna con commit atomici per sito/test e documentazione, sul solo branch esistente. Commit sito/test e licenze: `965a4ac46388b91a9b4533bb28bed1ee8deb33e0` (`feat: create immersive boutique identity and editorial pages`). La documentazione segue nel commit `docs: record boutique brand direction and milestone 2 validation`. Comandi:
+
+```powershell
+git -c commit.gpgsign=false commit -m '<messaggio atomico>'
+git push origin feature/mvp-foundation
+git status --short
+git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
+```
+
+Nessun merge, rebase, force push, deploy o modifica a DNS, Access, secrets, CI o billing. Passo successivo previsto: milestone 3, soltanto con incarico distinto.
