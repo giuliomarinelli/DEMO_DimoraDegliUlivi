@@ -68,4 +68,4 @@ La demo emette `noindex, nofollow` e `robots.txt` restrittivo. Canonical omesso 
 
 Milestone 1–3 sul solo `feature/mvp-foundation`, derivato da `develop` e mantenuto su richiesta. Nessun merge o rebase; push solo al branch di lavoro. `develop` integra, `preview` è staging, `master` produzione. Pubblicazione, DNS, Access, secrets, CI e billing restano riservati al proprietario. Milestone 4 non avviata.
 
-I limiti della verifica browser e le segnalazioni transitive dell’audit npm sono riportati nel worklog. Non usare `npm audit fix --force` senza revisione di compatibilità.
+La verifica browser mirata della ricerca, tastiera, responsive e GET senza script è conclusa; modalità, limiti e segnalazioni transitive dell’audit npm sono nel worklog. Non usare `npm audit fix --force` senza revisione di compatibilità.

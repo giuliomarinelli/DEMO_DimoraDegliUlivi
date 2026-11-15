@@ -32,10 +32,10 @@ Il motore puro è condiviso fra browser e loader SSR. Con JavaScript si ricalcol
 
 17 test unitari verificano date, notti, prezzi, occupazione continua, capienze e determinismo. 16 test HTTP interrogano il worker prodotto dall’adapter tramite Wrangler locale: sette rotte, query complete/errate/vuote, metadati, associazioni ARIA, asset, 404 e assenza di HTML prerenderizzato. Typecheck, lint e build sono verificati separatamente; risultati e problemi nel [worklog](WORKLOG.md).
 
-I controlli responsive della milestone 2 restano evidenza storica delle pagine editoriali. In milestone 3 Playwright MCP non ha restituito le chiamate: la nuova interazione client, il focus effettivo, la resa responsive dei risultati e l’uso con lettore di schermo non hanno una verifica browser conclusa. I controlli strutturali ARIA e i test SSR sono superati, ma non equivalgono a un audit WCAG o a un test end-to-end del browser.
+Ripresa la verifica con Playwright MCP su richiesta del proprietario: provati ricerca client, modifica, dettagli/importi da tastiera, focus su esito ed errore, date invertite, chiusura, nessuna combinazione e sincronizzazione della query. Modulo e risultati controllati a 1440, 768, 390 e 320 px senza overflow; schermate desktop/mobile ispezionate. La prova con script bloccati ha individuato e fatto correggere le opzioni selezionate nell’HTML SSR: ora valori iniziali e query sono conservati anche nel GET nativo. Il blocco browser iniziale è superato per questi controlli; restano fuori un audit WCAG completo, un lettore di schermo reale e browser diversi da Chromium. Evidenze, modalità e limiti nel worklog.
 
 Le dipendenze dello scaffold hanno segnalazioni transitive già documentate; nessun aggiornamento forzato o nuovo pacchetto. Nessun deployment, integrazione alberghiera, invio o modifica a servizi esterni. Regole, esempi e riproduzione in [AVAILABILITY_SIMULATOR.md](AVAILABILITY_SIMULATOR.md).
 
 ## Confine della consegna
 
-Milestone 3 implementata; limite di verifica browser esplicitamente aperto. Milestone 4, consolidamento e preparazione finale al deploy, non avviata. Nessuna pubblicazione.
+Milestone 3 implementata e verifica browser mirata conclusa. Milestone 4, consolidamento e preparazione finale al deploy, non avviata. Nessuna pubblicazione.

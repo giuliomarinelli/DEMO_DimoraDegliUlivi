@@ -165,7 +165,11 @@ export const AvailabilitySearch = component$<{ initial: InitialSearch }>(
                     onChange$={(_, select) => update("guests", select.value)}
                   >
                     {Array.from({ length: MAX_GUESTS }, (_, i) => (
-                      <option key={i + 1} value={String(i + 1)}>
+                      <option
+                        key={i + 1}
+                        value={String(i + 1)}
+                        selected={draft.guests === String(i + 1)}
+                      >
                         {`${i + 1} ${i === 0 ? "ospite" : "ospiti"}`}
                       </option>
                     ))}
@@ -191,7 +195,11 @@ export const AvailabilitySearch = component$<{ initial: InitialSearch }>(
                     onChange$={(_, select) => update("rooms", select.value)}
                   >
                     {Array.from({ length: MAX_ROOMS }, (_, i) => (
-                      <option key={i + 1} value={String(i + 1)}>
+                      <option
+                        key={i + 1}
+                        value={String(i + 1)}
+                        selected={draft.rooms === String(i + 1)}
+                      >
                         {`${i + 1} ${i === 0 ? "camera" : "camere"}`}
                       </option>
                     ))}

@@ -137,6 +137,25 @@ test("availability form is server rendered with labels, native dates and GET fal
   assert.equal((html.match(/type="date"/g) ?? []).length, 2);
   assert.match(html, /role="status"/);
   assert.match(html, /nessuna prenotazione/i);
+  for (const [field, value] of [
+    ["guests", "2"],
+    ["rooms", "1"],
+  ]) {
+    const select = html.match(
+      new RegExp(
+        '<select\\b[^>]*name="' + field + '"[^>]*>([\\s\\S]*?)<\\/select>',
+      ),
+    )?.[1];
+    assert.ok(select, "Missing native select: " + field);
+    assert.match(
+      select,
+      new RegExp(
+        '<option\\b(?=[^>]*value="' +
+          value +
+          '")(?=[^>]*\\bselected(?:\\s|=|>))[^>]*>',
+      ),
+    );
+  }
 });
 
 test("direct GET renders complete result, capacity and full-stay price without JavaScript", async () => {
@@ -165,6 +184,25 @@ test("SSR handles mixed-room occupancy, invalid dates and no availability distin
   assert.match(mixed, /960,00/);
   assert.match(mixed, /5 ospiti in 2 camere/);
   assert.match(mixed, /Ospiti assegnati/);
+  for (const [field, value] of [
+    ["guests", "5"],
+    ["rooms", "2"],
+  ]) {
+    const select = mixed.match(
+      new RegExp(
+        '<select\\b[^>]*name="' + field + '"[^>]*>([\\s\\S]*?)<\\/select>',
+      ),
+    )?.[1];
+    assert.ok(select, "Missing query select: " + field);
+    assert.match(
+      select,
+      new RegExp(
+        '<option\\b(?=[^>]*value="' +
+          value +
+          '")(?=[^>]*\\bselected(?:\\s|=|>))[^>]*>',
+      ),
+    );
+  }
   const invalid = await (
     await fetchLocal(
       "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-09&guests=2&rooms=1",

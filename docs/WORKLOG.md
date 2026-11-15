@@ -264,11 +264,11 @@ SSR verificato su **build di produzione nel runtime locale Cloudflare/Wrangler**
 
 `npm audit --json` ripetuto: 12 segnalazioni (8 moderate, 4 high), stesso conteggio delle milestone precedenti. Report locale `.cache/milestone-3-audit.json`, ignorato. Nessun aggiornamento forzato, downgrade o override; rischio residuo da riesaminare prima di una pubblicazione. Il nuovo motore non usa zod né trasformazioni di immagini utente.
 
-## Accessibilità e limite browser
+## Accessibilità e limite browser — prima consegna
 
 Verificati automaticamente sul vero HTML SSR: etichette di tutti i campi, fieldset/legend, riferimenti aria-describedby risolti, quattro errori aria-invalid per una query errata, regione live, sezione esito con tabIndex -1 e nome accessibile, tabelle con caption e scope. Stili responsive e focus visibile implementati nel tema esistente; controlli data e dettagli nativi.
 
-**Non conclusa la verifica interattiva della milestone 3 nel browser**, a causa del collegamento Playwright non rispondente: handler client, focus effettivo, apertura dei calendari nativi, resa dei risultati ai diversi viewport e lettore di schermo restano da controllare. Non viene dichiarato un audit WCAG, un E2E superato o equivalenza con Safari. I controlli visuali della milestone 2 sono evidenza storica, non validazione dei nuovi risultati. Procedura manuale riproducibile in AVAILABILITY_SIMULATOR, senza passaggi di prenotazione.
+Alla prima consegna **non era conclusa la verifica interattiva della milestone 3 nel browser**, a causa del collegamento Playwright non rispondente. Stato storico successivamente superato per i controlli mirati descritti nell’integrazione seguente; restano distinti lettore di schermo, UI nativa del calendario e audit WCAG completo. Procedura manuale riproducibile in AVAILABILITY_SIMULATOR, senza passaggi di prenotazione.
 
 ## Documentazione e consegna
 
@@ -284,4 +284,42 @@ git status --short
 git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
 ```
 
-Gli SHA effettivi sono consultabili con `git log --oneline -2` e riportati nella consegna. Nessun merge, rebase, force push, deployment o modifica a DNS, Access, secrets, CI o billing. Milestone 4 non avviata; il limite browser di questa milestone rimane esplicito.
+Gli SHA effettivi sono consultabili con `git log --oneline` e riportati nella consegna. Nessun merge, rebase, force push, deployment o modifica a DNS, Access, secrets, CI o billing. Milestone 4 non avviata. Il primo blocco browser è seguito dalla verifica integrativa qui sotto.
+
+## Integrazione milestone 3 — ripresa Playwright e selezioni SSR
+
+Sempre il 15 novembre 2026, su richiesta esplicita del proprietario di riprovare Playwright. Branch `feature/mvp-foundation`, working tree inizialmente pulito su `9b5bdefd58c5f232f0e38f691d6c5aed6576865d`. Nessun cambio di milestone.
+
+La prima nuova richiesta di elenco schede non ha risposto dopo circa quaranta secondi ed è stata interrotta. Avviata la preview della build già prodotta con `npm run preview`; la successiva chiamata diretta `browser_navigate` ha risposto. Chromium esponeva una scheda con `document.visibilityState = hidden` e un’animazione sospesa: l’attesa Playwright del click per stabilità non terminava. Portata la scheda in primo piano con `page.bringToFront()`, senza input Windows, CDP o riavvio di browser condivisi. Creata poi una scheda dedicata quando quella iniziale è passata a un’altra rotta. Nessuna scheda o servizio di altri progetti modificato.
+
+### Interazioni concluse
+
+- Compilazione delle date 10–13 giugno 2027, due ospiti / una camera; invio con Enter sul pulsante. Tre soluzioni a 405 / 465 / 555 €, focus effettivo su `search-feedback`, outline visibile.
+- Apertura con Enter dei dettagli camera e del dettaglio prezzi. Pulsante Modifica attivato con Enter: focus sul check-in.
+- Cambio a cinque ospiti / due camere: scompaiono i vecchi risultati, stato invita a cercare nuovamente; nuovo risultato con prima combinazione a 960 €. Riprovato anche dopo la correzione delle option, tornando poi a due ospiti / una camera.
+- Tab dalla select Camere al pulsante Cerca, Enter con date invertite: riepilogo di errore presente, `aria-invalid=true` e focus effettivo sul check-out.
+- Date 5–8 novembre: stato di chiusura; link d’esempio sulla stessa rotta ripristina date e selezioni corrette. Cinque ospiti / cinque camere nel periodo di giugno: nessuna combinazione, distinta dall’errore di validazione.
+- Form e tre risultati a 1440, 768, 390 e 320 px: nessun overflow orizzontale, campi dentro il viewport con larghezza positiva, un H1, nessuna immagine completata ma rotta. Ispezionate cattura mobile dei risultati e desktop di modulo/prima soluzione; nessuna modifica visiva necessaria. File locali ignorati in `.playwright-mcp/`.
+- Nessun `pageerror` nelle sequenze normali controllate. Gli errori console CSP della prova senza script sono attesi e separati da questo esito.
+
+### Difetto trovato e corretto
+
+Il test del modulo con tutti gli script applicativi bloccati ha mostrato che `value` sulla select non selezionava le option nell’HTML nativo. Il browser inviava un ospite come primo valore, sebbene lo stato iniziale fosse due; analogamente una risposta GET non conservava correttamente le quantità richieste senza ripresa Qwik.
+
+Aggiunto `selected` esplicito alle option di ospiti e camere, derivato dallo stesso draft. Nessun cambiamento al motore, alle tariffe o alle regole. Estesi due test HTTP esistenti per verificare nell’HTML grezzo le opzioni iniziali due/uno e quelle della query cinque/due. Il numero complessivo dei test resta 33.
+
+### GET senza script e limiti della prova
+
+Playwright ha aggiunto temporaneamente `Content-Security-Policy: script-src 'none'` alle sole risposte della disponibilità nella scheda di test, tramite intercettazione locale; nessuna CSP applicativa modificata. Dopo rebuild, controllati valori nativi iniziali due ospiti / una camera, compilate le date e attivato il pulsante: navigazione GET reale con query corretta, tre prezzi attesi e container Qwik ancora `paused`. Secondo invio con cinque ospiti / due camere: importo 960 € e selezioni conservate nella nuova risposta.
+
+Durante questa prova la scheda tornava nascosta e i tentativi di click/Enter non concludevano: l’attivazione finale del pulsante è stata eseguita con `button.click()` dal driver DOM, lasciando il comportamento di invio al browser. È prova del percorso HTML/GET senza JavaScript applicativo, non di un click fisico o di una tastiera nel browser nascosto. Le prove mirate da tastiera sopra sono state concluse separatamente nella scheda visibile. Intercettazione CSP rimossa e pagina ricaricata normalmente al termine.
+
+Non è stato usato un lettore di schermo reale, non è stata validata l’interfaccia nativa del popup calendario né Safari. I test date usano input nativi riempiti da Playwright. Il controllo resta mirato alla milestone, non un audit WCAG completo o la milestone 4.
+
+### Validazione e consegna integrativa
+
+Dopo la correzione: `npm run fmt`, `npm run typecheck`, `npm run lint`, `npm run build` tutti con exit code 0; `npm test` sulla nuova produzione Wrangler: **17 unitari e 16 HTTP passati, zero falliti o saltati**. Confermati SSR e artefatti dell’adapter; sorgenti del motore, dipendenze e configurazioni di hosting invariati. Ripetuta nel browser la transizione due/uno → cinque/due → due/uno dopo la modifica.
+
+Aggiornati README, ARCHITECTURE, DEPLOYMENT, CASE_STUDY, AVAILABILITY_SIMULATOR e WORKLOG per sostituire il blocco iniziale con evidenze effettive e limiti residui. La preview locale viene lasciata attiva a `http://127.0.0.1:8947` per la revisione; non è un deployment.
+
+Commit atomico integrativo `fix: preserve native SSR selections and verify browser flow`, con `git -c commit.gpgsign=false commit`, e push esclusivamente al branch esistente. Nessun merge, rebase, modifica permanente Git, servizio esterno o passaggio alla milestone 4. SHA effettivo nel log e nella consegna.
