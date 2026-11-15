@@ -268,6 +268,94 @@ test("search accessibility associations survive validation and server-rendered r
   assert.match(results, /scope="row"/);
 });
 
+test("SSR accepts occupancy, duration and checkout boundaries", async () => {
+  const maximum = await (
+    await fetchLocal(
+      "/disponibilita/?checkIn=2027-01-04&checkOut=2027-01-05&guests=12&rooms=5",
+    )
+  ).text();
+  assert.match(maximum, /12 ospiti in 5 camere, 1 notte/);
+  assert.match(maximum, /765,00/);
+  assert.match(maximum, /Capienza totale: fino a 12 persone/);
+  assert.equal((maximum.match(/class="stay-offer"/g) ?? []).length, 1);
+  const yearEnd = await (
+    await fetchLocal(
+      "/disponibilita/?checkIn=2027-12-31&checkOut=2028-01-01&guests=1&rooms=1",
+    )
+  ).text();
+  assert.match(yearEnd, /1 ospite in 1 camera, 1 notte/);
+  assert.match(yearEnd, /1 gennaio 2028/);
+  assert.doesNotMatch(yearEnd, /role="alert"/);
+  const longest = await (
+    await fetchLocal(
+      "/disponibilita/?checkIn=2027-06-01&checkOut=2027-06-15&guests=1&rooms=1",
+    )
+  ).text();
+  assert.match(longest, /1 ospite in 1 camera, 14 notti/);
+  assert.match(longest, /(?:1\.810|1810),00/);
+  assert.doesNotMatch(longest, /role="alert"/);
+});
+
+test("SSR rejects limits and duplicate parameters before producing offers", async () => {
+  const cases = [
+    [
+      "checkIn=2027-06-10&checkOut=2027-06-13&guests=13&rooms=1",
+      /da 1 a 12 ospiti/,
+    ],
+    [
+      "checkIn=2027-06-10&checkOut=2027-06-13&guests=2&rooms=6",
+      /da 1 a 5 camere/,
+    ],
+    [
+      "checkIn=2027-06-10&checkOut=2027-06-13&guests=1&rooms=2",
+      /almeno un ospite/,
+    ],
+    [
+      "checkIn=2027-06-10&checkOut=2027-06-10&guests=2&rooms=1",
+      /successivo al check-in/,
+    ],
+    [
+      "checkIn=2027-06-01&checkOut=2027-06-16&guests=2&rooms=1",
+      /da 1 a 14 notti/,
+    ],
+    [
+      "checkIn=2027-12-31&checkOut=2028-01-02&guests=2&rooms=1",
+      /entro il 1 gennaio 2028/,
+    ],
+    [
+      "checkIn=2027-06-10&checkOut=2027-06-13&guests=2&guests=3&rooms=1",
+      /un solo valore/,
+    ],
+  ];
+  for (const [query, error] of cases) {
+    const response = await fetchLocal("/disponibilita/?" + query);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.match(html, /role="alert"/);
+    assert.match(html, error);
+    assert.doesNotMatch(html, /class="stay-offer"/);
+  }
+});
+
+test("a fresh SSR search has blank dates and no previous results or errors", async () => {
+  await (
+    await fetchLocal(
+      "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=5&rooms=2",
+    )
+  ).text();
+  const html = await (await fetchLocal("/disponibilita/")).text();
+  assert.match(html, /Scegli date, ospiti e camere per iniziare/);
+  for (const field of ["checkIn", "checkOut"]) {
+    assert.match(
+      html,
+      new RegExp(
+        '<input\\b(?=[^>]*name="' + field + '")(?=[^>]*value="")[^>]*>',
+      ),
+    );
+  }
+  assert.doesNotMatch(html, /class="stay-offer"|role="alert"/);
+});
+
 test("unknown paths return a real 404 with a way home", async () => {
   const response = await fetchLocal("/un-sentiero-inesistente/");
   assert.equal(response.status, 404);
