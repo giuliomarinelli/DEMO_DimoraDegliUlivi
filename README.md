@@ -2,7 +2,7 @@
 
 Agriturismo **fittizio**: azienda, informazioni, immagini e operazioni sono dimostrative. Nessuna prenotazione, pagamento o comunicazione reale.
 
-## Stato: milestone 3
+## Stato: milestone 3; collaudo 4A con blocco browser
 
 Sito boutique luminoso e fotografico su Qwik City SSR per Cloudflare Pages. La ricerca disponibilità è ora attiva come simulatore: date, ospiti e camere, inventario locale Ulivo/Acqua/Lino, combinazioni coerenti, importi per soggiorno, errori e casi senza risultati. La direzione acqua/lino/miele/ulivo e le fotografie della milestone 2 sono conservate.
 
@@ -35,7 +35,7 @@ Lasciare aperta la preview e, in un secondo terminale nella repository, eseguire
 npm test
 ```
 
-Wrangler Pages locale serve il worker di produzione a `http://127.0.0.1:8947`. `test.unit` esegue 17 test del motore senza server; `test.ssr` esegue 16 test HTTP reali su pagine, query del simulatore, metadati, associazioni ARIA, link, asset, 404 e artefatti SSR. `npm test` esegue entrambe le suite e richiede quindi la preview attiva. Per una porta diversa usare `SSR_TEST_ORIGIN` nella sola sessione dei test. Arrestare la preview con `Ctrl+C`.
+Wrangler Pages locale serve il worker di produzione a `http://127.0.0.1:8947`. `test.unit` esegue 17 test del motore senza server; `test.ssr` esegue 19 test HTTP reali su pagine, query del simulatore, metadati, associazioni ARIA, link, asset, 404 e artefatti SSR. `npm test` esegue entrambe le suite e richiede quindi la preview attiva. Per una porta diversa usare `SSR_TEST_ORIGIN` nella sola sessione dei test. Arrestare la preview con `Ctrl+C`.
 
 Esempio: aprire `/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=2&rooms=1`: tre soluzioni, Lino 405 €, Ulivo 465 €, Acqua 555 € per l’intero soggiorno. Calendario demo fisso 2027, da 1 a 14 notti, massimo 12 ospiti / 5 camere. Il modulo funziona anche tramite GET senza JavaScript; con JavaScript ricalcola localmente. Regole e limiti in [AVAILABILITY_SIMULATOR.md](docs/AVAILABILITY_SIMULATOR.md).
 
@@ -61,11 +61,14 @@ Rotte: `/`, `/camere/`, `/esperienze/`, `/territorio/`, `/galleria/`, `/disponib
 - [Caso di studio e limiti](docs/CASE_STUDY.md)
 - [Fonti e licenze degli asset](docs/ASSETS.md)
 - [Direzione del brand](docs/BRAND_DIRECTION.md)
+- [Audit editoriale per pagina](docs/CONTENT_AUDIT.md)
+- [Collaudo 4A: stato e procedura manuale](docs/QA_MANUAL.md)
+- [Rilevanza delle dipendenze segnalate](docs/DEPENDENCY_AUDIT.md)
 
 La demo emette `noindex, nofollow` e `robots.txt` restrittivo. Canonical omesso senza un’origine pubblica configurata: vedere DEPLOYMENT. Queste direttive non sostituiscono Cloudflare Access.
 
 ## Git e confini operativi
 
-Milestone 1–3 sul solo `feature/mvp-foundation`, derivato da `develop` e mantenuto su richiesta. Nessun merge o rebase; push solo al branch di lavoro. `develop` integra, `preview` è staging, `master` produzione. Pubblicazione, DNS, Access, secrets, CI e billing restano riservati al proprietario. Milestone 4 non avviata.
+Milestone 1–3 sul solo `feature/mvp-foundation`, derivato da `develop` e mantenuto su richiesta. Nessun merge o rebase; push solo al branch di lavoro. `develop` integra, `preview` è staging, `master` produzione. Pubblicazione, DNS, Access, secrets, CI e billing restano riservati al proprietario. Collaudo tecnico/editoriale 4A eseguito; matrice visuale/tastiera di 4A bloccata. Nessuna fase successiva avviata.
 
-La verifica browser mirata della ricerca, tastiera, responsive e GET senza script è conclusa; modalità, limiti e segnalazioni transitive dell’audit npm sono nel worklog. Non usare `npm audit fix --force` senza revisione di compatibilità.
+La verifica browser mirata della milestone 3 rimane storica. In 4A Playwright non ha risposto: nessun nuovo collaudo visuale/tastiera o screenshot dichiarato. I 36 test tecnici passano; procedura manuale, evidenze e audit sono nei documenti elencati sopra. Non usare `npm audit fix --force` senza revisione di compatibilità.

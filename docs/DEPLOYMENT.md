@@ -79,7 +79,7 @@ Il rollback della milestone 2 segue la procedura di revert sopra, iniziando dai 
 
 ## Aggiornamento milestone 3
 
-Adapter, configurazione Wrangler e dipendenze restano invariati. Cambiano gli script di test, senza modificare il lockfile: `npm run test.unit` esegue i 17 test del motore anche senza server; `npm run test.ssr` esegue 16 controlli HTTP con la preview già attiva; `npm test` esegue entrambi. La nuova compilazione isolata dei test scrive solo nella cache ignorata da Git.
+Adapter, configurazione Wrangler e dipendenze restano invariati. Cambiano gli script di test, senza modificare il lockfile: `npm run test.unit` esegue i 17 test del motore anche senza server; `npm run test.ssr` esegue 19 controlli HTTP con la preview già attiva; `npm test` esegue entrambi. La nuova compilazione isolata dei test scrive solo nella cache ignorata da Git.
 
 Per verificare direttamente risultati significativi nella risposta di produzione, nel secondo terminale:
 
@@ -90,3 +90,10 @@ Per verificare direttamente risultati significativi nella risposta di produzione
 L’HTML contiene tre soluzioni e importi 405,00 / 465,00 / 555,00 €, oltre a titolo e descrizione; non occorre eseguire JavaScript. Il normale modulo GET produce lo stesso percorso. Nessun binding, account, login o servizio di disponibilità esterno. Inventario, chiusure e calendario sono nel codice, non in un ambiente Cloudflare: vedere AVAILABILITY_SIMULATOR.
 
 Il rollback segue il revert già descritto, dai commit più recenti della milestone, senza riscrivere la storia. Nessuna operazione di rollback o deployment è stata eseguita. Dopo il primo blocco Playwright, verifica browser mirata del flusso, tastiera e responsive completata su richiesta; corretta anche la selezione delle option SSR nel percorso senza script. Evidenze e limiti nel worklog; procedura manuale nel documento del simulatore.
+
+
+## Collaudo 4A
+
+Configurazione Pages, adapter e lockfile invariati. Typecheck, lint, build e 36 test (17 unitari + 19 HTTP) superati sulla produzione locale. Aggiunti controlli su estremi di capienza/durata/date, query non valide o duplicate e riapertura della ricerca senza query. Evidenze versionate in `docs/qa/milestone-4a/`.
+
+Il nuovo tentativo Playwright non ha restituito un risultato ed è stato interrotto senza insistere. Nessuna nuova verifica visuale ai quattro viewport, prova reale di tastiera o cattura di 4A dichiarata. Procedura completa in [QA_MANUAL.md](QA_MANUAL.md); valutazione delle dipendenze in [DEPENDENCY_AUDIT.md](DEPENDENCY_AUDIT.md). Il collaudo tecnico non è un’approvazione di deployment o sicurezza. Rollback dei soli test/documenti 4A mediante revert, come sopra; nessuna modifica applicativa da ripristinare.

@@ -1,4 +1,4 @@
-# Architettura — milestone 3
+# Architettura — milestone 3 e collaudo 4A
 
 ## Rendering
 
@@ -70,7 +70,7 @@ Ogni pagina esporta `DocumentHead` con titolo e descrizione distinti. Lingua HTM
 
 npm unico package manager; lockfile committato. Le librerie Qwik rimangono in devDependencies secondo lo scaffold: Vite le incorpora nell’artefatto server e nel client; l’ambiente di build deve installare anche le devDependencies. TypeScript strict include sorgenti, configurazioni e adapter. ESLint 9 applica regole TypeScript e Qwik, incluso il motore in `src/lib`: esclusioni lint/Prettier limitate alla directory di output `lib` in radice.
 
-Test runner nativo Node, senza nuove dipendenze: 17 test unitari compilano il motore tramite `tests/tsconfig.json` in `.cache/availability-tests/`, con TypeScript strict e senza framework/browser. I 16 test HTTP interrogano Wrangler locale: HTML e metadati sulle sette rotte, asset, link, crediti, 404, worker/manifest senza prerender, modulo GET e query con risultati/errori/nessuna disponibilità. Controllano inoltre etichette, descrizioni ARIA, errori, regione live, intestazioni delle tabelle e opzioni selezionate SSR. `npm run test.unit` è autonomo; `npm run test.ssr` richiede build e preview; `npm test` esegue entrambe le suite. Nessuna dipendenza, lockfile o configurazione di hosting modificata in milestone 3. I test HTTP sono distinti dalla verifica interattiva Playwright, successivamente conclusa: evidenze e limiti nel worklog.
+Test runner nativo Node, senza nuove dipendenze: 17 test unitari compilano il motore tramite `tests/tsconfig.json` in `.cache/availability-tests/`, con TypeScript strict e senza framework/browser. I 19 test HTTP interrogano Wrangler locale: HTML e metadati sulle sette rotte, asset, link, crediti, 404, worker/manifest senza prerender, modulo GET e query con risultati/errori/nessuna disponibilità. Controllano inoltre etichette, descrizioni ARIA, errori, regione live, intestazioni delle tabelle e opzioni selezionate SSR. `npm run test.unit` è autonomo; `npm run test.ssr` richiede build e preview; `npm test` esegue entrambe le suite. Nessuna dipendenza, lockfile o configurazione di hosting modificata in milestone 3. In 4A aggiunti controlli HTTP su capienza/durata massime, fine anno, query fuori limite o duplicate e riapertura senza risultati precedenti. I test HTTP sono distinti dalla verifica interattiva: Playwright era stato usato in milestone 3, mentre in 4A non ha risposto. Stato ed evidenze in WORKLOG e QA_MANUAL.
 
 Riferimenti consultati: [adapter Qwik City](https://qwik.dev/docs/deployments/cloudflare-pages/), [Tailwind per Qwik](https://qwik.dev/docs/integrations/tailwind/), [Pages locale](https://developers.cloudflare.com/pages/functions/local-development/). Le configurazioni effettive sono quelle versionate; non usare i vecchi esempi Node delle guide come requisito del progetto.
 

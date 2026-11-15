@@ -323,3 +323,95 @@ Dopo la correzione: `npm run fmt`, `npm run typecheck`, `npm run lint`, `npm run
 Aggiornati README, ARCHITECTURE, DEPLOYMENT, CASE_STUDY, AVAILABILITY_SIMULATOR e WORKLOG per sostituire il blocco iniziale con evidenze effettive e limiti residui. La preview locale viene lasciata attiva a `http://127.0.0.1:8947` per la revisione; non è un deployment.
 
 Commit atomico integrativo `fix: preserve native SSR selections and verify browser flow`, con `git -c commit.gpgsign=false commit`, e push esclusivamente al branch esistente. Nessun merge, rebase, modifica permanente Git, servizio esterno o passaggio alla milestone 4. SHA effettivo nel log e nella consegna.
+
+# Milestone 4A — collaudo tecnico/editoriale e blocco browser
+
+Data: 15 novembre 2026. Ambito richiesto: collaudo dell’intera applicazione sulla build Qwik City SSR in Wrangler locale, correzioni solo per difetti circoscritti, audit dei contenuti e dipendenze. Nessuna nuova funzionalità o revisione generale del design.
+
+## Preliminari e ambiente
+
+Letti AGENTS.md, docs/MVP.md, BRAND_DIRECTION e questo worklog. Working tree pulito su `feature/mvp-foundation`, HEAD iniziale `bf7029f9a70332a69b850d3fd24f3f2fcdfa20b8`. `git fetch origin` e confronto con origin: `0 0`. Nessun nuovo branch, worktree o subagente.
+
+Node 22.16.0, npm 10.9.2, Qwik/Qwik City 1.20.4, Wrangler 4.162.0. Dipendenze già presenti: nessuna reinstallazione necessaria e lockfile invariato. Letta la skill Wrangler e consultata la documentazione ufficiale [Pages locale](https://developers.cloudflare.com/pages/functions/local-development/). Nessun comando remoto, login o configurazione Cloudflare.
+
+La preview 8947 lasciata dalla milestone precedente è stata arrestata e riavviata sulla build appena ricostruita. Su Windows identificati e arrestati solo CLI Wrangler della repository con porta 8947 e binari sotto il percorso assoluto del progetto; nessun processo di altri progetti modificato. Preview finale locale lasciata attiva per revisione a `http://127.0.0.1:8947`.
+
+## Browser: blocco e limite della consegna
+
+Eseguita **una sola richiesta Playwright MCP**, apertura di una nuova scheda sulla Home locale (`browser_tabs`, azione new). La chiamata non ha restituito un risultato ed è stata interrotta. Rispettata la richiesta di non insistere: nessuna serie di tentativi, nessun reset del browser condiviso, CDP, input nativo o sostituzione con servizi di screenshot.
+
+Perciò in **questa milestone** non risultano eseguiti controlli visuali delle sette pagine ai viewport 1440/768/390/320, nuove prove reali di tastiera, focus o stati client, né screenshot desktop/mobile. Non sono dichiarati fallimenti del prodotto: il canale di verifica è bloccato. Le prove browser concluse in milestone 3 restano evidenza storica e non vengono riciclate come collaudo 4A.
+
+Creato `docs/QA_MANUAL.md`: matrice di tutte le pagine e della 404 ai quattro viewport, controlli di overflow, immagini, tipografia, spaziatura, navigazione, zoom, tastiera e ricerca; input/risultati riproducibili; istruzioni senza JavaScript; nomi delle catture ancora da produrre. Tutte le celle visuali sono marcate da eseguire. Accettazione visuale 4A e nuove catture restano aperte.
+
+## Verifiche tecniche e nuovi test
+
+Typecheck e lint eseguiti separatamente: exit code 0, nessun errore o warning lint. Build produzione via `npm run build`: exit code 0; artefatti client, server, worker e routes dell’adapter generati; nessun HTML prerenderizzato. Le note ambiente colore e cache header restano distinte dagli errori tecnici. Log locali ignorati: `.cache/milestone-4a-build.log`, `milestone-4a-unit.log`, `milestone-4a-tests.log`.
+
+Prima esecuzione sulle suite esistenti: 17 unitari + 16 HTTP passati. Aggiunti tre test HTTP mirati in `tests/ssr.test.mjs`:
+
+1. Limiti validi: dodici ospiti/cinque camere, una notte a 765 €; un ospite/una camera con ultimo check-out 1 gennaio 2028; quattordici notti con Lino a 1810 €.
+2. Limiti non validi: tredici ospiti, sei camere, più camere che ospiti, date uguali, quindici notti, partenza oltre finestra, parametro duplicato. Errori espliciti e assenza di offerte.
+3. Riavvio HTTP della ricerca senza query dopo un risultato: date vuote, messaggio iniziale, nessuna offerta o errore precedente. Questo verifica la risposta SSR, non il reset dello stato client tramite navigazione. Non esiste un pulsante Reset e non ne è stato introdotto uno.
+
+Il nuovo controllo del prezzo per quattordici notti inizialmente presumeva il separatore delle migliaia `1.810,00`; Intl del runtime emette `1810,00`. Importo e notti erano corretti. Reso il matcher compatibile con le due formattazioni, senza cambiare l’importo atteso o il prodotto. Il primo fallimento non è conteggiato come passaggio; l’esecuzione finale è separata e conservata.
+
+Esito finale di `npm test` sulla produzione locale: **17 unitari + 19 HTTP = 36 passati, zero falliti, zero saltati**. Evidenza completa versionata: `docs/qa/milestone-4a/tests.tap.txt`. Le sette pagine rispondono 200 con un H1 e metadati distinti; query valide, errori, assenza disponibilità, selezioni SSR, link/ancore, asset e loro firme, status 404, manifest/worker e assenza di prerender verificati. Riepilogo delle richieste grezze in `http-pages.json`. Nessun mock di HTTP o test CI remoto dichiarato.
+
+Comandi riproducibili:
+
+```powershell
+git status --short
+git branch --show-current
+git fetch origin
+git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
+npm run typecheck
+npm run lint
+npm run test.unit
+npm run build
+npm run preview
+# Secondo terminale con Wrangler attivo:
+npm test
+npm audit --json
+npm explain sharp
+npm explain zod
+npm explain minimatch
+git diff --check
+git diff -- AGENTS.md docs/MVP.md src adapters wrangler.jsonc package.json package-lock.json
+```
+
+Un primo comando PowerShell di aggiornamento dei documenti è stato respinto dal parser per un apostrofo tipografico in una stringa; nessuna scrittura di quel comando eseguita. Ripetuto con patch e stringhe appropriate. Nessuna modifica permanente a shell o Git.
+
+## Contrasto e revisione editoriale
+
+Ricalcolati sul codice i rapporti sRGB dei token su fondi uniformi: inchiostro/lino 10,24:1, testo secondario/lino 5,95:1, inchiostro/acqua 6,17:1, bianco/ulivo 4,89:1, errore/lino 7,42:1, errore/fondo errore 7,25:1, focus/lino 5,41:1. Ulivo/lino è 4,46:1 e resta riservato a titoli grandi/grafica; secondario/acqua pieno sarebbe 3,58:1, ma il richiamo su acqua eredita inchiostro. Nessun utilizzo riproducibile da correggere individuato su questi abbinamenti per piccoli testi. Formula, riferimento W3C e limiti in QA_MANUAL. Non sono misure dei gradienti o dei pixel di foto e non certificano la leggibilità effettiva senza browser.
+
+CONTENT_AUDIT esamina tutte le sette pagine sulla base di sorgenti e HTML attuale, con necessità, priorità, proposta e motivazione. Priorità editoriale maggiore: Esperienze, dove tre scene brevi ripetono lo stesso schema; poi differenze concrete fra le camere, specificità/fonti del Territorio e guida d’uso della demo in Contatti. Home e Galleria non richiedono riempitivi; ricerca già completa nei contenuti essenziali. Individuate ripetizioni di lessico e invito condiviso, CTA meno orientata all’azione nelle FAQ. Nessun arricchimento implementato, nessun dato reale inventato.
+
+## Audit dipendenze: rilevanza, non solo conteggi
+
+Ripetuto `npm audit --json`: 12 voci di pacchetto, 8 moderate e 4 high, riferite a cinque advisory propagati anche ai genitori. Report completo in `docs/qa/milestone-4a/npm-audit.json`. Consultati avvisi originali dei manutentori sharp/minimatch e PR/issue Zod, collegati in DEPENDENCY_AUDIT.
+
+Verificato `npm explain` e caricate le versioni native effettive sharp: 0.34.5, libvips 8.17.3, libheif 1.20.2, librsvg 2.61.2; elenco versionato. Distinta la copia sharp 0.35.5 di Miniflare. La catena vulnerabile della toolchain resta installata; l’app serve foto statiche, senza upload, trasformazioni da input utente o endpoint sharp.
+
+Zod 3.25.48 è nel range segnalato e non viene scartato perché v3. Individuato `zodQrl` nel framework, ma nessun uso di validatori Zod/action/body JSON nel codice applicativo: il motore tratta quattro stringhe locali. minimatch 9.0.9/10.2.6 è nelle catene TypeScript ESLint, separato dalla copia 3.1.5; callsite analizzato legato a configurazione di glob locale, senza livello 2 esplicito. Nessun percorso fra query della ricerca e pattern glob.
+
+Ricerca testuale dei marker ZodArray/ZodError/zodQrl/imagetools/VipsForeign/Minimatch nell’output server/client: zero corrispondenze. È un indizio coerente con il tree shaking e la separazione del tooling, non una prova formale di sicurezza. Rilevanza, condizioni, limitazioni e procedura riproducibile documentate; tutte le segnalazioni restano aperte. Nessun audit fix, override o downgrade; non adottate le proposte automatiche incompatibili con lo stack. Nessuna autorizzazione di sicurezza al deploy implicita nei test verdi.
+
+## Modifiche e consegna
+
+Nessun difetto applicativo nuovo riprodotto nelle verifiche possibili: **nessuna modifica a src, design, routing, motore, inventario, adapter o configurazione hosting**. Modificati solo test e documentazione/evidenze. Preservati AGENTS.md, docs/MVP.md, package.json e lockfile.
+
+Creati CONTENT_AUDIT, QA_MANUAL, DEPENDENCY_AUDIT e quattro file di evidenza in `docs/qa/milestone-4a/`. Aggiornati README, ARCHITECTURE, DEPLOYMENT, CASE_STUDY, AVAILABILITY_SIMULATOR e WORKLOG per stato e conteggi correnti. BRAND_DIRECTION e ASSETS invariati. Nessuno screenshot nuovo disponibile e nessun file immagine simulato.
+
+Consegna con commit atomico dei tre nuovi test SSR e commit separato per audit/documentazione/evidenze, sul solo branch corrente. Commit test: `95a4c8ee9f394425699803bc3b24681fb16ed7ea` (`test: cover SSR search limits and fresh search state`). GPG disattivato soltanto per ciascun comando:
+
+```powershell
+git -c commit.gpgsign=false commit -m 'test: cover SSR search limits and fresh search state'
+git -c commit.gpgsign=false commit -m 'docs: record milestone 4A audits and browser verification block'
+git push origin feature/mvp-foundation
+git status --short
+git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
+```
+
+SHA effettivi nel log e nella consegna. Nessun merge, rebase, force push, deploy, DNS, Access, secret, CI o billing. Il lavoro si ferma alla consegna tecnica/editoriale 4A con blocco visuale esplicito; nessuna fase successiva avviata.
