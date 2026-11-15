@@ -1,0 +1,262 @@
+[
+  {
+    "path": "screenshots/404-1440.jpg",
+    "bytes": 70818,
+    "sha256": "9b7631339379c53104c71d63b4e69a123eb24e24cee5d5cbed0859985b6802b7"
+  },
+  {
+    "path": "screenshots/404-320.jpg",
+    "bytes": 47676,
+    "sha256": "47549e98b10e272b3af6a302fcbd31e553e72713be60961d85655648d6f33b25"
+  },
+  {
+    "path": "screenshots/404-390.jpg",
+    "bytes": 48571,
+    "sha256": "97ab4c3673f916e2902878eb83c514e7c88be3a92fa4421fc5aa722e1cbc8963"
+  },
+  {
+    "path": "screenshots/404-768.jpg",
+    "bytes": 54043,
+    "sha256": "84b756cb790bee27568e2aa558da0ba1c926ef5e0b454c852a6c60a072121dff"
+  },
+  {
+    "path": "screenshots/camere-1440.jpg",
+    "bytes": 363520,
+    "sha256": "7064831998541dd9532784dcbb988b6ac636e755c30dd8b73e29185cf15b8414"
+  },
+  {
+    "path": "screenshots/camere-320.jpg",
+    "bytes": 218835,
+    "sha256": "1bfafe79e2c3f0a607cb86932539b7cd14babbe33c089cc495cff00ce703f57b"
+  },
+  {
+    "path": "screenshots/camere-390.jpg",
+    "bytes": 235667,
+    "sha256": "4bb6a84b999f6fdf2e1af46e7dafc0b92c897380d1f252dedea0ed65d663c04a"
+  },
+  {
+    "path": "screenshots/camere-768.jpg",
+    "bytes": 238628,
+    "sha256": "910245cc79ef4191fd059b95885ae8f864efa2371c9738ecb68bc04a08832a27"
+  },
+  {
+    "path": "screenshots/chiusura-1440.jpg",
+    "bytes": 205960,
+    "sha256": "c5384eb1a5d69d8c382058cb3234cd6fc6e0df24a7d587806ee5bbfce40e3c2a"
+  },
+  {
+    "path": "screenshots/chiusura-320.jpg",
+    "bytes": 150282,
+    "sha256": "434fa5b96d416f5185e71ef8e0ce83c483996f60e6aacb2832136090d13197d5"
+  },
+  {
+    "path": "screenshots/chiusura-390.jpg",
+    "bytes": 154847,
+    "sha256": "83d675c67eea39b88a3142c6422d7ae0e4652f7b37fee647933f4802e4e12664"
+  },
+  {
+    "path": "screenshots/chiusura-768.jpg",
+    "bytes": 163370,
+    "sha256": "3902e3eb68152bcc8c56b6998305919a192430014c89e2f657ea5dc608b626d9"
+  },
+  {
+    "path": "screenshots/contatti-1440.jpg",
+    "bytes": 294458,
+    "sha256": "dd19fddc7e3556bda255a701f8e2d9637cf97f8a8e9b71c9b6362142a27c7c9c"
+  },
+  {
+    "path": "screenshots/contatti-320.jpg",
+    "bytes": 153250,
+    "sha256": "12129365580fb98745a083d46a533d62fbd9eb81a70fd2c528d0e56cde2a46e1"
+  },
+  {
+    "path": "screenshots/contatti-390.jpg",
+    "bytes": 170197,
+    "sha256": "8235a21d23f3a618629fd72a476b6db3fa5e79359ec5ba9751166a631d501178"
+  },
+  {
+    "path": "screenshots/contatti-768.jpg",
+    "bytes": 167348,
+    "sha256": "389956ecc1556e6c1d8ce6f4c632c6933fbedba846639705b8f5e6a30940549f"
+  },
+  {
+    "path": "screenshots/dettaglio-prezzi-320.jpg",
+    "bytes": 41322,
+    "sha256": "03bc3dadaf68f5c2e6d45beaadb7abce139f3a23f5398436fc4372d36da5a2b6"
+  },
+  {
+    "path": "screenshots/disponibilita-1440.jpg",
+    "bytes": 177622,
+    "sha256": "fa35e98fe591190b8881a0f9c5f0e6425fb50e43e27fa87f047d0ba149af695f"
+  },
+  {
+    "path": "screenshots/disponibilita-320.jpg",
+    "bytes": 134693,
+    "sha256": "c27a74521727a983ee943c6cc9bbbc44f23f7286e895af1dc61b0a0aadf30ce0"
+  },
+  {
+    "path": "screenshots/disponibilita-390.jpg",
+    "bytes": 130218,
+    "sha256": "93fdc1563e1df4e9e60d0704c8fef92bc623a2885c8173f81fbc3c2b07ca8ee1"
+  },
+  {
+    "path": "screenshots/disponibilita-768.jpg",
+    "bytes": 143782,
+    "sha256": "de372c79c13ef1812cdd46d16a9be64593386cccc48e611da6a1ec39e9782d92"
+  },
+  {
+    "path": "screenshots/errore-1440.jpg",
+    "bytes": 176826,
+    "sha256": "14162b91c6e7ad09921e1c3de37a6265d08a70c32690c8c74261caa4894f5916"
+  },
+  {
+    "path": "screenshots/errore-320.jpg",
+    "bytes": 128929,
+    "sha256": "c073a7a29a45bd48e56d29809e51b649a2a927e7e698d715765be282859fa2cd"
+  },
+  {
+    "path": "screenshots/errore-390.jpg",
+    "bytes": 131031,
+    "sha256": "17d0cd2e7aac4e43513ec9ad44503853b2dcc2abe28cdf8fb0e44ae333c6ce32"
+  },
+  {
+    "path": "screenshots/errore-768.jpg",
+    "bytes": 144517,
+    "sha256": "fe033bbf7f9a2ffc105fdc8cbd78a5ddc0badc00d4deb6c8d8ec3fa34430ec52"
+  },
+  {
+    "path": "screenshots/esperienze-1440.jpg",
+    "bytes": 336608,
+    "sha256": "f0ab6c8485a045b944f210d5830eab1781318629bb3c95432eeb40af3e63314a"
+  },
+  {
+    "path": "screenshots/esperienze-320.jpg",
+    "bytes": 221981,
+    "sha256": "5e8d30175c75317beb94e64d9e22dea9a0ee00b9b6b842fe139041dd424887c3"
+  },
+  {
+    "path": "screenshots/esperienze-390.jpg",
+    "bytes": 261925,
+    "sha256": "23be4a22efc30a5270f7d8490e6a83ddf691c747e7d4b389a5d1ee434799a1ac"
+  },
+  {
+    "path": "screenshots/esperienze-768.jpg",
+    "bytes": 200976,
+    "sha256": "d30bb8a75ad1bd2396f394900a97e9586cbec5638c2e7b8d716fd572e8eab918"
+  },
+  {
+    "path": "screenshots/galleria-1440.jpg",
+    "bytes": 565626,
+    "sha256": "b4b65e3f32403f55a3aeb76e771993212fd669ce2194dc74f5c747fb1c979528"
+  },
+  {
+    "path": "screenshots/galleria-320.jpg",
+    "bytes": 327383,
+    "sha256": "4d4bab26610fb211283a4de1b0c68c12869bf5b55c43b536a7a4c9fad78209a7"
+  },
+  {
+    "path": "screenshots/galleria-390.jpg",
+    "bytes": 421019,
+    "sha256": "abcf64021574eef6ef0f4f3aa7edeaa224176d59d6102e37fd143911e8e55179"
+  },
+  {
+    "path": "screenshots/galleria-768.jpg",
+    "bytes": 255177,
+    "sha256": "8186a8c01dfe7991eb2649ab0ceed09a97785751da762bac4ab9d9c66fefef84"
+  },
+  {
+    "path": "screenshots/home-1440.jpg",
+    "bytes": 713317,
+    "sha256": "9ec2d69a528535d1e9813430228f059ef042e1c3dcdfc635d97764a5c1cb5d76"
+  },
+  {
+    "path": "screenshots/home-320-viewport.jpg",
+    "bytes": 48100,
+    "sha256": "53d1d71a58e75d3c317bbb47bb9b27d994a840d0cf6bb05169e2e0857202a3e9"
+  },
+  {
+    "path": "screenshots/home-320.jpg",
+    "bytes": 328350,
+    "sha256": "b18b0c3aeac0ae88a9a7298fa8852fbc6f12fc9fec53563ecd3ed2a3c67a95f6"
+  },
+  {
+    "path": "screenshots/home-390-viewport.jpg",
+    "bytes": 52453,
+    "sha256": "138fe84438f6e5e905acbe26b694722767cb38b60f241cd51ab7aec01030b60f"
+  },
+  {
+    "path": "screenshots/home-390.jpg",
+    "bytes": 329145,
+    "sha256": "fbdb459474fb8febf0945e67371b1f886cd4e1dee25bf2e9d57a571de8f54223"
+  },
+  {
+    "path": "screenshots/home-768-viewport.jpg",
+    "bytes": 73234,
+    "sha256": "4d4481d3c30197cdbca543886c474b1b7905a92bc6920f1406e2e9a04938d139"
+  },
+  {
+    "path": "screenshots/home-768.jpg",
+    "bytes": 392231,
+    "sha256": "98a44f539949449a32a028cc60d3eb964e63c426f03724089c386bf4eb555fca"
+  },
+  {
+    "path": "screenshots/nessuna-combinazione-1440.jpg",
+    "bytes": 209300,
+    "sha256": "8130dc141c77549204c1655346d3c6e1fc68aea3008f16fa0977f1618261fc6c"
+  },
+  {
+    "path": "screenshots/nessuna-combinazione-320.jpg",
+    "bytes": 153244,
+    "sha256": "d3194a39d7c26460d7c6815cc032c1a8c157c40d25b00eb68b3fcfe6b1b055b4"
+  },
+  {
+    "path": "screenshots/nessuna-combinazione-390.jpg",
+    "bytes": 157755,
+    "sha256": "9b3b03e22a58e10b243823ec52a2ff90da825c3a2e93907ec84db280f3539d80"
+  },
+  {
+    "path": "screenshots/nessuna-combinazione-768.jpg",
+    "bytes": 166628,
+    "sha256": "635f815f5713453c09c142440fa7463c7098e8d72c98b1f0223636742c5020be"
+  },
+  {
+    "path": "screenshots/ricerca-1440.jpg",
+    "bytes": 340820,
+    "sha256": "e768109de4fbbf774b479d325d0eb9aa9f859113e903d6b87f8fb0c1d2ffc9fe"
+  },
+  {
+    "path": "screenshots/ricerca-320.jpg",
+    "bytes": 265314,
+    "sha256": "2656b1c8b298ad9e58bc29587385c0657cade48a88cf9acc8c97dbdc8bebea89"
+  },
+  {
+    "path": "screenshots/ricerca-390.jpg",
+    "bytes": 279580,
+    "sha256": "4802738489a00aad8986582d40136f92c9d7d30f685612dfcb4bc260c21a2a79"
+  },
+  {
+    "path": "screenshots/ricerca-768.jpg",
+    "bytes": 283139,
+    "sha256": "e07e824b026970c8286104c2590c2e2a4d3fc7a55b4c38a54355c7146348dd37"
+  },
+  {
+    "path": "screenshots/territorio-1440.jpg",
+    "bytes": 336300,
+    "sha256": "e4fd90798e137fe86c7d42964fe826695d9aec2a4955b3988c4edde30eccf3cf"
+  },
+  {
+    "path": "screenshots/territorio-320.jpg",
+    "bytes": 182540,
+    "sha256": "26ce5941e036dc4c93f5fd9459b6732a6160b3a2c80cb692fd5975da47020a9b"
+  },
+  {
+    "path": "screenshots/territorio-390.jpg",
+    "bytes": 186061,
+    "sha256": "75733eb54c8706a1512db60e5475c05bd79342192706b6becc4c3360a4c91d09"
+  },
+  {
+    "path": "screenshots/territorio-768.jpg",
+    "bytes": 214661,
+    "sha256": "25a36417edc51fff84c15dff660f9aefcaac0ba9fc9f0977b3ebd127aa1fa12b"
+  }
+]

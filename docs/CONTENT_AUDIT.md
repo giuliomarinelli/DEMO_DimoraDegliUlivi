@@ -6,7 +6,7 @@ Data: 15 novembre 2026. Base esaminata: `bf7029f9a70332a69b850d3fd24f3f2fcdfa20b
 
 Analisi dei sorgenti editoriali, dei componenti condivisi e dell’HTML realmente restituito dalla build Qwik City SSR su Wrangler locale. Tutte le sette pagine rispondono 200 con un H1 e metadati distinti; riepilogo in [http-pages.json](qa/milestone-4a/http-pages.json). Il conteggio immagini indica elementi HTML, non prova caricamento o qualità del ritaglio.
 
-**Playwright non ha risposto al tentativo di apertura della scheda di questa milestone.** Interrotto senza tentativi ripetuti, come richiesto. Non sono stati eseguiti nuovi controlli visuali ai quattro viewport né prodotte nuove catture. Le valutazioni seguenti riguardano contenuto e struttura, non certificano la resa visuale. Le evidenze browser della milestone 3 rimangono storiche. Procedura di collaudo e matrice da completare in [QA_MANUAL.md](QA_MANUAL.md).
+Dopo il primo blocco storico, Playwright ha completato 48 controlli pagina/stato/viewport a 1440/768/390/320 px e 26 scenari funzionali. Le immagini sono caricate; catture esaminate per ritagli, spaziatura e leggibilità, senza nuovi difetti circoscritti. [Indice screenshot](qa/milestone-4a/SCREENSHOTS.md), risultati e limiti in [QA_MANUAL.md](QA_MANUAL.md).
 
 Le opportunità elencate sono raccomandazioni: nessun nuovo contenuto, funzionalità o restyling è stato implementato in questa milestone. Non occorre allungare tutte le pagine; il criterio è aggiungere informazioni utili a scegliere un soggiorno dimostrativo.
 
@@ -24,7 +24,7 @@ Le opportunità elencate sono raccomandazioni: nessun nuovo contenuto, funzional
 
 ### Home
 
-Presenti hero fotografica, racconto della dimora, tre camere, finestra sul paesaggio, invito alla galleria e richiamo finale alla ricerca. La pagina non è scarna sul piano della struttura; la scarsità visuale va verificata nel browser.
+Presenti hero fotografica, racconto della dimora, tre camere, finestra sul paesaggio, invito alla galleria e richiamo finale alla ricerca. La pagina non è scarna: la verifica visuale conferma alternanza di immagini, racconto e azioni, con scorrimento mobile lungo ma coerente.
 
 Opportunità: integrare in futuro una breve sintesi già coerente con il motore — cinque camere simulate, tre atmosfere, fino a dodici ospiti — vicino al rimando a Camere. Questo anticiperebbe una scelta concreta senza aggiungere altre sezioni poetiche. Evitare una seconda storia introduttiva o nuove ripetizioni di “luce”, “paesaggio” e “senza fretta”. La CTA principale “Scopri la disponibilità” è chiara e punta a una rotta funzionante; non serve moltiplicarla ulteriormente.
 
@@ -50,13 +50,13 @@ Opportunità: aggiungere a ogni sosta un elemento culturale o paesaggistico dist
 
 Tre categorie ad ancore native, otto fotografie con titolo, provenienza e autore/fonte. Distingue correttamente le ispirazioni fuori Toscana. Non richiede un’introduzione più lunga né un testo sotto ogni immagine per riempire spazio.
 
-Opportunità facoltativa: associare alcune didascalie a una caratteristica già raccontata nelle camere o nelle esperienze. Aggiungere nuove fotografie solo per colmare un soggetto preciso e con licenze documentate, non per ripetere lo stesso paesaggio. L’assenza di una lightbox non è una carenza editoriale e non ne viene proposta l’implementazione qui. Ritagli, leggibilità dei crediti e carico di scorrimento mobile rimangono da esaminare visualmente.
+Opportunità facoltativa: associare alcune didascalie a una caratteristica già raccontata nelle camere o nelle esperienze. Aggiungere nuove fotografie solo per colmare un soggetto preciso e con licenze documentate, non per ripetere lo stesso paesaggio. L’assenza di una lightbox non è una carenza editoriale e non ne viene proposta l’implementazione qui. Ritagli e scorrimento mobile sono stati esaminati: immagini integre, crediti presenti e nessun overflow. I piccoli crediti possono essere un affinamento futuro di leggibilità.
 
 ### Disponibilità
 
 Modulo con finestra 2027, limiti, esempi, avviso di simulazione; risultati con capienza, distribuzione ospiti, foto e caratteristiche, totale soggiorno e dettaglio per notte. Stati senza camere e chiusura spiegati. Nessuna pagina vuota nel percorso HTTP provato.
 
-Non occorrono nuove sezioni prima del modulo: renderebbero più lungo l’accesso all’interazione. Possibile affinamento futuro dei soli testi: spiegare brevemente che le soluzioni possono combinare più tipologie e che una modifica richiede una nuova ricerca; il secondo punto è già annunciato durante l’interazione. Le etichette numeriche “Soluzione 1/2” sono corrette, ma la loro efficacia visuale va verificata con le schede reali. Il tasto Modifica non azzera: riporta ai campi. Non esiste un pulsante Reset; il ritorno alla rotta senza query riparte dallo stato iniziale. Aggiungere un controllo sarebbe una modifica funzionale e non viene fatto in 4A.
+Non occorrono nuove sezioni prima del modulo: renderebbero più lungo l’accesso all’interazione. Possibile affinamento futuro dei soli testi: spiegare brevemente che le soluzioni possono combinare più tipologie e che una modifica richiede una nuova ricerca; il secondo punto è già annunciato durante l’interazione. Le etichette numeriche “Soluzione 1/2” distinguono le schede reali controllate anche su mobile; foto, totale e azione mantengono una gerarchia riconoscibile. Il tasto Modifica non azzera: riporta ai campi. Non esiste un pulsante Reset; il ritorno alla rotta senza query riparte dallo stato iniziale. Aggiungere un controllo sarebbe una modifica funzionale e non viene fatto in 4A.
 
 ### Contatti
 
@@ -68,4 +68,4 @@ Opportunità: una breve guida “Come provare la demo”, con rinvio a ricerca, 
 
 L’invito al soggiorno è un componente condiviso presente in sei pagine; il ritorno alla disponibilità è voluto. Homepage, Camere, Esperienze e Territorio ripetono anche immagini e lessico (“luce”, “paesaggio”, “tempo”, “senza fretta”). In una revisione successiva concentrare l’atmosfera sulla Home, le differenze pratiche su Camere, le scene concrete su Esperienze e le specificità geografiche su Territorio.
 
-Mantenere la dichiarazione di simulazione in ogni pagina; eventuali riduzioni di ripetitività non devono far credere all’esistenza di azienda, servizi o prenotazioni reali. Non aggiungere recensioni, stelle, certificazioni, indirizzi o testimonianze inventate. Prima degli arricchimenti restano prioritari il collaudo visuale/tastiera sospeso e la revisione compatibile delle dipendenze: vedere [DEPENDENCY_AUDIT.md](DEPENDENCY_AUDIT.md).
+Mantenere la dichiarazione di simulazione in ogni pagina; eventuali riduzioni di ripetitività non devono far credere all’esistenza di azienda, servizi o prenotazioni reali. Non aggiungere recensioni, stelle, certificazioni, indirizzi o testimonianze inventate. Il collaudo visuale/tastiera mirato è completato; resta distinta la revisione compatibile delle dipendenze: vedere [DEPENDENCY_AUDIT.md](DEPENDENCY_AUDIT.md).

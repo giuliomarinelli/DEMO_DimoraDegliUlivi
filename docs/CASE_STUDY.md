@@ -38,4 +38,4 @@ Le dipendenze dello scaffold hanno segnalazioni transitive già documentate; nes
 
 ## Confine della consegna
 
-Milestone 3 implementata e verifica browser mirata di quella fase conclusa. Nel collaudo 4A passano 36 test tecnici; il nuovo tentativo Playwright è bloccato, quindi la matrice visuale/tastiera e le catture di 4A restano da eseguire. Nessun difetto applicativo riprodotto, nessun restyling o arricchimento implementato. Audit dei contenuti e procedura in CONTENT_AUDIT e QA_MANUAL; dipendenze in DEPENDENCY_AUDIT. Nessuna fase successiva o pubblicazione avviata.
+Milestone 3 implementata; collaudo browser 4A completato dopo la ripresa richiesta dal proprietario: 48 controlli pagina/stato/viewport, 26 scenari funzionali e 52 catture. I 36 test tecnici erano già passati sullo stesso codice. Nessun nuovo difetto applicativo riprodotto, nessun restyling o arricchimento implementato. Audit dei contenuti in CONTENT_AUDIT; prove, catture e limiti in QA_MANUAL; dipendenze in DEPENDENCY_AUDIT. Preview e scheda dedicate chiuse; nessuna pubblicazione o fase successiva.

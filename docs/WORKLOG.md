@@ -415,3 +415,54 @@ git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
 ```
 
 SHA effettivi nel log e nella consegna. Nessun merge, rebase, force push, deploy, DNS, Access, secret, CI o billing. Il lavoro si ferma alla consegna tecnica/editoriale 4A con blocco visuale esplicito; nessuna fase successiva avviata.
+
+# Integrazione 4A — collaudo Playwright e chiusura sequenziale
+
+15 novembre 2026. Su richiesta del proprietario ripreso il collaudo browser: il blocco descritto sopra è storico, non lo stato attuale. Riletti AGENTS, MVP, BRAND_DIRECTION, WORKLOG e DEPLOYMENT. Branch `feature/mvp-foundation`, base `387352853647351e7c90f93a6ef8a618e335c61f`; codice applicativo servito `bf7029f9a70332a69b850d3fd24f3f2fcdfa20b8`. I commit successivi riguardavano test/documenti. Nessuna modifica estranea: i file non tracciati iniziali erano report/catture della stessa sessione.
+
+## Runtime, scheda e verifiche effettive
+
+Riutilizzata esclusivamente la produzione Wrangler di proprietà della sessione sulla porta 8947. Home HTTP 200 verificato prima di Playwright. Dopo l’interruzione la scheda corrente MCP non era questa applicazione: controllato URL senza navigare quella pagina, poi aperta una scheda dedicata al progetto. Origine e viewport controllati prima delle sequenze. Nessun secondo runtime, subagente o worktree.
+
+La ripresa precedente all’ultima istruzione aveva già completato **48 combinazioni DOM e 25 scenari funzionali**, conservati nel report del driver; esportati senza ripeterli. Nell’esecuzione esclusiva completato il percorso ancora privo di prova tastiera: GET con Enter senza script applicativi. Totale **26 scenari funzionali passati**.
+
+- 48 combinazioni: sette pagine e 404, più ricerca valida/errore/chiusura/nessuna combinazione, ciascuna a 1440/768/390/320 px, altezza 900 CSS. Status atteso, un H1, immagini decodificate con alt, CTA nei limiti e nessun overflow orizzontale del documento. Catture esaminate per gerarchia, spaziature, leggibilità e immagini, con il limite di paint a 390 descritto sotto.
+- Ricerca: date vuote/uguali/invertite, durata oltre limite, più camere che ospiti, errori/focus, determinismo, importi 405/465/555 €, combinazioni 5/2 a 960/1020 €, massimo 12/5 a 765 €, ultimo check-out 1 gennaio 2028, quattordici notti a 1810/2090 €, chiusura e nessuna combinazione.
+- Interazioni: modifica dei campi elimina offerte obsolete; Modifica riporta al check-in; dettagli/importi Enter, tabella quattordici notti a 320 senza overflow del documento. Link esempio, rotta senza query con date vuote e default 2/1, indietro/avanti. Skip link, menu mobile Enter/Tab/Escape e ritorno focus, ancore Galleria/camera, cinque FAQ Spazio/Enter. Non aggiunto Reset: riavvio tramite rotta pulita.
+- Senza script: CSP temporanea `script-src 'none'` soltanto dal driver sulle risposte disponibilità. Prima prova con attivazione DOM e conservazione 5/2. Nell’integrazione esclusiva **Enter su submit** invia il GET, query giugno 10–13 / 2/1, prezzo 405 € presente e Qwik `paused`. Intercettazione rimossa nel finally; nessuna CSP applicativa modificata.
+- Movimento ridotto: scroll da smooth ad auto, preferenza ripristinata. Colori computati coerenti con i token già calcolati. Contrasto sulle foto esaminato visualmente, senza misura pixel per pixel o certificazione WCAG.
+
+Report in `docs/qa/milestone-4a/browser-results.json`; **52 JPEG** (48 estese, tre hero viewport e un dettaglio prezzi viewport), indice SCREENSHOTS.md e manifest SHA-256. Catture reali, nessun nuovo asset fotografico; licenze esistenti in ASSETS. I parametri non selezionabili (13 ospiti, 6 camere, date inesistenti, query duplicate) restano coperti dagli HTTP/unitari, senza attribuirli a nuovi invii client.
+
+## Problemi del driver/browser e limiti residui
+
+Nessun nuovo bug applicativo riprodotto, nessun pageerror inatteso nelle sequenze registrate; CSP e 404 intenzionali distinti dagli errori applicativi. Nessuna modifica a sorgenti, stile, inventario, dipendenze, lockfile o hosting.
+
+1. Dopo il primo blocco storico di browser_tabs, browser_navigate ha risposto. Nella ripresa esclusiva il contesto isolato è stato rifiutato immediatamente con `Target.createBrowserContext: Not allowed`; la scheda ordinaria dedicata ha funzionato. Non è un timeout MCP o un difetto del sito.
+2. I primi Enter in documento nascosto non sono conteggiati come passati; le sequenze riuscite portano la scheda in primo piano prima/dopo l’input. Il nuovo GET senza script ha avuto un timeout locator del driver: cercava “Cerca disponibilità” anziché “Cerca disponibilità demo”. Corretto il selettore submit, Enter è passato. Nessun tentativo ripetuto su un servizio non rispondente.
+3. Alcune catture estese mostravano immagini decodificate ma non dipinte. Home 768 ricatturata scorrendo ogni immagine e nuovamente esaminata; hero 320/390/768 con supplementi corretti. **Home estesa 390 conserva un artefatto nelle foto inferiori panorama/uliveto**: il DOM le dà caricate, ma quella cattura non prova la resa dei loro pixel. Le stesse sezioni sono visibili a 320/768. Limite esplicito nell’indice, senza modificare l’app o dichiarare completo quel dettaglio visuale.
+4. Non eseguiti popup calendario di sistema, lettore di schermo reale, Safari/Firefox, dispositivi fisici e zoom browser reale 200%. Date riempite nei controlli nativi da Playwright. Sono limiti del collaudo mirato, non blocchi MCP. Piccoli crediti restano possibile affinamento, senza difetto accertato dal solo font-size.
+
+L’import dinamico fs non è supportato nel driver: esportato il JSON restituito dallo strumento. Una patch con due operazioni sullo stesso file è stata rifiutata e sostituita con un update valido. Uno script documentale con backtick non escapati è stato respinto dal parser prima delle scritture, poi sostituito con patch. Nessun fallimento del tooling conteggiato come test del prodotto superato.
+
+## Documentazione, verifiche e rilascio delle risorse
+
+Aggiornati README, ARCHITECTURE, AVAILABILITY_SIMULATOR, DEPLOYMENT, CASE_STUDY, CONTENT_AUDIT e QA_MANUAL per lo stato corrente. Cronologia del blocco preservata sopra. Opportunità editoriali soltanto documentate; audit dipendenze invariato, nessun aggiornamento forzato. AGENTS/MVP invariati.
+
+Typecheck, lint, build produzione e **36 test (17 unitari + 19 HTTP)** erano già passati su questo stesso codice. Non ripetuti nella ripresa esclusiva, come richiesto: cambiano solo documenti/evidenze. Controllati integrità JSON/conteggi/manifest, link, `git diff --check` e assenza di modifiche a sorgenti/configurazioni/lockfile.
+
+Chiusa solo la scheda dedicata, rimosse intercettazioni e ripristinata la preferenza movimento. Ctrl+C alla preview ha lasciato un figlio sulla porta: verificati PID già identificati e percorso assoluto sotto node_modules di questa repository, arrestato il CLI proprietario; figli terminati e nessun listener rimasto su 8947. Nessun processo browser o progetto esterno arrestato. **Playwright MCP liberato per la sessione successiva**; nessuna ulteriore chiamata browser dopo la chiusura.
+
+Consegna atomica di soli documenti/evidenze, dopo confronto remoto; SHA finale nel log Git e nel resoconto:
+
+```powershell
+git diff --check
+git fetch origin
+git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
+git -c commit.gpgsign=false commit -m 'docs: complete sequential Playwright QA and capture evidence'
+git push origin feature/mvp-foundation
+git status --short
+git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
+```
+
+Nessun merge, rebase, deployment, CI, servizio Cloudflare o fase successiva. Rollback documentale mediante revert, senza riscrittura della storia.
