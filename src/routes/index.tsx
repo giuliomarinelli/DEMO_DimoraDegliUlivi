@@ -1,173 +1,208 @@
-/* eslint-disable qwik/jsx-img -- Local WebP assets are already compressed, sized and intentionally served without the image transformation pipeline. */
 import { component$ } from "@builder.io/qwik";
 import { Link, type DocumentHead } from "@builder.io/qwik-city";
+import { Photo } from "~/components/photo/photo";
 import { OliveBranch } from "~/components/brand/brand";
+import { StayInvitation } from "~/components/stay-invitation/stay-invitation";
+import { rooms } from "~/data/editorial";
 
 export default component$(() => (
   <>
-    <section class="hero shell" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">
-          <span class="small-line" /> Ospitalità di campagna, in Toscana
-        </p>
+    <section class="hero" aria-labelledby="hero-title">
+      <Photo image="paesaggio" eager class="hero-photo" />
+      <div class="hero-shade" />
+      <div class="hero-content shell">
+        <p class="eyebrow">Dimora degli Ulivi · Toscana</p>
         <h1 id="hero-title">
-          Il tempo, qui,
+          La tua parentesi
           <br />
-          ha un <em>altro</em>
-          <br />
-          passo.
+          <em>toscana.</em>
         </h1>
-        <p class="hero-description">
-          Tra il verde degli ulivi e la luce delle colline, una dimora da
-          abitare con calma. E il piacere semplice di sentirsi a casa.
-        </p>
-        <Link href="/camere/" class="button">
-          Entra nella dimora <span aria-hidden="true">↗</span>
-        </Link>
-        <p class="hero-footnote">Terra, silenzio e piccole cose fatte bene.</p>
-      </div>
-      <figure class="hero-figure">
-        <img
-          class="hero-image"
-          src="/images/podere.webp"
-          width={1800}
-          height={1200}
-          alt="Case di campagna tra ulivi e colline toscane, immagine d’ispirazione per la dimora fittizia"
-          fetchPriority="high"
-        />
-        <div class="hero-seal" aria-hidden="true">
-          <OliveBranch class="h-12 w-10" />
-          <span>
-            RADICI IN TERRA
-            <br />
-            SGUARDO LENTO
-          </span>
-        </div>
-        <figcaption>
-          <span>01 / Appunti di campagna</span>
-          <span>Un paesaggio da immaginare, insieme.</span>
-        </figcaption>
-      </figure>
-    </section>
-    <div class="shell qualities" aria-label="Lo spirito della dimora">
-      <p>
-        <span aria-hidden="true">01</span> Il ritmo delle stagioni
-      </p>
-      <p>
-        <span aria-hidden="true">02</span> L’intimità di una casa
-      </p>
-      <p>
-        <span aria-hidden="true">03</span> La bellezza dell’essenziale
-      </p>
-    </div>
-    <section class="shell story" aria-labelledby="story-title">
-      <figure class="story-image">
-        <img
-          src="/images/uliveto.webp"
-          width={1000}
-          height={750}
-          loading="lazy"
-          alt="Un uliveto toscano nella luce del mattino"
-        />
-        <figcaption>Il nostro punto di partenza: la terra.</figcaption>
-      </figure>
-      <div class="story-copy">
-        <p class="eyebrow">Benvenuti alla Dimora degli Ulivi</p>
-        <h2 id="story-title">
-          Ci sono luoghi
+        <p>
+          Una casa tra gli ulivi, la luce sulle colline.
           <br />
-          che invitano a <em>restare.</em>
-        </h2>
-        <p>
-          Abbiamo immaginato una casa di campagna dove aprire le finestre sul
-          verde, fare colazione senza guardare l’orologio e lasciare che sia la
-          giornata a scegliere la strada.
+          Il tempo di stare bene, lontano dal rumore.
         </p>
-        <p>
-          Una Toscana raccolta e quotidiana: il pane sulla tavola, i sentieri
-          tra gli ulivi, un libro lasciato a metà. Da qui comincia il racconto
-          della nostra dimora.
-        </p>
-        <Link href="/territorio/" class="text-link">
-          Intorno a noi <span aria-hidden="true">↗</span>
-        </Link>
+        <div class="hero-actions">
+          <Link href="/disponibilita/" class="button button-linen">
+            Scopri la disponibilità <span aria-hidden="true">↗</span>
+          </Link>
+          <a href="#la-dimora" class="hero-text-link">
+            Esplora la dimora <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-caption shell">
+        <span>Ospitalità di campagna, sguardo contemporaneo</span>
+        <span>Paesaggio illustrativo · Kalina O.</span>
       </div>
     </section>
-    <section class="discover" aria-labelledby="discover-title">
+    <div class="welcome-strip">
+      <span>Camere da abitare</span>
+      <i aria-hidden="true">✳</i>
+      <span>Orizzonti da scoprire</span>
+      <i aria-hidden="true">✳</i>
+      <span>Tempo da ritrovare</span>
+    </div>
+    <section
+      id="la-dimora"
+      class="shell introduction section-space"
+      aria-labelledby="welcome-title"
+    >
+      <div>
+        <p class="eyebrow">Un piccolo mondo, aperto sul paesaggio</p>
+        <h2 id="welcome-title">
+          Arrivare.
+          <br />
+          Aprire le finestre.
+          <br />
+          <em>Sentirsi altrove.</em>
+        </h2>
+        <OliveBranch class="intro-branch" />
+      </div>
+      <div class="introduction-copy">
+        <p>
+          La Dimora degli Ulivi è la nostra idea di un soggiorno boutique nella
+          campagna toscana: ambienti luminosi, pochi dettagli scelti con cura e
+          la bellezza del paesaggio che entra in casa.
+        </p>
+        <p>
+          Al risveglio, una colazione in giardino. Poi una strada bianca da
+          seguire, un borgo da esplorare, oppure un pomeriggio a bordo piscina.
+          Qui la vacanza lascia spazio a quello che ti va di fare.
+        </p>
+        <p class="editorial-note">
+          Un’ospitalità immaginata per questa demo. Camere, servizi e soggiorni
+          descritti non sono reali.
+        </p>
+      </div>
+    </section>
+    <section class="rooms-section section-space" aria-labelledby="rooms-title">
       <div class="shell">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Il piacere delle cose semplici</p>
-            <h2 id="discover-title">A ciascuno, il suo ritmo.</h2>
+            <p class="eyebrow">Le camere</p>
+            <h2 id="rooms-title">
+              Il paesaggio fuori.
+              <br />
+              <em>Il tuo spazio, dentro.</em>
+            </h2>
           </div>
-          <p>
-            Tre modi per entrare
-            <br />
-            nel mondo della dimora.
-          </p>
+          <Link href="/camere/" class="text-link">
+            Scopri tutte le camere <span aria-hidden="true">↗</span>
+          </Link>
         </div>
-        <div class="discovery-grid">
-          {[
-            {
-              number: "01",
-              title: "Abitare la quiete",
-              text: "Lino, toni naturali e luce del mattino. L’idea di un riposo che sa di casa.",
-              href: "/camere/",
-              label: "Le camere",
-            },
-            {
-              number: "02",
-              title: "Coltivare il tempo",
-              text: "Una passeggiata nell’uliveto, i sapori della terra, il racconto di una stagione.",
-              href: "/esperienze/",
-              label: "Le esperienze",
-            },
-            {
-              number: "03",
-              title: "Seguire la bellezza",
-              text: "Strade bianche, piccoli borghi e orizzonti aperti. La campagna come compagna di viaggio.",
-              href: "/territorio/",
-              label: "Il territorio",
-            },
-          ].map((item) => (
-            <article key={item.number} class="discovery-item">
-              <span class="chapter-number">{item.number}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <Link href={item.href} class="text-link">
-                {item.label}
-                <span aria-hidden="true">↗</span>
+        <div class="room-grid">
+          {rooms.map((room) => (
+            <article class="room-card" key={room.id}>
+              <Link
+                href={"/camere/#" + room.id}
+                class="room-photo-link"
+                aria-label={"Scopri " + room.name}
+              >
+                <Photo image={room.image} />
+                <span class="photo-arrow" aria-hidden="true">
+                  ↗
+                </span>
               </Link>
+              <p class="eyebrow">{room.mood}</p>
+              <h3>
+                <Link href={"/camere/#" + room.id}>{room.name}</Link>
+              </h3>
+              <p>{room.description}</p>
             </article>
           ))}
         </div>
+        <p class="editorial-note mt-8">
+          Tre atmosfere dimostrative. Fotografie d’ispirazione; nessuna camera
+          prenotabile.
+        </p>
       </div>
     </section>
-    <section class="shell closing">
-      <OliveBranch class="h-20 w-16" />
-      <p class="eyebrow">Una finestra sulla dimora</p>
-      <h2>
-        Prima di partire,
-        <br />
-        <em>lasciati ispirare.</em>
-      </h2>
-      <Link href="/galleria/" class="button button-outline">
-        Sfoglia le prime immagini <span aria-hidden="true">↗</span>
-      </Link>
-      <p class="mt-6 text-sm">
-        Una storia immaginaria, raccontata con trasparenza.
-      </p>
+    <section
+      class="shell section-space hospitality-story"
+      aria-labelledby="hospitality-title"
+    >
+      <div class="hospitality-image">
+        <Photo image="finestra" />
+        <span class="image-label">Dentro e fuori, la stessa calma.</span>
+      </div>
+      <div class="hospitality-copy">
+        <p class="eyebrow">Il piacere di soggiornare</p>
+        <h2 id="hospitality-title">
+          Tra un tuffo
+          <br />e un nuovo
+          <br />
+          <em>orizzonte.</em>
+        </h2>
+        <p>
+          Una mattina da dedicare alla scoperta, un pomeriggio da tenere libero.
+          Immaginiamo una dimora da vivere anche senza uscire, tra il giardino,
+          l’acqua e la luce che cambia.
+        </p>
+        <Link href="/esperienze/" class="text-link">
+          Trova il tuo ritmo <span aria-hidden="true">↗</span>
+        </Link>
+        <p class="editorial-note mt-6">
+          Scena illustrativa fotografata in Umbria; non raffigura una struttura
+          esistente con questo nome.
+        </p>
+      </div>
     </section>
+    <section class="landscape-feature" aria-labelledby="territory-title">
+      <Photo image="orizzonti" class="landscape-image" />
+      <div class="landscape-shade" />
+      <div class="shell landscape-content">
+        <p class="eyebrow">Fuori dalla dimora</p>
+        <h2 id="territory-title">
+          La Toscana,
+          <br />
+          <em>un giorno alla volta.</em>
+        </h2>
+        <p>
+          Colline, cipressi e piccoli borghi.
+          <br />
+          Partire per una passeggiata, tornare con una storia.
+        </p>
+        <Link href="/territorio/" class="button button-linen">
+          Esplora il territorio <span aria-hidden="true">↗</span>
+        </Link>
+      </div>
+    </section>
+    <section
+      class="shell section-space gallery-invite"
+      aria-labelledby="gallery-title"
+    >
+      <div>
+        <p class="eyebrow">Prima del viaggio</p>
+        <h2 id="gallery-title">
+          Immagina di
+          <br />
+          <em>essere già qui.</em>
+        </h2>
+        <p>
+          Luce sulle pareti, un libro sul comodino, il verde oltre una finestra.
+          Il nostro album raccoglie le immagini da cui nasce l’atmosfera della
+          dimora.
+        </p>
+        <Link href="/galleria/" class="text-link">
+          Entra nella galleria <span aria-hidden="true">↗</span>
+        </Link>
+      </div>
+      <div class="gallery-pair">
+        <Photo image="dettaglio" />
+        <Photo image="uliveto" />
+      </div>
+    </section>
+    <StayInvitation />
   </>
 ));
-
 export const head: DocumentHead = {
-  title: "Dimora degli Ulivi | Un altro passo, in Toscana · Demo",
+  title: "Dimora degli Ulivi | La tua parentesi toscana · Demo",
   meta: [
     {
       name: "description",
       content:
-        "Una dimora immaginaria tra gli ulivi della Toscana. Scopri lo spirito della casa, le camere e le esperienze di questo agriturismo dimostrativo.",
+        "Immagina il tuo soggiorno boutique in Toscana: camere luminose, giardino, paesaggi ed esperienze. Dimora degli Ulivi è una struttura fittizia, senza prenotazioni reali.",
     },
   ],
 };

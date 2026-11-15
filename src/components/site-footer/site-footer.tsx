@@ -9,9 +9,9 @@ export const SiteFooter = component$(() => (
       <div>
         <Brand />
         <p class="mt-5 max-w-xs text-sm leading-7">
-          Una casa tra gli ulivi.
+          La tua parentesi toscana.
           <br />
-          Uno spazio per ritrovare il proprio tempo.
+          Camere, luce e nuovi orizzonti.
         </p>
       </div>
       <nav aria-label="Esplora la dimora" class="footer-nav">
@@ -29,9 +29,9 @@ export const SiteFooter = component$(() => (
     </div>
     <div class="shell footer-bottom">
       <span>© 2026 Dimora degli Ulivi · Progetto demo</span>
-      <span>
-        Immagini illustrative: Kalina O. e Andreas Weilguny / Unsplash
-      </span>
+      <Link href="/galleria/">
+        Fotografie illustrative · Autori e crediti in Galleria ↗
+      </Link>
     </div>
   </footer>
 ));

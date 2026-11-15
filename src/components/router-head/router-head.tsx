@@ -21,7 +21,7 @@ export const RouterHead = component$(() => {
         />
       )}
       <meta name="robots" content="noindex, nofollow" />
-      <meta name="theme-color" content="#384735" />
+      <meta name="theme-color" content="#A7C6C6" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 

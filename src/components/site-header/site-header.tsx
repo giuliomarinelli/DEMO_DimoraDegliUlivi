@@ -12,8 +12,7 @@ export const SiteHeader = component$(() => {
         Vai al contenuto
       </a>
       <div class="demo-bar">
-        Un luogo immaginato, un invito a rallentare.{" "}
-        <span>Stai esplorando un sito demo.</span>
+        Ospitalità immaginata in Toscana · Sito dimostrativo
       </div>
       <header class="site-header shell">
         <Brand />
@@ -31,7 +30,7 @@ export const SiteHeader = component$(() => {
           ))}
         </nav>
         <Link href="/disponibilita/" class="button header-cta">
-          Il tuo soggiorno <span aria-hidden="true">↗</span>
+          Disponibilità <span aria-hidden="true">↗</span>
         </Link>
         <details
           class="mobile-menu"
@@ -44,12 +43,13 @@ export const SiteHeader = component$(() => {
           }}
         >
           <summary>
-            Menu <span aria-hidden="true">☰</span>
+            <span class="sr-only">Menu</span>
+            <span aria-hidden="true">☰</span>
           </summary>
           <nav aria-label="Navigazione mobile">
             {[
               ...navigation,
-              { href: "/disponibilita/", label: "Il tuo soggiorno" },
+              { href: "/disponibilita/", label: "Disponibilità demo" },
             ].map((item) => (
               <Link
                 key={item.href}

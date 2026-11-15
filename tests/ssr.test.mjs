@@ -7,18 +7,20 @@ const origin = process.env.SSR_TEST_ORIGIN ?? "http://127.0.0.1:8947";
 const fetchLocal = (path) =>
   fetch(new URL(path, origin), { signal: AbortSignal.timeout(10000) });
 const routes = [
-  ["/", "Il tempo, qui,"],
-  ["/camere/", "Il riposo, nella sua forma più semplice."],
-  ["/esperienze/", "Il lusso di avere tempo."],
-  ["/territorio/", "La strada più bella è quella senza fretta."],
-  ["/galleria/", "Due sguardi, un inizio."],
-  ["/disponibilita/", "Il prossimo soggiorno comincia da un’idea."],
-  ["/contatti/", "Una casa immaginata. Un racconto aperto."],
+  ["/", "La tua parentesi"],
+  ["/camere/", "Il tuo spazio, nella luce della Toscana."],
+  ["/esperienze/", "La vacanza, come piace a te."],
+  ["/territorio/", "Un viaggio dentro il paesaggio."],
+  ["/galleria/", "Il tuo soggiorno, in immagini."],
+  ["/disponibilita/", "Il tuo prossimo soggiorno comincia qui."],
+  ["/contatti/", "Prima di immaginare la partenza."],
 ];
 const titles = new Set();
 const descriptions = new Set();
 const localAssets = new Set();
 const localLinks = new Set();
+const pageHtml = new Map();
+const anchors = [];
 
 for (const [path, heading] of routes) {
   test(`production SSR: ${path} includes content and metadata in raw HTTP HTML`, async () => {
@@ -27,6 +29,7 @@ for (const [path, heading] of routes) {
     assert.match(response.headers.get("content-type"), /text\/html/);
     const raw = await response.text();
     const html = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+    pageHtml.set(path, html);
     assert.match(html, /<html[^>]*lang="it"/);
     assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
     assert.ok(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1].includes(heading));
@@ -50,8 +53,8 @@ for (const [path, heading] of routes) {
     assert.match(raw, /q:render="ssr"/);
     assert.doesNotMatch(
       html,
-      /<form\b/,
-      "no search or contact submission in milestone 1",
+      /<(?:form|input|select)\b/,
+      "no search, calendar or contact submission in milestone 2",
     );
     for (const [, href] of html.matchAll(/<a\b[^>]*href="(\/[^"#?]*)"/g))
       localLinks.add(href);
@@ -59,6 +62,14 @@ for (const [path, heading] of routes) {
       /(?:src|href)="(\/(?:build|assets|images)\/[^"?]+|\/favicon\.svg)"/g,
     ))
       localAssets.add(src);
+    for (const [, srcset] of html.matchAll(/srcset="([^"]+)"/g)) {
+      for (const candidate of srcset.split(","))
+        localAssets.add(candidate.trim().split(/\s+/)[0]);
+    }
+    for (const [, href] of html.matchAll(
+      /<a\b[^>]*href="((?:\/[^"?]*)?#[^"]+)"/g,
+    ))
+      anchors.push(new URL(href, new URL(path, origin)));
   });
 }
 
@@ -68,12 +79,54 @@ test("all navigation targets resolve and local images, scripts and styles are se
   for (const path of [...localLinks, ...localAssets]) {
     const response = await fetchLocal(path);
     assert.equal(response.status, 200, path);
+    const bytes = Buffer.from(await response.arrayBuffer());
+    assert.ok(bytes.length > 0, path + " must have a nonempty body");
     if (path.endsWith(".webp")) {
       assert.match(response.headers.get("content-type"), /image\/webp/);
-      const bytes = Buffer.from(await response.arrayBuffer());
       assert.equal(bytes.toString("ascii", 8, 12), "WEBP");
     }
+    if (path.endsWith(".jpg")) {
+      assert.match(response.headers.get("content-type"), /image\/jpeg/);
+      assert.equal(bytes.readUInt16BE(0), 0xffd8);
+    }
   }
+});
+
+test("editorial links and gallery categories point to real server-rendered anchors", () => {
+  assert.ok(anchors.length >= 10);
+  for (const target of anchors) {
+    const html = pageHtml.get(target.pathname);
+    assert.ok(html, target.pathname);
+    assert.ok(
+      html.includes('id="' + decodeURIComponent(target.hash.slice(1)) + '"'),
+      target.href,
+    );
+  }
+});
+
+test("room narratives, photo credits and FAQ content are complete without booking controls", () => {
+  const rooms = pageHtml.get("/camere/");
+  for (const name of ["Camera Ulivo", "Camera Acqua", "Camera Lino"])
+    assert.ok(rooms.includes(name));
+  const gallery = pageHtml.get("/galleria/");
+  for (const author of [
+    "Kalina O.",
+    "Andreas Weilguny",
+    "Andrea Mosti",
+    "Alan Jiang",
+    "Clay Banks",
+    "Taylor Friehl",
+    "Alessandro Guarino",
+    "Andrea Kartali",
+  ])
+    assert.ok(gallery.includes(author), author);
+  assert.match(gallery, /fotografie di una struttura esistente/);
+  assert.match(pageHtml.get("/contatti/"), /<details\b/);
+  assert.match(pageHtml.get("/disponibilita/"), /Non ancora attiva/);
+  assert.match(
+    pageHtml.get("/disponibilita/"),
+    /calendario e i risultati dimostrativi non sono ancora disponibili/,
+  );
 });
 
 test("unknown paths return a real 404 with a way home", async () => {
