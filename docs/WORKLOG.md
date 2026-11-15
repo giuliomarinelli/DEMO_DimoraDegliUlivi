@@ -204,3 +204,84 @@ git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
 ```
 
 Nessun merge, rebase, force push, deploy o modifica a DNS, Access, secrets, CI o billing. Passo successivo previsto: milestone 3, soltanto con incarico distinto.
+
+# Milestone 3 — simulatore disponibilità camere
+
+Data: 15 novembre 2026. Proseguimento esplicitamente richiesto su `feature/mvp-foundation`; nessun nuovo branch, worktree o subagente. Milestone 4 non avviata.
+
+## Stato iniziale e specifiche
+
+Letti integralmente AGENTS, MVP e documentazione esistente della foundation e della direzione boutique. Working tree inizialmente pulito, HEAD `6e7da76039e98060701f49d3b8355e34d065cffa`. `git fetch origin` e confronto con `origin/feature/mvp-foundation`: `0 0`, confermato anche prima dei commit. Nessun conflitto o lavoro locale preesistente.
+
+Qwik/Qwik City 1.20.4, TypeScript strict, Tailwind, routing e adapter Pages conservati. AGENTS.md, docs/MVP.md, package-lock.json, configurazioni adapter e Wrangler invariati. Dipendenze già installate e nessuna nuova dipendenza: non ripetuta `npm ci`; la procedura pulita resta in README/DEPLOYMENT. Nessun database, API business, autenticazione, pagamento, prenotazione, servizio esterno o invio reale.
+
+## Scelte e implementazione
+
+- Motore puro `src/lib/availability.ts`, condiviso da SSR e browser. Nessuna lettura dell’orologio, casualità, rete o persistenza: medesimi input, medesimi risultati.
+- Inventario coerente con le tre camere editoriali: due Ulivo da due posti / 145 €, due Acqua da tre posti / 175 €, una Lino da due posti / 125 €. Cinque unità fisiche e dodici posti complessivi, dati tutti fittizi.
+- Finestra fissa 2027, partenza finale 1 gennaio 2028, soggiorni da 1 a 14 notti. Limiti espliciti nel modulo e validazione condivisa. Giorni civili UTC, check-out escluso: nessuna variazione dovuta all’ora legale.
+- Occupazioni simulate di tre notti ogni ventotto giorni con offset per unità; chiusura delle notti 1–14 novembre. La stessa unità deve restare libera per l’intero soggiorno. Test dedicato al caso in cui esista una camera libera diversa ogni notte ma nessuna libera continuativamente.
+- Enumerazione delle combinazioni di tipologie, anche miste, con esatto numero di camere e capienza sufficiente. Una sola offerta per combinazione equivalente, unità univoche, assegnazione degli ospiti rispettosa delle capienze. Ordinamento per totale, capienza e ID stabile.
+- Importi in centesimi, sommati per notte e per camera: base +30% in luglio/agosto, poi +15 € per venerdì/sabato. Nessun supplemento ospite; extra e imposte non simulati. Interfaccia con totale soggiorno, subtotali tipologia e dettaglio notturno. Tutte le assunzioni in AVAILABILITY_SIMULATOR.
+- Componente `AvailabilitySearch` con form GET, input data nativi, select ospiti/camere, errori, stato vuoto, risultati fotografici e modifica ricerca. Riutilizzati Photo e contenuti editoriali; palette, tipografia e hero precedenti conservate. Nessun asset o licenza aggiunto.
+- `routeLoader$` per inizializzare dal query string sul server. Senza JavaScript il GET restituisce comunque il risultato completo. Con JavaScript, handler Qwik e primitive `useStore`/`useSignal` ricalcolano localmente; `useTask$` sincronizza i cambi di query della stessa rotta. Nessuna API aggiuntiva. Le successive modifiche client non aggiornano l’URL e sono effimere; documentato l’effetto della ricarica.
+- Cambiare un parametro rimuove le precedenti offerte. Etichette, fieldset/legend, aiuti e errori associati, riepilogo con ancore, aria-invalid esplicito e stato live. L’invio avanzato porta il focus al primo errore o alla sezione esito; il pulsante Modifica torna al check-in. Dettagli HTML nativi, tabelle con caption e scope, stili di focus esistenti.
+- Aggiornate Camere con capacità/quantità/base derivate dal motore, FAQ/Contatti, inviti e footer: nessun residuo messaggio di ricerca non attiva nell’applicazione.
+
+## Test e problemi risolti
+
+Aggiunti 17 test unitari del motore: inventario e unicità unità, date impossibili, notti con ora legale/bisestile/cambio anno, limiti, quantità, prezzi stagionali/weekend, check-out escluso, continuità dell’unità, confini della chiusura, prezzi noti, combinazioni miste e assegnazione, dodici posti, assenza risultati, determinismo/invarianti e query incomplete/duplicate. Compilazione TypeScript strict isolata in `.cache/availability-tests/`; runner Node, nessun nuovo framework di test.
+
+Test HTTP ampliati da 12 a 16: sette rotte editoriali con contenuti/metadati nella risposta grezza; navigazione, asset e firme immagini, ancore, crediti e FAQ; modulo con GET e date native; risultati senza script, capienze/prezzi; combinazioni miste, errori e due tipi di assenza risultati; associazioni ARIA; HTTP 404; worker e manifest senza HTML prerenderizzato. Non si tratta di mock HTTP.
+
+Problemi durante lo sviluppo:
+
+1. I tipi Qwik per `<option>` non accettavano i figli separati numero/testo: usata un’unica stringa per opzione. Successivo typecheck passato.
+2. Primo controllo del focus nell’HTML fallito perché il matcher cercava solo `tabindex` minuscolo, mentre Qwik emette `tabIndex`. Ispezionata la sezione prodotta e reso il matcher insensibile alla capitalizzazione degli attributi HTML. Nessuna rimozione dell’asserzione sul focus programmabile.
+3. Playwright MCP non ha restituito né navigazione con timeout esplicito, né una successiva richiesta di elenco schede. Chiamate interrotte; richiesto all’utente il ripristino del collegamento. Nessun riavvio del browser condiviso, uso di input nativo o intervento su altri progetti. Queste prove non sono conteggiate come superate.
+4. Per ricostruire e riavviare la preview Windows, arrestati solo CLI Wrangler con percorso di questa repository/porta 8947 e binari locali identificati dal percorso assoluto. Nessun servizio di altri progetti arrestato. Preview locale arrestata a fine verifica.
+5. Nel controllo finale rilevato che le esclusioni generiche `lib` dello scaffold nascondevano anche il nuovo `src/lib` a ESLint e Prettier. Ristretti i pattern alla directory di output in radice (`lib/**` in ESLint, `/lib` in Prettier); formattato il motore e ripetuti lint, typecheck, test e build con il sorgente incluso. Nessuna modifica di CI.
+
+## Comandi ed esiti
+
+```powershell
+npm run fmt
+npm run typecheck
+npm run lint
+npm run test.unit
+npm run build
+npm run preview
+# In un secondo terminale, preview di produzione già attiva:
+npm test
+npm audit --json
+git diff --check
+git diff -- AGENTS.md docs/MVP.md adapters/cloudflare-pages/vite.config.ts wrangler.jsonc package-lock.json
+```
+
+Typecheck, lint e build produzione: exit code 0, lint senza errori né warning. `npm test` dopo build e riavvio Wrangler: **17 unitari + 16 HTTP = 33 passati, 0 falliti, 0 saltati**. Artefatti client (`dist/build`, `dist/assets`, manifest), server (`server/`, `dist/_worker.js`, `_routes.json`) generati; nessun HTML prerenderizzato. La nota interna “Starting Qwik City SSG” non produce pagine, come confermato dai test. Restano i warning ambiente colore e la nota adapter sui cache header, distinti da errori di compilazione. Log locale non versionato: `.cache/milestone-3-build.log`.
+
+SSR verificato su **build di produzione nel runtime locale Cloudflare/Wrangler**, `http://127.0.0.1:8947`, non solo vite dev. Homepage e tutte le rotte interne contengono HTML significativo e metadati. GET diretto alla ricerca 10–13 giugno 2027 / due ospiti / una camera: tre soluzioni e totali 405 / 465 / 555 €. Cinque ospiti / due camere: prima combinazione 960 €. Query errate e chiusura restituiscono spiegazioni nella risposta iniziale, senza esecuzione JavaScript. `git diff --check` superato; nessuna differenza sulle specifiche o configurazioni protette.
+
+`npm audit --json` ripetuto: 12 segnalazioni (8 moderate, 4 high), stesso conteggio delle milestone precedenti. Report locale `.cache/milestone-3-audit.json`, ignorato. Nessun aggiornamento forzato, downgrade o override; rischio residuo da riesaminare prima di una pubblicazione. Il nuovo motore non usa zod né trasformazioni di immagini utente.
+
+## Accessibilità e limite browser
+
+Verificati automaticamente sul vero HTML SSR: etichette di tutti i campi, fieldset/legend, riferimenti aria-describedby risolti, quattro errori aria-invalid per una query errata, regione live, sezione esito con tabIndex -1 e nome accessibile, tabelle con caption e scope. Stili responsive e focus visibile implementati nel tema esistente; controlli data e dettagli nativi.
+
+**Non conclusa la verifica interattiva della milestone 3 nel browser**, a causa del collegamento Playwright non rispondente: handler client, focus effettivo, apertura dei calendari nativi, resa dei risultati ai diversi viewport e lettore di schermo restano da controllare. Non viene dichiarato un audit WCAG, un E2E superato o equivalenza con Safari. I controlli visuali della milestone 2 sono evidenza storica, non validazione dei nuovi risultati. Procedura manuale riproducibile in AVAILABILITY_SIMULATOR, senza passaggi di prenotazione.
+
+## Documentazione e consegna
+
+Creato `docs/AVAILABILITY_SIMULATOR.md`; aggiornati README, ARCHITECTURE, DEPLOYMENT, CASE_STUDY, BRAND_DIRECTION e WORKLOG. ASSETS invariato perché fotografie e licenze non cambiano. Procedure di test, esempi, assunzioni e rollback documentati senza credenziali.
+
+Consegna in due commit atomici sul solo `feature/mvp-foundation`: implementazione/test e documentazione. Commit implementazione/test: `1028483fc44359fdb8de5d1b369913ff06cc5541` (`feat: add deterministic room availability simulator`). La documentazione segue nel commit `docs: document availability rules and milestone 3 validation`. GPG disattivato soltanto per ciascun comando di commit. Comandi di consegna:
+
+```powershell
+git -c commit.gpgsign=false commit -m 'feat: add deterministic room availability simulator'
+git -c commit.gpgsign=false commit -m 'docs: document availability rules and milestone 3 validation'
+git push origin feature/mvp-foundation
+git status --short
+git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
+```
+
+Gli SHA effettivi sono consultabili con `git log --oneline -2` e riportati nella consegna. Nessun merge, rebase, force push, deployment o modifica a DNS, Access, secrets, CI o billing. Milestone 4 non avviata; il limite browser di questa milestone rimane esplicito.

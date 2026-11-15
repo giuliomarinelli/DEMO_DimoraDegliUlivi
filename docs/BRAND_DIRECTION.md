@@ -58,3 +58,9 @@ La destinazione `/disponibilita/` è progettata come ingresso al futuro percorso
 Controllare Home, Camere, Esperienze, Territorio, Galleria, Contatti e Disponibilità a 1440, 768, 390 e 320 px. Verificare header/CTA, assenza di overflow, taglio delle immagini, leggibilità, ancore, menu, FAQ e focus da tastiera. Per le immagini lazy scorrere la pagina e attendere il caricamento prima di valutarle; una cattura estesa immediata può mostrare immagini ancora fuori area visibile.
 
 Le verifiche effettivamente eseguite e i limiti sono riportati nel worklog. Questa direzione non sostituisce un audit completo di accessibilità o una verifica su browser diversi da quello provato.
+
+## Evoluzione milestone 3 — simulatore attivo
+
+Le sezioni precedenti documentano la direzione e il confine della milestone 2. Con la milestone 3 Ulivo, Acqua e Lino acquisiscono un inventario esclusivamente fittizio, capienze e tariffe locali; `/disponibilita/` ospita ora il simulatore, con date native, ospiti/camere e risultati fotografici. I precedenti riferimenti alla ricerca futura descrivono lo stato storico della milestone 2.
+
+Restano palette, tipografia, fotografie, tono e inviti esistenti. Campi su fondo lino, pannelli luminosi, stato acqua, risultati con foto e importo ampio continuano la direzione hospitality. Gli errori hanno testo e bordo scuro `#8A3327`, oltre alle associazioni ARIA: il colore da solo non comunica lo stato. Nessuna urgenza commerciale, prenotazione o promessa di prezzo reale. Regole e limiti in AVAILABILITY_SIMULATOR; verifiche effettive nel worklog.

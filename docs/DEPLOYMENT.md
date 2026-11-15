@@ -16,6 +16,7 @@ npm --version
 npm ci
 npm run typecheck
 npm run lint
+npm run test.unit
 npm run build
 npm run preview
 ```
@@ -74,3 +75,18 @@ Riferimenti: [Qwik City Cloudflare Pages](https://qwik.dev/docs/deployments/clou
 Comandi, adapter, runtime e confini di deployment invariati. Nessuna modifica a package.json, lockfile, configurazione Wrangler, DNS, Access, CI o secrets. La build include le nuove fotografie locali e le sette pagine editoriali; il test HTTP verifica anche crediti, ancore e srcset. Non servono servizi di prenotazione né configurazioni aggiuntive. Per la verifica visiva scorrere le pagine, attendere le immagini lazy e provare header/Disponibilità, menu e FAQ da tastiera. La milestone non introduce calendario o ricerca.
 
 Il rollback della milestone 2 segue la procedura di revert sopra, iniziando dai commit della milestone più recenti e rispettando le modifiche successive. Gli SHA effettivi sono nel log di `feature/mvp-foundation`; non usare reset o force push. Non è previsto un rollback remoto Cloudflare perché non è stato eseguito un deployment.
+
+
+## Aggiornamento milestone 3
+
+Adapter, configurazione Wrangler e dipendenze restano invariati. Cambiano gli script di test, senza modificare il lockfile: `npm run test.unit` esegue i 17 test del motore anche senza server; `npm run test.ssr` esegue 16 controlli HTTP con la preview già attiva; `npm test` esegue entrambi. La nuova compilazione isolata dei test scrive solo nella cache ignorata da Git.
+
+Per verificare direttamente risultati significativi nella risposta di produzione, nel secondo terminale:
+
+```powershell
+(Invoke-WebRequest 'http://127.0.0.1:8947/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=2&rooms=1').Content
+```
+
+L’HTML contiene tre soluzioni e importi 405,00 / 465,00 / 555,00 €, oltre a titolo e descrizione; non occorre eseguire JavaScript. Il normale modulo GET produce lo stesso percorso. Nessun binding, account, login o servizio di disponibilità esterno. Inventario, chiusure e calendario sono nel codice, non in un ambiente Cloudflare: vedere AVAILABILITY_SIMULATOR.
+
+Il rollback segue il revert già descritto, dai commit più recenti della milestone, senza riscrivere la storia. Nessuna operazione di rollback o deployment è stata eseguita. Limite aperto: verifica browser del nuovo flusso e da tastiera, a causa del collegamento Playwright non rispondente; procedura manuale nel documento del simulatore e nel worklog.
