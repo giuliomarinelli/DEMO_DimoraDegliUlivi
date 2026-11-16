@@ -99,3 +99,7 @@ Configurazione Pages, adapter e lockfile invariati. Typecheck, lint, build e 36 
 Il blocco iniziale è stato superato su richiesta del proprietario. Playwright ha completato 48 controlli pagina/stato/viewport e 26 scenari funzionali sulla produzione locale, con 52 catture. Nessun difetto applicativo nuovo riprodotto. La ripresa esclusiva ha riutilizzato la preview di proprietà della sessione dopo HTTP 200, aperto una scheda dedicata e completato il GET con Enter senza script applicativi. A fine collaudo scheda e processi locali della repository sono stati chiusi, porta 8947 liberata; nessun processo browser condiviso arrestato. Esiti e riproduzione in [QA_MANUAL.md](QA_MANUAL.md), [catture](qa/milestone-4a/SCREENSHOTS.md), limiti e cronologia in WORKLOG; dipendenze in DEPENDENCY_AUDIT.
 
 Il collaudo non autorizza deployment o modifiche Cloudflare. Rollback dei soli test/documenti/evidenze 4A mediante revert, come sopra; nessuna modifica applicativa da ripristinare.
+
+## Contenuti 4B
+
+La milestone 4B modifica soltanto presentazione e testi di Camere, Esperienze, Territorio e Contatti. Dipendenze, comandi, configurazione Pages e motore invariati. Validazione con build produzione, suite locali esistenti e HTTP su Wrangler alla porta 8947; esiti nel worklog. Nessun Playwright MCP, nuovo E2E, servizio remoto o deployment. Per un rollback, revert dei commit 4B dal più recente, preservando eventuali modifiche successive, quindi eseguire gli stessi controlli locali; nessuna operazione Cloudflare necessaria.

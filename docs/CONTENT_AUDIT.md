@@ -69,3 +69,9 @@ Opportunità: una breve guida “Come provare la demo”, con rinvio a ricerca, 
 L’invito al soggiorno è un componente condiviso presente in sei pagine; il ritorno alla disponibilità è voluto. Homepage, Camere, Esperienze e Territorio ripetono anche immagini e lessico (“luce”, “paesaggio”, “tempo”, “senza fretta”). In una revisione successiva concentrare l’atmosfera sulla Home, le differenze pratiche su Camere, le scene concrete su Esperienze e le specificità geografiche su Territorio.
 
 Mantenere la dichiarazione di simulazione in ogni pagina; eventuali riduzioni di ripetitività non devono far credere all’esistenza di azienda, servizi o prenotazioni reali. Non aggiungere recensioni, stelle, certificazioni, indirizzi o testimonianze inventate. Il collaudo visuale/tastiera mirato è completato; resta distinta la revisione compatibile delle dipendenze: vedere [DEPENDENCY_AUDIT.md](DEPENDENCY_AUDIT.md).
+
+## Risposta all’audit — milestone 4B, 16 novembre 2026
+
+La valutazione sopra conserva lo stato 4A. In 4B implementati confronto delle tre tipologie con caratteristiche documentate e capienze/quantità derivate dal motore, scene mattino/pomeriggio/sera e alternativa al coperto, tre riferimenti distintivi verificati nella fonte geografica esistente e una guida in Contatti. Microcopy FAQ aggiornato a “Prova il simulatore”. Home e Galleria non ampliate, simulatore invariato.
+
+Non aggiunte configurazioni dei letti per Acqua/Lino, metrature o dotazioni: il modello non le documenta. Gli spunti per il taccuino sono narrativa, distinti dai fatti geografici. Nessun nuovo collaudo browser in questa milestone per vincolo esplicito; esiti e limiti tecnici nel worklog. Le raccomandazioni ulteriori, comprese quelle sulle stagioni, non implicano lavoro autorizzato aggiuntivo.

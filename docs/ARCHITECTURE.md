@@ -86,3 +86,7 @@ Il `routeLoader$` della rotta disponibilità interpreta la query e produce lo st
 Errori per campo e riepilogo con ancore, `aria-invalid` esplicito, etichette/aiuti, stato live, focus al primo errore o alla sezione esito nell’invio avanzato. Dettagli camere e tabelle prezzi usano HTML nativo. Le option ospiti/camere emettono `selected` esplicito: il solo `value` sulla select non inizializza la selezione HTML nativa senza script. La CSS responsive estende palette e spaziatura esistenti, con una/due/quattro colonne per i campi. Nessuna modifica alla hero fotografica o alle licenze.
 
 Riferimenti aggiuntivi: [routeLoader Qwik City](https://qwik.dev/docs/route-loader/), [task Qwik](https://qwik.dev/docs/core/tasks/).
+
+## Contenuti di soggiorno — milestone 4B
+
+La rotta Camere compone una vista locale dai dati editoriali esistenti e da ROOM_TYPES/ROOM_UNITS: nessuna seconda fonte di capienza, quantità o prezzo. Il confronto usa schede con definition list nello stesso ordine, in una colonna su mobile e tre da md. Non aggiunge preferenze alla ricerca. I dati delle camere condivisi con Home e risultati restano invariati; in editorial.ts cambiano soltanto i testi delle esperienze. L’alternativa al coperto e la guida Contatti sono contenuto SSR con link nativi/Qwik City, senza stato interattivo aggiuntivo. Nessun componente estratto per sezioni usate in una sola pagina, nessuna nuova regola CSS globale o dipendenza. Routing e adapter invariati.

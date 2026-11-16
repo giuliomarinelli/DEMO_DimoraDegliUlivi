@@ -466,3 +466,66 @@ git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
 ```
 
 Nessun merge, rebase, deployment, CI, servizio Cloudflare o fase successiva. Rollback documentale mediante revert, senza riscrittura della storia.
+
+# Milestone 4B — esperienza di soggiorno e profondità editoriale
+
+Data: 16 novembre 2026. Incarico circoscritto a Camere, Esperienze, Territorio e Contatti. Letti AGENTS.md, MVP.md, BRAND_DIRECTION, CONTENT_AUDIT, catalogo camere, worklog e documentazione esistente. Working tree pulito su `feature/mvp-foundation`, base `421ecb73ef2e07cf27089a24fb354efbaecbe4ab`. Dopo fetch confronto con origin `0 0`. Nessun cambio branch, worktree, subagente o lavoro su altri progetti.
+
+## Interventi e motivazioni
+
+- **Camere:** confronto iniziale in tre schede, con campi nello stesso ordine e liste di definizione semantiche. Una colonna su mobile, tre da md, nessuna tabella larga o larghezza minima imposta. Capienze/quantità e tariffa già mostrata sono derivate dalla stessa fonte del simulatore (`ROOM_TYPES`, `ROOM_UNITS`); vista locale della rotta, nessun catalogo duplicato. Ulivo: due ospiti/due unità, letto matrimoniale immaginato e angolo lettura già documentati; Acqua: tre ospiti/due unità, tessuti chiari e atmosfera ariosa; Lino: due ospiti/una unità, lino/miele e legno. Collegamenti alle tre sezioni esistenti. Non inventate composizioni dei letti Acqua/Lino, misure, accessibilità fisica, dotazioni o servizi.
+- **Esperienze:** arricchite le tre scene mantenendo nomi e fotografie: osservare/disegnare un dettaglio degli ulivi al mattino, riprendere un libro nel pomeriggio, scrivere un ricordo verso sera. Alternativa al coperto con libro e taccuino portati dal visitatore, fotografia esistente e credito. Nessun orario, guida, fornitura di materiali o attività prenotabile. Aggiornata descrizione SEO.
+- **Territorio:** brevi riferimenti distintivi verificati nella fonte Visit Tuscany già adottata dal repository, separati dagli spunti narrativi di osservazione. Il vecchio URL minuscolo ha dato timeout al recupero web; consultato quello disponibile con `Val-dOrcia`, ora collegato dal sito e documentato in ASSETS. Nessun dettaglio storico aggiuntivo non verificato, distanza, posizione della dimora, mappa o indicazione operativa. Nessun contenuto fotografico della guida copiato.
+- **Contatti:** tre passi per confrontare le camere, provare il simulatore esistente e consultare fotografie/crediti. Introdotta un’ancora verso il confronto, mantenute le cinque FAQ e migliorata la CTA “Prova il simulatore”. Nessun recapito, modulo o invio reale.
+
+Conservati Home, Galleria e simulatore, compresi i testi delle camere condivisi in `editorial.ts`: confronto del prefisso del file con HEAD iniziale conferma che cambiano soltanto le esperienze. Nessuna modifica a prezzi, inventario, date, disponibilità, prenotazioni o logica business. Nuovo contenuto costruito con componenti Qwik esistenti e utility Tailwind, senza stato aggiuntivo, estrazioni artificiali di componenti o cambiamenti al CSS globale.
+
+## Verifiche effettivamente eseguite
+
+Ambiente invariato: Node 22.16.0, npm 10.9.2, Qwik/Qwik City 1.20.4, Wrangler 4.162.0. Dipendenze presenti e lockfile invariato: nessuna installazione necessaria. Letta la skill Wrangler, consultata la documentazione ufficiale [Pages locale](https://developers.cloudflare.com/pages/functions/local-development/) e l’help della versione installata. Usato soltanto lo script locale della repository, senza login o risorse remote.
+
+```powershell
+git status --short
+git branch --show-current
+git fetch origin
+git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
+npx --no-install prettier --write src/routes/camere/index.tsx src/routes/esperienze/index.tsx src/routes/territorio/index.tsx src/routes/contatti/index.tsx src/data/editorial.ts
+npm run typecheck
+npm run lint
+npm run test.unit
+npm run build
+npm run preview
+# In un secondo terminale, con preview pronta su 127.0.0.1:8947:
+npm run test.ssr
+(Invoke-WebRequest 'http://127.0.0.1:8947/camere/').Content
+npx --no-install prettier --check src/routes/camere/index.tsx src/routes/esperienze/index.tsx src/routes/territorio/index.tsx src/routes/contatti/index.tsx src/data/editorial.ts
+git diff --check
+```
+
+Typecheck e lint separati: **exit code 0**, nessun errore o warning lint. Lint/build hanno richiesto un’attesa iniziale, poi sono terminati senza riavvio o correzioni del tooling. Build produzione **exit code 0**, include controllo tipi/lint e genera client, server, worker Pages, routes e manifest. La fase denominata SSG non genera pagine. Restano il warning ambiente NO_COLOR/FORCE_COLOR e la nota adapter sui cache header; nessun errore di build. Log locale ignorato `.cache/milestone-4b-build.log`.
+
+Suite esistenti eseguite separatamente, senza nuovi test o modifiche ai test: **17 unitari + 19 HTTP = 36 passati, zero falliti/saltati**. Gli HTTP sulla nuova produzione locale coprono tutte le sette pagine, contenuti/metadati, navigazione/ancore, asset, modulo/query/risultati/importi/errori e output SSR senza prerender. Evidenza dell’esecuzione HTTP in `docs/qa/milestone-4b/http-tests.tap.txt`.
+
+Controllo HTTP mirato aggiuntivo sulle quattro rotte modificate: status 200, un H1, descrizione SEO, marker SSR e presenza dei nuovi contenuti dopo rimozione degli script dalla risposta. Verificate tre liste di confronto con capienze 2/3/2 e quantità 2/2/1 nell’ordine Ulivo/Acqua/Lino. Non è un E2E browser né una prova visuale; riepilogo in `docs/qa/milestone-4b/ssr-content.json`. La verifica è stata eseguita con uno script Node temporaneo da stdin, senza aggiungere suite o dipendenze.
+
+Prettier check e diff check superati. Verificata assenza di modifiche a AGENTS/MVP, motore, Home/Galleria/Disponibilità, componente ricerca, CSS globale, adapter, Wrangler, package.json e lockfile. Nessuna chiamata Playwright MCP o CUA, nuovo E2E, screenshot o test CI remoto. Le evidenze visuali 4A rimangono storiche: **il nuovo layout 4B non è stato collaudato nel browser**, per vincolo esplicito; controllo responsive limitato alla revisione del codice. Le segnalazioni dipendenze di DEPENDENCY_AUDIT restano aperte e non sono state aggiornate forzatamente in questa milestone.
+
+## Documentazione, consegna e riproduzione
+
+Aggiornati CASE_STUDY e questo worklog, oltre alle brevi note di continuità README/ARCHITECTURE/DEPLOYMENT e alla risposta all’audit in CONTENT_AUDIT. ASSETS aggiornato soltanto per il riuso della fotografia esistente e per la fonte editoriale ricontrollata; nessun nuovo asset o cambiamento di licenza. Non modificati AGENTS.md e docs/MVP.md.
+
+Preview avviata solo dopo aver verificato libera la porta 8947. A fine verifica Ctrl+C e chiusura degli eventuali figli rimasti, identificati per PID della sessione e percorso assoluto sotto node_modules di questa repository; porta nuovamente libera. Nessun browser o processo di altri progetti modificato.
+
+Per riprodurre: installare da lockfile solo se necessario, eseguire i comandi sopra, leggere le quattro risposte dirette e seguire i link confronto/ricerca/crediti. La verifica visuale eventuale richiede un incarico distinto; nessuna autorizzazione implicita a Playwright. Rollback mediante revert dei commit 4B dal più recente, preservando modifiche successive, quindi typecheck/lint/test/build e SSR locale; nessun rollback remoto necessario.
+
+Commit implementazione `6b3f9ca1d2162be28a58316a04f41dc1e0d08c42` (`feat: deepen stay content and compare existing room types`); documentazione/evidenze nel commit successivo. GPG disattivato soltanto nei singoli comandi, senza modificare configurazione Git:
+
+```powershell
+git -c commit.gpgsign=false commit -m 'feat: deepen stay content and compare existing room types'
+git -c commit.gpgsign=false commit -m 'docs: record milestone 4B editorial decisions and SSR checks'
+git push origin feature/mvp-foundation
+git status --short
+git rev-list --left-right --count HEAD...origin/feature/mvp-foundation
+```
+
+SHA documentazione e conferma remota nel log Git e nella consegna. Nessun merge, rebase, force push, deploy, infrastruttura aggiuntiva o modifica a servizi Cloudflare. Lavoro concluso alla milestone 4B, senza iniziare fasi successive.

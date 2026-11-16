@@ -36,6 +36,16 @@ Nella milestone 3 è stata ripresa la verifica con Playwright MCP su richiesta d
 
 Le dipendenze dello scaffold hanno segnalazioni transitive già documentate; nessun aggiornamento forzato o nuovo pacchetto. Nessun deployment, integrazione alberghiera, invio o modifica a servizi esterni. Regole, esempi e riproduzione in [AVAILABILITY_SIMULATOR.md](AVAILABILITY_SIMULATOR.md).
 
-## Confine della consegna
+## Collaudo 4A
 
 Milestone 3 implementata; collaudo browser 4A completato dopo la ripresa richiesta dal proprietario: 48 controlli pagina/stato/viewport, 26 scenari funzionali e 52 catture. I 36 test tecnici erano già passati sullo stesso codice. Nessun nuovo difetto applicativo riprodotto, nessun restyling o arricchimento implementato. Audit dei contenuti in CONTENT_AUDIT; prove, catture e limiti in QA_MANUAL; dipendenze in DEPENDENCY_AUDIT. Preview e scheda dedicate chiuse; nessuna pubblicazione o fase successiva.
+
+## Milestone 4B — scegliere e immaginare il soggiorno
+
+L’audit editoriale aveva individuato tre camere descritte soprattutto attraverso i colori, scene di soggiorno simili e pochi riferimenti distintivi per i luoghi. La revisione rende la visita più concreta senza ampliare il simulatore.
+
+Camere apre con tre schede confrontabili: capienza, quantità nel catalogo, colori/materiali e carattere dell’ambiente, nello stesso ordine. Capienze e quantità sono lette direttamente dal motore; le caratteristiche provengono dai dettagli editoriali esistenti, condivisi con i risultati. Ulivo valorizza lettura e letto matrimoniale immaginato, Acqua tessuti e capienza fino a tre, Lino legno e atmosfera raccolta. Non vengono aggiunti misure, letti per i posti non documentati o dotazioni. Le descrizioni condivise con Home e simulatore restano identiche.
+
+Esperienze distingue osservazione e disegno al mattino, lettura nel pomeriggio, scrittura di un ricordo la sera. Un’alternativa al coperto usa il libro e il taccuino del visitatore, senza promettere materiali o servizi. Territorio separa i brevi riferimenti verificati nella fonte Visit Tuscany già adottata dagli spunti narrativi per il taccuino; nessun itinerario o distanza dalla dimora. Contatti offre tre passi: confronto camere, prova della ricerca, fotografie e crediti.
+
+Fotografie e palette esistenti, Qwik City SSR e adapter Pages conservati. Nessuna modifica a prezzi, inventario, date, occupazioni o calcolo; nessuna nuova funzione business, dipendenza o infrastruttura. Per questa milestone non si usa Playwright MCP e non si aggiungono test E2E. Le catture 4A documentano lo stato precedente, non certificano il nuovo layout. Esiti tecnici e SSR correnti nel [worklog](WORKLOG.md). Nessun deployment.

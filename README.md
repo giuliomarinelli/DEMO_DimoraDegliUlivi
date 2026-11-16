@@ -2,7 +2,7 @@
 
 Agriturismo **fittizio**: azienda, informazioni, immagini e operazioni sono dimostrative. Nessuna prenotazione, pagamento o comunicazione reale.
 
-## Stato: milestone 3 e collaudo browser 4A completato
+## Stato: milestone 4B — profondità editoriale
 
 Sito boutique luminoso e fotografico su Qwik City SSR per Cloudflare Pages. La ricerca disponibilità è ora attiva come simulatore: date, ospiti e camere, inventario locale Ulivo/Acqua/Lino, combinazioni coerenti, importi per soggiorno, errori e casi senza risultati. La direzione acqua/lino/miele/ulivo e le fotografie della milestone 2 sono conservate.
 
@@ -72,3 +72,5 @@ La demo emette `noindex, nofollow` e `robots.txt` restrittivo. Canonical omesso 
 Milestone 1–3 sul solo `feature/mvp-foundation`, derivato da `develop` e mantenuto su richiesta. Nessun merge o rebase; push solo al branch di lavoro. `develop` integra, `preview` è staging, `master` produzione. Pubblicazione, DNS, Access, secrets, CI e billing restano riservati al proprietario. Collaudo tecnico/editoriale e matrice visuale/tastiera 4A eseguiti. Nessuna fase successiva avviata.
 
 Playwright ha completato 48 controlli pagina/stato/viewport e 26 scenari funzionali sulla produzione Wrangler locale, con 52 catture: [indice screenshot](docs/qa/milestone-4a/SCREENSHOTS.md). I 36 test tecnici erano già superati sullo stesso codice. Nessun nuovo bug applicativo riprodotto; limiti e procedure in QA_MANUAL. Scheda dedicata e preview chiuse a fine verifica. Non usare `npm audit fix --force` senza revisione di compatibilità.
+
+La milestone 4B aggiunge confronto camere dal catalogo esistente, scene di soggiorno distinte e un’alternativa al coperto, riferimenti verificati per il territorio e una guida alla demo in Contatti. Home, Galleria e simulatore conservati; nessuna regola business modificata. Verifiche correnti nel worklog: nessun uso di Playwright MCP o nuovo E2E in questa fase. Le evidenze browser 4A restano riferite alla versione precedente.

@@ -1,0 +1,128 @@
+
+> dimora-degli-ulivi@0.1.0 test.ssr
+> node --test tests/ssr.test.mjs
+
+TAP version 13
+# Subtest: production SSR: / includes content and metadata in raw HTTP HTML
+ok 1 - production SSR: / includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 56.6054
+  type: 'test'
+  ...
+# Subtest: production SSR: /camere/ includes content and metadata in raw HTTP HTML
+ok 2 - production SSR: /camere/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 15.4803
+  type: 'test'
+  ...
+# Subtest: production SSR: /esperienze/ includes content and metadata in raw HTTP HTML
+ok 3 - production SSR: /esperienze/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 12.9469
+  type: 'test'
+  ...
+# Subtest: production SSR: /territorio/ includes content and metadata in raw HTTP HTML
+ok 4 - production SSR: /territorio/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 13.4306
+  type: 'test'
+  ...
+# Subtest: production SSR: /galleria/ includes content and metadata in raw HTTP HTML
+ok 5 - production SSR: /galleria/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 15.032
+  type: 'test'
+  ...
+# Subtest: production SSR: /disponibilita/ includes content and metadata in raw HTTP HTML
+ok 6 - production SSR: /disponibilita/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 15.9688
+  type: 'test'
+  ...
+# Subtest: production SSR: /contatti/ includes content and metadata in raw HTTP HTML
+ok 7 - production SSR: /contatti/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 12.076
+  type: 'test'
+  ...
+# Subtest: all navigation targets resolve and local images, scripts and styles are served
+ok 8 - all navigation targets resolve and local images, scripts and styles are served
+  ---
+  duration_ms: 287.1732
+  type: 'test'
+  ...
+# Subtest: editorial links and gallery categories point to real server-rendered anchors
+ok 9 - editorial links and gallery categories point to real server-rendered anchors
+  ---
+  duration_ms: 0.8488
+  type: 'test'
+  ...
+# Subtest: room narratives, photo credits and FAQ content are complete without booking controls
+ok 10 - room narratives, photo credits and FAQ content are complete without booking controls
+  ---
+  duration_ms: 0.7337
+  type: 'test'
+  ...
+# Subtest: availability form is server rendered with labels, native dates and GET fallback
+ok 11 - availability form is server rendered with labels, native dates and GET fallback
+  ---
+  duration_ms: 0.6001
+  type: 'test'
+  ...
+# Subtest: direct GET renders complete result, capacity and full-stay price without JavaScript
+ok 12 - direct GET renders complete result, capacity and full-stay price without JavaScript
+  ---
+  duration_ms: 21.8473
+  type: 'test'
+  ...
+# Subtest: SSR handles mixed-room occupancy, invalid dates and no availability distinctly
+ok 13 - SSR handles mixed-room occupancy, invalid dates and no availability distinctly
+  ---
+  duration_ms: 51.3553
+  type: 'test'
+  ...
+# Subtest: search accessibility associations survive validation and server-rendered results
+ok 14 - search accessibility associations survive validation and server-rendered results
+  ---
+  duration_ms: 25.735
+  type: 'test'
+  ...
+# Subtest: SSR accepts occupancy, duration and checkout boundaries
+ok 15 - SSR accepts occupancy, duration and checkout boundaries
+  ---
+  duration_ms: 41.0823
+  type: 'test'
+  ...
+# Subtest: SSR rejects limits and duplicate parameters before producing offers
+ok 16 - SSR rejects limits and duplicate parameters before producing offers
+  ---
+  duration_ms: 76.248
+  type: 'test'
+  ...
+# Subtest: a fresh SSR search has blank dates and no previous results or errors
+ok 17 - a fresh SSR search has blank dates and no previous results or errors
+  ---
+  duration_ms: 25.0422
+  type: 'test'
+  ...
+# Subtest: unknown paths return a real 404 with a way home
+ok 18 - unknown paths return a real 404 with a way home
+  ---
+  duration_ms: 10.7269
+  type: 'test'
+  ...
+# Subtest: Cloudflare output is a server worker with a client manifest, without prerendered route HTML
+ok 19 - Cloudflare output is a server worker with a client manifest, without prerendered route HTML
+  ---
+  duration_ms: 4.6839
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 874.5575
