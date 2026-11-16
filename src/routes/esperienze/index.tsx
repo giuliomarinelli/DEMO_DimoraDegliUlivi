@@ -10,7 +10,7 @@ export default component$(() => (
     <PageIntro
       eyebrow="Esperienze"
       title="La vacanza, come piace a te."
-      description="Ci sono giornate da riempire di scoperte e altre da lasciare aperte. Alla dimora immaginiamo entrambe: il paesaggio come punto di partenza, la libertà di scegliere come viverlo."
+      description="Un dettaglio da disegnare al mattino, un capitolo da leggere nel pomeriggio, poche righe da scrivere la sera. Tre scene immaginate per dare un ritmo personale al soggiorno, senza programmi da prenotare."
     >
       <p class="editorial-note">
         Idee dimostrative di soggiorno: nessuna attività acquistabile, guida
@@ -30,6 +30,33 @@ export default component$(() => (
         </article>
       ))}
     </div>
+    <section class="linen-band" aria-labelledby="indoor-title">
+      <div class="shell grid items-center gap-8 md:grid-cols-2 md:gap-16">
+        <figure>
+          <Photo image="dettaglio" class="aspect-[5/4] w-full" />
+          <figcaption>
+            Un libro come punto di partenza · Andrea Kartali / Pexels
+          </figcaption>
+        </figure>
+        <div>
+          <p class="eyebrow">Se preferisci restare al coperto</p>
+          <h2 id="indoor-title" class="mt-4 mb-6">
+            Una pagina aperta. <em>Il resto può aspettare.</em>
+          </h2>
+          <p class="text-muted text-sm leading-8">
+            Immagina di tornare in camera con il tuo libro, scegliere un
+            racconto breve e leggerlo fino in fondo. Accanto, sul tuo taccuino,
+            puoi raccogliere il nome di un luogo che vorresti conoscere: Pienza,
+            San Quirico d’Orcia o Bagno Vignoni. È un altro modo di preparare il
+            viaggio, anche quando non hai voglia di uscire.
+          </p>
+          <p class="editorial-note mt-5">
+            Una proposta da vivere con ciò che porti con te, non un laboratorio,
+            una biblioteca o un servizio della struttura.
+          </p>
+        </div>
+      </div>
+    </section>
     <section class="aqua-band">
       <div class="shell comfort-grid">
         <div>
@@ -65,7 +92,7 @@ export const head: DocumentHead = {
     {
       name: "description",
       content:
-        "Passeggiate tra gli ulivi, pomeriggi d’estate e tramonti sulle colline: idee per vivere una vacanza toscana. Esperienze narrative, nessun servizio prenotabile.",
+        "Osservare gli ulivi, leggere nel pomeriggio e scrivere un ricordo la sera, con un’alternativa al coperto. Scene di soggiorno immaginate, nessun servizio prenotabile.",
     },
   ],
 };

@@ -6,6 +6,13 @@ import { StayInvitation } from "~/components/stay-invitation/stay-invitation";
 import { rooms } from "~/data/editorial";
 import { ROOM_TYPES, ROOM_UNITS, formatMoney } from "~/lib/availability";
 
+// Read the same catalog as the simulator; no editorial copy of capacity or stock.
+const roomCatalog = rooms.map((room) => ({
+  ...room,
+  ...ROOM_TYPES.find((type) => type.id === room.id)!,
+  quantity: ROOM_UNITS.filter((unit) => unit.type === room.id).length,
+}));
+
 export default component$(() => (
   <>
     <PageIntro
@@ -18,8 +25,69 @@ export default component$(() => (
         Puoi confrontare le disponibilità demo, senza prenotare.
       </p>
     </PageIntro>
+    <section
+      class="shell pb-12 md:pb-16"
+      aria-labelledby="room-comparison-title"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Scegli da dove cominciare</p>
+          <h2 id="room-comparison-title">
+            Tre atmosfere, <em>tre modi di fermarsi.</em>
+          </h2>
+        </div>
+        <p>
+          Un angolo per leggere, la possibilità di soggiornare fino in tre o
+          piccoli rituali del risveglio. Ecco cosa distingue le nostre tre
+          atmosfere.
+        </p>
+      </div>
+      <div class="grid gap-5 md:grid-cols-3">
+        {roomCatalog.map((room) => (
+          <article
+            class="border-olive/25 min-w-0 border bg-white/40 p-6"
+            key={room.id}
+          >
+            <h3 class="mb-6 text-3xl">
+              <a
+                href={"#" + room.id}
+                class="decoration-olive/40 underline underline-offset-8"
+              >
+                {room.name}
+              </a>
+            </h3>
+            <dl class="grid gap-5 text-sm leading-7">
+              <div>
+                <dt class="text-muted text-xs">Capienza per camera</dt>
+                <dd class="font-bold">Fino a {room.capacity} ospiti</dd>
+              </div>
+              <div>
+                <dt class="text-muted text-xs">Nel catalogo simulato</dt>
+                <dd>
+                  {room.quantity} {room.quantity === 1 ? "camera" : "camere"}
+                </dd>
+              </div>
+              <div>
+                <dt class="text-muted text-xs">Colori e materiali</dt>
+                <dd>{room.details[0]}</dd>
+              </div>
+              <div>
+                <dt class="text-muted text-xs">Il carattere dell’ambiente</dt>
+                <dd>{room.details.slice(1).join(". ")}.</dd>
+              </div>
+            </dl>
+          </article>
+        ))}
+      </div>
+      <p class="editorial-note mt-6">
+        Le capienze descrivono il catalogo demo, non la disposizione dei letti.
+        Le foto suggeriscono colori e atmosfere: non attestano metrature,
+        dotazioni o accessibilità fisica. La disponibilità dipende dalle date
+        scelte nel simulatore.
+      </p>
+    </section>
     <div class="shell rooms-editorial">
-      {rooms.map((room, index) => (
+      {roomCatalog.map((room, index) => (
         <article
           class={["room-detail", index % 2 === 1 && "room-detail-reverse"]}
           id={room.id}
@@ -34,17 +102,9 @@ export default component$(() => (
             <h2>{room.name}</h2>
             <p>{room.description}</p>
             <p class="room-allocation mt-4">
-              Fino a {ROOM_TYPES.find((type) => type.id === room.id)!.capacity}{" "}
-              ospiti ·{" "}
-              {ROOM_UNITS.filter((unit) => unit.type === room.id).length}{" "}
-              {ROOM_UNITS.filter((unit) => unit.type === room.id).length === 1
-                ? "camera simulata"
-                : "camere simulate"}{" "}
-              · Base{" "}
-              {formatMoney(
-                ROOM_TYPES.find((type) => type.id === room.id)!.baseCents,
-              )}{" "}
-              per camera/notte
+              Fino a {room.capacity} ospiti · {room.quantity}{" "}
+              {room.quantity === 1 ? "camera simulata" : "camere simulate"} ·
+              Base {formatMoney(room.baseCents)} per camera/notte
             </p>
             <ul class="detail-list">
               {room.details.map((detail) => (

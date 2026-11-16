@@ -43,45 +43,59 @@ export default component$(() => (
           <span class="place-number">01</span>
           <h3>Pienza</h3>
           <p>
-            Il piacere di passeggiare tra piazze e vicoli, poi cercare uno
-            scorcio aperto sulla campagna. Una sosta da dedicare allo sguardo,
-            tra architettura e paesaggio.
+            Pienza è la «città ideale» nel racconto di Visit Tuscany.
+            L’architettura diventa il filo della visita: osservare una facciata,
+            una piazza, il passaggio fra gli edifici e il paesaggio aperto.
           </p>
-          <span class="eyebrow">Borghi e prospettive</span>
+          <p>
+            Nel taccuino: uno schizzo di una prospettiva, per ricordare come
+            cambia lo sguardo fra il borgo e la campagna.
+          </p>
+          <span class="eyebrow">Architettura da osservare</span>
         </article>
         <article>
           <span class="place-number">02</span>
           <h3>San Quirico d’Orcia</h3>
           <p>
-            Un borgo da attraversare a piedi e un territorio segnato dai
-            cipressi. L’idea è alternare una passeggiata tra le vie a una pausa
-            davanti alle colline.
+            La corona di cipressi è il segno paesaggistico che Visit Tuscany
+            associa a San Quirico. Nella Val d’Orcia questi alberi disegnano
+            gruppi sulle alture e filari lungo le strade.
           </p>
-          <span class="eyebrow">Cipressi e strade di campagna</span>
+          <p>
+            Nel taccuino: la sagoma di un gruppo di alberi, da confrontare con
+            la linea continua di un filare.
+          </p>
+          <span class="eyebrow">I segni del paesaggio</span>
         </article>
         <article>
           <span class="place-number">03</span>
           <h3>Bagno Vignoni</h3>
           <p>
-            La grande vasca termale al centro del borgo regala una prospettiva
-            insolita. Una tappa da osservare e raccontare, prima di continuare
-            il proprio viaggio.
+            Bagno Vignoni si distingue per la grande vasca termale, ricordata
+            dalla stessa guida. Qui è l’acqua a offrire il punto di partenza per
+            osservare il borgo, anziché una facciata o un filare.
+          </p>
+          <p>
+            Nel taccuino: un riflesso da descrivere a parole. Uno spunto di
+            osservazione, senza proporre bagni o trattamenti.
           </p>
           <span class="eyebrow">Acqua e storia</span>
         </article>
       </div>
       <p class="source-note">
-        Per conoscere i luoghi reali:{" "}
+        I riferimenti a Pienza, ai cipressi di San Quirico e alla vasca di Bagno
+        Vignoni sono tratti da{" "}
         <a
-          href="https://www.visittuscany.com/it/territori/val-dorcia/"
+          href="https://www.visittuscany.com/it/territori/Val-dOrcia/"
           target="_blank"
           rel="noreferrer"
         >
           Val d’Orcia sul sito ufficiale Visit Tuscany{" "}
           <span class="sr-only">(si apre in una nuova scheda)</span>↗
         </a>
-        . Le fotografie di questa demo sono illustrative e non documentano tutte
-        le tappe descritte.
+        . Gli spunti per il taccuino sono nostri suggerimenti narrativi, non
+        itinerari organizzati. Le fotografie sono illustrative e non documentano
+        tutte le tappe descritte.
       </p>
     </section>
     <section class="aqua-band">

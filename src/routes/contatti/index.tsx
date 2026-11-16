@@ -9,7 +9,7 @@ export default component$(() => (
     <PageIntro
       eyebrow="Contatti"
       title="Prima di immaginare la partenza."
-      description="Abbiamo raccolto qui le informazioni per esplorare la dimora con chiarezza. Questo sito racconta una struttura fittizia: l’esperienza di visita è reale, il soggiorno descritto è una simulazione."
+      description="Una piccola guida alla visita e le risposte alle domande sulla demo. Puoi esplorare le camere, provare la ricerca e conoscere le fonti delle fotografie: la struttura e il soggiorno raccontati sono fittizi."
     >
       <a href="#domande" class="text-link">
         Leggi le domande frequenti <span aria-hidden="true">↓</span>
@@ -39,6 +39,54 @@ export default component$(() => (
         </Link>
       </div>
     </section>
+    <section class="shell py-12 md:py-16" aria-labelledby="demo-guide-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Da dove partire</p>
+          <h2 id="demo-guide-title">
+            Come esplorare <em>la demo.</em>
+          </h2>
+        </div>
+        <p>Tre passi, senza account, dati personali o richieste da inviare.</p>
+      </div>
+      <ol class="grid gap-8 md:grid-cols-3">
+        <li class="border-olive/25 min-w-0 border-t pt-6">
+          <p class="eyebrow">01 · Immagina il soggiorno</p>
+          <h3 class="mt-4 mb-4 text-2xl">Trova la tua atmosfera</h3>
+          <p class="text-muted mb-4 text-sm leading-8">
+            Confronta caratteri e capienze di Ulivo, Acqua e Lino. Poi lasciati
+            accompagnare dalle scene di soggiorno raccontate in Esperienze.
+          </p>
+          <Link href="/camere/#room-comparison-title" class="text-link">
+            Confronta le camere <span aria-hidden="true">↗</span>
+          </Link>
+        </li>
+        <li class="border-olive/25 min-w-0 border-t pt-6">
+          <p class="eyebrow">02 · Metti alla prova la ricerca</p>
+          <h3 class="mt-4 mb-4 text-2xl">Prova un soggiorno demo</h3>
+          <p class="text-muted mb-4 text-sm leading-8">
+            Scegli date, ospiti e camere. Puoi partire dall’esempio già presente
+            nel simulatore, leggere il dettaglio degli importi e modificare la
+            ricerca: non prenoti e non blocchi nulla.
+          </p>
+          <Link href="/disponibilita/" class="text-link">
+            Prova il simulatore <span aria-hidden="true">↗</span>
+          </Link>
+        </li>
+        <li class="border-olive/25 min-w-0 border-t pt-6">
+          <p class="eyebrow">03 · Conosci le ispirazioni</p>
+          <h3 class="mt-4 mb-4 text-2xl">Guarda oltre le fotografie</h3>
+          <p class="text-muted mb-4 text-sm leading-8">
+            In Galleria trovi autori, provenienze e fonti: le immagini arrivano
+            da luoghi diversi e non ritraggono una struttura chiamata Dimora
+            degli Ulivi.
+          </p>
+          <Link href="/galleria/" class="text-link">
+            Esplora foto e crediti <span aria-hidden="true">↗</span>
+          </Link>
+        </li>
+      </ol>
+    </section>
     <section
       id="domande"
       class="shell faq-section section-space"
@@ -61,7 +109,7 @@ export default component$(() => (
             esclusivamente simulati, senza bloccare camere.
           </p>
           <Link href="/disponibilita/" class="text-link">
-            Stato della disponibilità demo <span aria-hidden="true">↗</span>
+            Prova il simulatore <span aria-hidden="true">↗</span>
           </Link>
         </details>
         <details>

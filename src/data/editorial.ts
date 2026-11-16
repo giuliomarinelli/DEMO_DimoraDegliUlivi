@@ -64,9 +64,9 @@ export const experiences: {
     moment: "Al mattino · All’aria aperta",
     image: "uliveto",
     description:
-      "Uscire quando l’aria è ancora fresca, seguire un filare e fermarsi dove si apre il panorama. Una passeggiata senza un traguardo da raggiungere, da accompagnare con scarpe comode e curiosità.",
+      "Nel nostro mattino immaginato, una passeggiata tra gli ulivi diventa un piccolo esercizio di osservazione. Scegli un tronco, segui con gli occhi i nodi della corteccia e confronta il verde delle foglie con il loro rovescio argentato. Su un taccuino puoi annotare un colore o abbozzare una forma: un ricordo diverso dalla solita fotografia.",
     suggestion:
-      "Il momento da cercare: la luce che attraversa le foglie argentate.",
+      "Da portare nel racconto: un taccuino e una matita, per raccogliere un dettaglio.",
   },
   {
     id: "acqua",
@@ -74,17 +74,18 @@ export const experiences: {
     moment: "Nel pomeriggio · Tempo per sé",
     image: "finestra",
     description:
-      "Nel nostro racconto, una sosta a bordo piscina alterna un tuffo a qualche pagina di lettura. All’ombra, un telo leggero e un bicchiere d’acqua: la giornata può restare tutta qui.",
-    suggestion: "Il momento da cercare: il riflesso delle colline sull’acqua.",
+      "Il pomeriggio della nostra storia si divide fra un tuffo e un libro portato da casa. Dopo l’acqua, riprendi il capitolo lasciato a metà e scegli una frase da ricordare. La piscina è una scena narrativa della dimora fittizia: qui immaginiamo una pausa personale, senza attività organizzate o attrezzature fornite.",
+    suggestion:
+      "Un piccolo rituale: lasciare il segnalibro fra due pagine, poi riprendere da lì.",
   },
   {
     id: "tramonto",
     name: "Aspettare l’ultima luce",
-    moment: "Verso sera · Paesaggio",
+    moment: "Verso sera · Un ricordo da tenere",
     image: "orizzonti",
     description:
-      "Scegliere un punto panoramico, lasciare il telefono in tasca e guardare i colori cambiare. La Toscana, al tramonto, si scopre anche così: senza un programma da riempire.",
+      "Verso sera immaginiamo di fermarci a guardare lo stesso tratto di colline mentre cambia colore. Prova a scegliere tre parole per descriverlo, poi torna al taccuino del mattino: che cosa aggiungeresti? Il ricordo della giornata può finire in poche righe, da rileggere una volta a casa.",
     suggestion:
-      "Il momento da cercare: i cipressi che si disegnano contro il cielo.",
+      "Da tenere per sé: tre parole sul tramonto, invece di un’altra lista di cose da fare.",
   },
 ];
