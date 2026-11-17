@@ -1,0 +1,100 @@
+export const photos = {
+  paesaggio: {
+    src: "/images/paesaggio.webp",
+    small: "/images/paesaggio-small.webp",
+    width: 2200,
+    height: 1467,
+    alt: "Colline e case toscane tra filari di ulivi sotto un cielo azzurro",
+    author: "Kalina O.",
+    source:
+      "https://unsplash.com/photos/a-view-of-an-olive-grove-in-the-countryside-KCORaIlY5bw",
+    provider: "Unsplash",
+    title: "Colline, fino all’orizzonte",
+    place: "Toscana",
+  },
+  uliveto: {
+    src: "/images/uliveto.webp",
+    width: 1000,
+    height: 750,
+    alt: "Ulivi secolari illuminati dal sole in un prato verde",
+    author: "Andreas Weilguny",
+    source:
+      "https://unsplash.com/photos/ancient-olive-trees-in-a-sunlit-tuscan-field-OBHoIVnUCBQ",
+    provider: "Unsplash",
+    title: "All’ombra degli ulivi",
+    place: "Pelago, Toscana",
+  },
+  tenuta: {
+    src: "/images/tenuta.jpg",
+    width: 1920,
+    height: 1440,
+    alt: "Vista dall’alto di una casa di campagna toscana con giardino e piscina tra i vigneti",
+    author: "Andrea Mosti",
+    source:
+      "https://www.pexels.com/photo/rural-residence-with-a-swimming-pool-15508432/",
+    provider: "Pexels",
+    title: "Architettura nel paesaggio",
+    place: "Crespina, Toscana",
+  },
+  orizzonti: {
+    src: "/images/orizzonti.webp",
+    width: 1800,
+    height: 1200,
+    alt: "Una casa e un filare di cipressi sulle colline nella luce dorata del tramonto",
+    author: "Alan Jiang",
+    source:
+      "https://unsplash.com/photos/tuscan-farmhouse-on-rolling-hills-at-sunset-iW06DUcrhSY",
+    provider: "Unsplash",
+    title: "L’ultima luce sulle colline",
+    place: "Toscana",
+  },
+  ulivo: {
+    src: "/images/camera-ulivo.webp",
+    width: 1200,
+    height: 800,
+    alt: "Camera con letto chiaro, pareti verde salvia e una poltrona accanto alla finestra",
+    author: "Clay Banks",
+    source:
+      "https://unsplash.com/photos/a-neutral-bedroom-with-a-large-bed-and-wooden-wardrobe-Xbe5BfScmvM",
+    provider: "Unsplash",
+    title: "Verde salvia e luce naturale",
+    place: "Red Hook, Stati Uniti · ispirazione d’interni",
+  },
+  acqua: {
+    src: "/images/camera-acqua.webp",
+    width: 1200,
+    height: 1800,
+    alt: "Dettaglio di un letto dai tessuti azzurri con lampada in vetro e comodino in legno",
+    author: "Taylor Friehl",
+    source:
+      "https://unsplash.com/photos/cozy-bedroom-with-a-rustic-table-lamp-and-blue-bed-2VgHKYOIiqU",
+    provider: "Unsplash",
+    title: "Il colore di un risveglio",
+    place: "Ispirazione d’interni",
+  },
+  finestra: {
+    src: "/images/finestra.webp",
+    width: 1200,
+    height: 1800,
+    alt: "Una finestra ad arco aperta su una piscina e la campagna umbra",
+    author: "Alessandro Guarino",
+    source:
+      "https://unsplash.com/photos/open-window-view-of-a-swimming-pool-and-tuscan-landscape-qdJCZrRT9Xo",
+    provider: "Unsplash",
+    title: "Una finestra sull’estate",
+    place: "Assisi, Umbria · ispirazione d’ospitalità",
+  },
+  dettaglio: {
+    src: "/images/dettaglio.jpg",
+    width: 1000,
+    height: 1494,
+    alt: "Un libro aperto sul comodino accanto a tende chiare e a un letto di lino",
+    author: "Andrea Kartali",
+    source:
+      "https://www.pexels.com/photo/book-lying-on-a-wooden-bedside-table-18145480/",
+    provider: "Pexels",
+    title: "Ancora qualche pagina",
+    place: "Chianciano Terme, Toscana",
+  },
+} as const;
+export type PhotoKey = keyof typeof photos;

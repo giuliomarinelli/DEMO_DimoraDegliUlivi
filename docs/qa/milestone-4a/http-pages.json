@@ -1,0 +1,58 @@
+[
+  {
+    "route": "/",
+    "status": 200,
+    "title": "Dimora degli Ulivi | La tua parentesi toscana · Demo",
+    "h1Count": 1,
+    "images": 8,
+    "verification": "HTTP raw HTML; no browser layout check"
+  },
+  {
+    "route": "/camere/",
+    "status": 200,
+    "title": "Camere e atmosfere | Dimora degli Ulivi · Demo",
+    "h1Count": 1,
+    "images": 3,
+    "verification": "HTTP raw HTML; no browser layout check"
+  },
+  {
+    "route": "/esperienze/",
+    "status": 200,
+    "title": "Esperienze e idee di soggiorno | Dimora degli Ulivi · Demo",
+    "h1Count": 1,
+    "images": 3,
+    "verification": "HTTP raw HTML; no browser layout check"
+  },
+  {
+    "route": "/territorio/",
+    "status": 200,
+    "title": "Territorio e Val d’Orcia | Dimora degli Ulivi · Demo",
+    "h1Count": 1,
+    "images": 1,
+    "verification": "HTTP raw HTML; no browser layout check"
+  },
+  {
+    "route": "/galleria/",
+    "status": 200,
+    "title": "Galleria fotografica e crediti | Dimora degli Ulivi · Demo",
+    "h1Count": 1,
+    "images": 8,
+    "verification": "HTTP raw HTML; no browser layout check"
+  },
+  {
+    "route": "/disponibilita/",
+    "status": 200,
+    "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+    "h1Count": 1,
+    "images": 0,
+    "verification": "HTTP raw HTML; no browser layout check"
+  },
+  {
+    "route": "/contatti/",
+    "status": 200,
+    "title": "Contatti e domande frequenti | Dimora degli Ulivi · Demo",
+    "h1Count": 1,
+    "images": 1,
+    "verification": "HTTP raw HTML; no browser layout check"
+  }
+]
