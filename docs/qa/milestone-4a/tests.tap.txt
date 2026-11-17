@@ -1,0 +1,248 @@
+
+> dimora-degli-ulivi@0.1.0 test
+> npm run test.unit && npm run test.ssr
+
+
+> dimora-degli-ulivi@0.1.0 test.unit
+> tsc -p tests/tsconfig.json && node --test tests/availability.test.mjs
+
+TAP version 13
+# Subtest: inventory has Ulivo, Acqua and Lino, five unique physical units and 12 total places
+ok 1 - inventory has Ulivo, Acqua and Lino, five unique physical units and 12 total places
+  ---
+  duration_ms: 1.0938
+  type: 'test'
+  ...
+# Subtest: strict civil dates reject rollover, malformed strings and times
+ok 2 - strict civil dates reject rollover, malformed strings and times
+  ---
+  duration_ms: 0.9097
+  type: 'test'
+  ...
+# Subtest: nights are civil UTC differences, including DST, leap days and year boundaries
+ok 3 - nights are civil UTC differences, including DST, leap days and year boundaries
+  ---
+  duration_ms: 0.1951
+  type: 'test'
+  ...
+# Subtest: empty and reversed dates produce field-specific errors
+ok 4 - empty and reversed dates produce field-specific errors
+  ---
+  duration_ms: 0.3713
+  type: 'test'
+  ...
+# Subtest: fixed demo window and maximum stay are enforced
+ok 5 - fixed demo window and maximum stay are enforced
+  ---
+  duration_ms: 0.2285
+  type: 'test'
+  ...
+# Subtest: guest and room counts must be bounded positive integers
+ok 6 - guest and room counts must be bounded positive integers
+  ---
+  duration_ms: 0.2526
+  type: 'test'
+  ...
+# Subtest: night rates combine summer and Friday/Saturday adjustments in integer cents
+ok 7 - night rates combine summer and Friday/Saturday adjustments in integer cents
+  ---
+  duration_ms: 0.453
+  type: 'test'
+  ...
+# Subtest: check-out is excluded from both occupancy and amount
+ok 8 - check-out is excluded from both occupancy and amount
+  ---
+  duration_ms: 0.761
+  type: 'test'
+  ...
+# Subtest: summer boundary is calculated night by night
+ok 9 - summer boundary is calculated night by night
+  ---
+  duration_ms: 0.4373
+  type: 'test'
+  ...
+# Subtest: a changing free room each night does not count as continuous availability
+ok 10 - a changing free room each night does not count as continuous availability
+  ---
+  duration_ms: 1.0954
+  type: 'test'
+  ...
+# Subtest: closure has explicit inclusive start and exclusive end
+ok 11 - closure has explicit inclusive start and exclusive end
+  ---
+  duration_ms: 0.358
+  type: 'test'
+  ...
+# Subtest: known single-room example has reproducible full-stay prices
+ok 12 - known single-room example has reproducible full-stay prices
+  ---
+  duration_ms: 0.2555
+  type: 'test'
+  ...
+# Subtest: mixed types satisfy exactly two rooms and five guests, not per-room guest duplication
+ok 13 - mixed types satisfy exactly two rooms and five guests, not per-room guest duplication
+  ---
+  duration_ms: 0.2674
+  type: 'test'
+  ...
+# Subtest: all five physical units can host the 12-place maximum without duplicates
+ok 14 - all five physical units can host the 12-place maximum without duplicates
+  ---
+  duration_ms: 0.1686
+  type: 'test'
+  ...
+# Subtest: valid but unavailable searches remain distinct from validation errors
+ok 15 - valid but unavailable searches remain distinct from validation errors
+  ---
+  duration_ms: 0.1224
+  type: 'test'
+  ...
+# Subtest: searches are deterministic, do not mutate inventory and keep totals coherent
+ok 16 - searches are deterministic, do not mutate inventory and keep totals coherent
+  ---
+  duration_ms: 4.3004
+  type: 'test'
+  ...
+# Subtest: GET initialization supports idle, complete, partial and duplicate query states
+ok 17 - GET initialization supports idle, complete, partial and duplicate query states
+  ---
+  duration_ms: 0.531
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 120.2702
+
+> dimora-degli-ulivi@0.1.0 test.ssr
+> node --test tests/ssr.test.mjs
+
+TAP version 13
+# Subtest: production SSR: / includes content and metadata in raw HTTP HTML
+ok 1 - production SSR: / includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 44.5072
+  type: 'test'
+  ...
+# Subtest: production SSR: /camere/ includes content and metadata in raw HTTP HTML
+ok 2 - production SSR: /camere/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 47.0312
+  type: 'test'
+  ...
+# Subtest: production SSR: /esperienze/ includes content and metadata in raw HTTP HTML
+ok 3 - production SSR: /esperienze/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 23.6399
+  type: 'test'
+  ...
+# Subtest: production SSR: /territorio/ includes content and metadata in raw HTTP HTML
+ok 4 - production SSR: /territorio/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 29.9531
+  type: 'test'
+  ...
+# Subtest: production SSR: /galleria/ includes content and metadata in raw HTTP HTML
+ok 5 - production SSR: /galleria/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 25.4694
+  type: 'test'
+  ...
+# Subtest: production SSR: /disponibilita/ includes content and metadata in raw HTTP HTML
+ok 6 - production SSR: /disponibilita/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 31.5201
+  type: 'test'
+  ...
+# Subtest: production SSR: /contatti/ includes content and metadata in raw HTTP HTML
+ok 7 - production SSR: /contatti/ includes content and metadata in raw HTTP HTML
+  ---
+  duration_ms: 30.0029
+  type: 'test'
+  ...
+# Subtest: all navigation targets resolve and local images, scripts and styles are served
+ok 8 - all navigation targets resolve and local images, scripts and styles are served
+  ---
+  duration_ms: 374.6691
+  type: 'test'
+  ...
+# Subtest: editorial links and gallery categories point to real server-rendered anchors
+ok 9 - editorial links and gallery categories point to real server-rendered anchors
+  ---
+  duration_ms: 0.4473
+  type: 'test'
+  ...
+# Subtest: room narratives, photo credits and FAQ content are complete without booking controls
+ok 10 - room narratives, photo credits and FAQ content are complete without booking controls
+  ---
+  duration_ms: 0.3821
+  type: 'test'
+  ...
+# Subtest: availability form is server rendered with labels, native dates and GET fallback
+ok 11 - availability form is server rendered with labels, native dates and GET fallback
+  ---
+  duration_ms: 0.4117
+  type: 'test'
+  ...
+# Subtest: direct GET renders complete result, capacity and full-stay price without JavaScript
+ok 12 - direct GET renders complete result, capacity and full-stay price without JavaScript
+  ---
+  duration_ms: 38.5803
+  type: 'test'
+  ...
+# Subtest: SSR handles mixed-room occupancy, invalid dates and no availability distinctly
+ok 13 - SSR handles mixed-room occupancy, invalid dates and no availability distinctly
+  ---
+  duration_ms: 63.7915
+  type: 'test'
+  ...
+# Subtest: search accessibility associations survive validation and server-rendered results
+ok 14 - search accessibility associations survive validation and server-rendered results
+  ---
+  duration_ms: 30.3201
+  type: 'test'
+  ...
+# Subtest: SSR accepts occupancy, duration and checkout boundaries
+ok 15 - SSR accepts occupancy, duration and checkout boundaries
+  ---
+  duration_ms: 53.5576
+  type: 'test'
+  ...
+# Subtest: SSR rejects limits and duplicate parameters before producing offers
+ok 16 - SSR rejects limits and duplicate parameters before producing offers
+  ---
+  duration_ms: 105.6589
+  type: 'test'
+  ...
+# Subtest: a fresh SSR search has blank dates and no previous results or errors
+ok 17 - a fresh SSR search has blank dates and no previous results or errors
+  ---
+  duration_ms: 42.8136
+  type: 'test'
+  ...
+# Subtest: unknown paths return a real 404 with a way home
+ok 18 - unknown paths return a real 404 with a way home
+  ---
+  duration_ms: 12.4821
+  type: 'test'
+  ...
+# Subtest: Cloudflare output is a server worker with a client manifest, without prerendered route HTML
+ok 19 - Cloudflare output is a server worker with a client manifest, without prerendered route HTML
+  ---
+  duration_ms: 2.9194
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1053.4891

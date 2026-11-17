@@ -1,0 +1,44 @@
+{
+  "name": "dimora-degli-ulivi",
+  "description": "Agriturismo fittizio: fondazione Qwik City SSR per Cloudflare Pages",
+  "engines": {
+    "node": "^22.16.0 || >=24.0.0"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode ssr",
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.server": "qwik check-client src dist && vite build -c adapters/cloudflare-pages/vite.config.ts",
+    "build.types": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src adapters vite.config.ts",
+    "test": "npm run test.unit && npm run test.ssr",
+    "preview": "wrangler pages dev ./dist --ip 127.0.0.1 --port 8947",
+    "fmt": "prettier --write src adapters tests vite.config.ts eslint.config.js package.json tsconfig.json wrangler.jsonc",
+    "qwik": "qwik",
+    "test.unit": "tsc -p tests/tsconfig.json && node --test tests/availability.test.mjs",
+    "test.ssr": "node --test tests/ssr.test.mjs"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "1.20.4",
+    "@builder.io/qwik-city": "1.20.4",
+    "@eslint/js": "^9",
+    "@tailwindcss/vite": "^4.1.4",
+    "@types/node": "20.19.0",
+    "eslint": "9.32.0",
+    "eslint-plugin-qwik": "1.20.4",
+    "globals": "16.4.0",
+    "prettier": "3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.1.4",
+    "typescript": "5.4.5",
+    "typescript-eslint": "8.38.0",
+    "undici": "*",
+    "vite": "7.3.7",
+    "vite-tsconfig-paths": "^4.2.1",
+    "wrangler": "^4.0.0"
+  },
+  "version": "0.1.0"
+}

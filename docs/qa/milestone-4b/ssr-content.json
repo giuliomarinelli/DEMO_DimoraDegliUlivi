@@ -1,0 +1,54 @@
+{
+  "origin": "http://127.0.0.1:8947",
+  "checkedAt": "2026-11-16T15:07:17.535Z",
+  "method": "Direct HTTP against production Qwik City worker in local Wrangler; script blocks excluded for content assertions; no browser automation",
+  "pages": [
+    {
+      "path": "/camere/",
+      "status": 200,
+      "h1": 1,
+      "ssr": true,
+      "metadata": true,
+      "contentChecks": 4
+    },
+    {
+      "path": "/esperienze/",
+      "status": 200,
+      "h1": 1,
+      "ssr": true,
+      "metadata": true,
+      "contentChecks": 5
+    },
+    {
+      "path": "/territorio/",
+      "status": 200,
+      "h1": 1,
+      "ssr": true,
+      "metadata": true,
+      "contentChecks": 4
+    },
+    {
+      "path": "/contatti/",
+      "status": 200,
+      "h1": 1,
+      "ssr": true,
+      "metadata": true,
+      "contentChecks": 4
+    }
+  ],
+  "roomComparison": {
+    "capacity": [
+      2,
+      3,
+      2
+    ],
+    "quantity": [
+      2,
+      2,
+      1
+    ]
+  },
+  "browserChecks": "Not run by explicit milestone constraint",
+  "applicationCommit": "6b3f9ca1d2162be28a58316a04f41dc1e0d08c42",
+  "initialCommit": "421ecb73ef2e07cf27089a24fb354efbaecbe4ab"
+}

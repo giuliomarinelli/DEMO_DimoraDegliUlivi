@@ -1,0 +1,2239 @@
+{
+  "matrix": [
+    {
+      "path": "/",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "home-1440.jpg",
+      "viewport": 1440,
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 5577,
+      "h1": 1,
+      "title": "Dimora degli Ulivi | La tua parentesi toscana · Demo",
+      "images": [
+        {
+          "src": "/images/paesaggio.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "status": 200,
+      "screenshot": "home-768.jpg",
+      "viewport": 768,
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 4986,
+      "h1": 1,
+      "title": "Dimora degli Ulivi | La tua parentesi toscana · Demo",
+      "images": [
+        {
+          "src": "/images/paesaggio-small.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "status": 200,
+      "screenshot": "home-390.jpg",
+      "viewport": 390,
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 7100,
+      "h1": 1,
+      "title": "Dimora degli Ulivi | La tua parentesi toscana · Demo",
+      "images": [
+        {
+          "src": "/images/paesaggio-small.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/",
+      "width": 320,
+      "status": 200,
+      "screenshot": "home-320.jpg",
+      "viewport": 320,
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 7306,
+      "h1": 1,
+      "title": "Dimora degli Ulivi | La tua parentesi toscana · Demo",
+      "images": [
+        {
+          "src": "/images/paesaggio-small.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/camere/",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "camere-1440.jpg",
+      "viewport": 1440,
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 3603,
+      "h1": 1,
+      "title": "Camere e atmosfere | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/camere/",
+      "width": 768,
+      "status": 200,
+      "screenshot": "camere-768.jpg",
+      "viewport": 768,
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 3854,
+      "h1": 1,
+      "title": "Camere e atmosfere | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/camere/",
+      "width": 390,
+      "status": 200,
+      "screenshot": "camere-390.jpg",
+      "viewport": 390,
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 5375,
+      "h1": 1,
+      "title": "Camere e atmosfere | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/camere/",
+      "width": 320,
+      "status": 200,
+      "screenshot": "camere-320.jpg",
+      "viewport": 320,
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 5458,
+      "h1": 1,
+      "title": "Camere e atmosfere | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/esperienze/",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "esperienze-1440.jpg",
+      "viewport": 1440,
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 2395,
+      "h1": 1,
+      "title": "Esperienze e idee di soggiorno | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/esperienze/",
+      "width": 768,
+      "status": 200,
+      "screenshot": "esperienze-768.jpg",
+      "viewport": 768,
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 2442,
+      "h1": 1,
+      "title": "Esperienze e idee di soggiorno | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/esperienze/",
+      "width": 390,
+      "status": 200,
+      "screenshot": "esperienze-390.jpg",
+      "viewport": 390,
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 4468,
+      "h1": 1,
+      "title": "Esperienze e idee di soggiorno | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/esperienze/",
+      "width": 320,
+      "status": 200,
+      "screenshot": "esperienze-320.jpg",
+      "viewport": 320,
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 4744,
+      "h1": 1,
+      "title": "Esperienze e idee di soggiorno | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/territorio/",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "territorio-1440.jpg",
+      "viewport": 1440,
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 3407,
+      "h1": 1,
+      "title": "Territorio e Val d’Orcia | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/territorio/",
+      "width": 768,
+      "status": 200,
+      "screenshot": "territorio-768.jpg",
+      "viewport": 768,
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 3303,
+      "h1": 1,
+      "title": "Territorio e Val d’Orcia | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/territorio/",
+      "width": 390,
+      "status": 200,
+      "screenshot": "territorio-390.jpg",
+      "viewport": 390,
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 4570,
+      "h1": 1,
+      "title": "Territorio e Val d’Orcia | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/territorio/",
+      "width": 320,
+      "status": 200,
+      "screenshot": "territorio-320.jpg",
+      "viewport": 320,
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 4826,
+      "h1": 1,
+      "title": "Territorio e Val d’Orcia | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "horizontalOffenders": []
+    },
+    {
+      "path": "/galleria/",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "galleria-1440.jpg",
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 3933,
+      "h1": 1,
+      "title": "Galleria fotografica e crediti | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/paesaggio.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/tenuta.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/galleria/",
+      "width": 768,
+      "status": 200,
+      "screenshot": "galleria-768.jpg",
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 3177,
+      "h1": 1,
+      "title": "Galleria fotografica e crediti | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/paesaggio-small.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/tenuta.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/galleria/",
+      "width": 390,
+      "status": 200,
+      "screenshot": "galleria-390.jpg",
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 7087,
+      "h1": 1,
+      "title": "Galleria fotografica e crediti | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/paesaggio-small.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/tenuta.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/galleria/",
+      "width": 320,
+      "status": 200,
+      "screenshot": "galleria-320.jpg",
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 6578,
+      "h1": 1,
+      "title": "Galleria fotografica e crediti | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/paesaggio-small.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/orizzonti.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/tenuta.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/finestra.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/uliveto.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/contatti/",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "contatti-1440.jpg",
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 2296,
+      "h1": 1,
+      "title": "Contatti e domande frequenti | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/tenuta.jpg",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/contatti/",
+      "width": 768,
+      "status": 200,
+      "screenshot": "contatti-768.jpg",
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 2445,
+      "h1": 1,
+      "title": "Contatti e domande frequenti | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/tenuta.jpg",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/contatti/",
+      "width": 390,
+      "status": 200,
+      "screenshot": "contatti-390.jpg",
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 3323,
+      "h1": 1,
+      "title": "Contatti e domande frequenti | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/tenuta.jpg",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/contatti/",
+      "width": 320,
+      "status": 200,
+      "screenshot": "contatti-320.jpg",
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 3485,
+      "h1": 1,
+      "title": "Contatti e domande frequenti | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/tenuta.jpg",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "disponibilita-1440.jpg",
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 2125,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/",
+      "width": 768,
+      "status": 200,
+      "screenshot": "disponibilita-768.jpg",
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 2166,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/",
+      "width": 390,
+      "status": 200,
+      "screenshot": "disponibilita-390.jpg",
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 3082,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/",
+      "width": 320,
+      "status": 200,
+      "screenshot": "disponibilita-320.jpg",
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 3481,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/un-sentiero-inesistente/",
+      "width": 1440,
+      "status": 404,
+      "screenshot": "404-1440.jpg",
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 1150,
+      "h1": 1,
+      "title": "Pagina non trovata | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/un-sentiero-inesistente/",
+      "width": 768,
+      "status": 404,
+      "screenshot": "404-768.jpg",
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 1082,
+      "h1": 1,
+      "title": "Pagina non trovata | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/un-sentiero-inesistente/",
+      "width": 390,
+      "status": 404,
+      "screenshot": "404-390.jpg",
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 1281,
+      "h1": 1,
+      "title": "Pagina non trovata | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/un-sentiero-inesistente/",
+      "width": 320,
+      "status": 404,
+      "screenshot": "404-320.jpg",
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 1341,
+      "h1": 1,
+      "title": "Pagina non trovata | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=2&rooms=1",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "ricerca-1440.jpg",
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 4014,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=2&rooms=1",
+      "width": 768,
+      "status": 200,
+      "screenshot": "ricerca-768.jpg",
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 4108,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=2&rooms=1",
+      "width": 390,
+      "status": 200,
+      "screenshot": "ricerca-390.jpg",
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 6130,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=2&rooms=1",
+      "width": 320,
+      "status": 200,
+      "screenshot": "ricerca-320.jpg",
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 6859,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [
+        {
+          "src": "/images/dettaglio.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-ulivo.webp",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "/images/camera-acqua.webp",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-09&guests=2&rooms=1",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "errore-1440.jpg",
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 2169,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-09&guests=2&rooms=1",
+      "width": 768,
+      "status": 200,
+      "screenshot": "errore-768.jpg",
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 2178,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-09&guests=2&rooms=1",
+      "width": 390,
+      "status": 200,
+      "screenshot": "errore-390.jpg",
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 3058,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-09&guests=2&rooms=1",
+      "width": 320,
+      "status": 200,
+      "screenshot": "errore-320.jpg",
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 3484,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-11-05&checkOut=2027-11-08&guests=2&rooms=1",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "chiusura-1440.jpg",
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 2599,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-11-05&checkOut=2027-11-08&guests=2&rooms=1",
+      "width": 768,
+      "status": 200,
+      "screenshot": "chiusura-768.jpg",
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 2562,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-11-05&checkOut=2027-11-08&guests=2&rooms=1",
+      "width": 390,
+      "status": 200,
+      "screenshot": "chiusura-390.jpg",
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 3562,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-11-05&checkOut=2027-11-08&guests=2&rooms=1",
+      "width": 320,
+      "status": 200,
+      "screenshot": "chiusura-320.jpg",
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 4085,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=5&rooms=5",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "nessuna-combinazione-1440.jpg",
+      "clientWidth": 1425,
+      "scrollWidth": 1425,
+      "height": 2631,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 1242.671875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 1362.5,
+        "bottom": 102,
+        "left": 1242.671875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=5&rooms=5",
+      "width": 768,
+      "status": 200,
+      "screenshot": "nessuna-combinazione-768.jpg",
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 2594,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 533.171875,
+        "y": 54,
+        "width": 119.828125,
+        "height": 48,
+        "top": 54,
+        "right": 653,
+        "bottom": 102,
+        "left": 533.171875
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=5&rooms=5",
+      "width": 390,
+      "status": 200,
+      "screenshot": "nessuna-combinazione-390.jpg",
+      "clientWidth": 375,
+      "scrollWidth": 375,
+      "height": 3626,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 196.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 301,
+        "bottom": 102,
+        "left": 196.0625
+      },
+      "missingAriaReferences": []
+    },
+    {
+      "path": "/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=5&rooms=5",
+      "width": 320,
+      "status": 200,
+      "screenshot": "nessuna-combinazione-320.jpg",
+      "clientWidth": 305,
+      "scrollWidth": 305,
+      "height": 4149,
+      "h1": 1,
+      "title": "Simulatore disponibilità camere | Dimora degli Ulivi · Demo",
+      "images": [],
+      "cta": {
+        "x": 126.0625,
+        "y": 54,
+        "width": 104.9375,
+        "height": 48,
+        "top": 54,
+        "right": 231,
+        "bottom": 102,
+        "left": 126.0625
+      },
+      "missingAriaReferences": []
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-BKZ00VYc.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-ECEGHOGzhypFTmBQXT2l2DUpvXoZkmH4zUCudxZ/oz4='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-CUITuIdR.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-IO36YP35FOMht0Ec0oHwSnW8VtDpAlxm54ShbTNJ4D0='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-+MfxjenN1kF6mUc3LjOWgXEJNQ5JUPXgped4v5ZpXCg='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-7mmMSpYzq/RMWLHmDc8g8EUJL+4SU8gxcfTW+VA4alI='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-BKZ00VYc.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-ECEGHOGzhypFTmBQXT2l2DUpvXoZkmH4zUCudxZ/oz4='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-CUITuIdR.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-IO36YP35FOMht0Ec0oHwSnW8VtDpAlxm54ShbTNJ4D0='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-phqlNRy02KdvLmM0k09mpF8yVr1b8DjidTUU7IrVBHE='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-7mmMSpYzq/RMWLHmDc8g8EUJL+4SU8gxcfTW+VA4alI='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-BKZ00VYc.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-ECEGHOGzhypFTmBQXT2l2DUpvXoZkmH4zUCudxZ/oz4='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-CUITuIdR.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-IO36YP35FOMht0Ec0oHwSnW8VtDpAlxm54ShbTNJ4D0='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-X+9KQ15SnksWhEQGRdBxlKXI86eSwMK3LKu4tuZ6k8I='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-7mmMSpYzq/RMWLHmDc8g8EUJL+4SU8gxcfTW+VA4alI='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-BKZ00VYc.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-ECEGHOGzhypFTmBQXT2l2DUpvXoZkmH4zUCudxZ/oz4='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-CUITuIdR.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-IO36YP35FOMht0Ec0oHwSnW8VtDpAlxm54ShbTNJ4D0='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-JubcgeIHDvUlLJ601Rz22PcF7q54BT+fg7puA6kWsGE='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-7mmMSpYzq/RMWLHmDc8g8EUJL+4SU8gxcfTW+VA4alI='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked."
+  ],
+  "responses": [
+    {
+      "url": "http://127.0.0.1:8947/un-sentiero-inesistente/",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8947/un-sentiero-inesistente/",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8947/un-sentiero-inesistente/",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:8947/un-sentiero-inesistente/",
+      "status": 404
+    }
+  ],
+  "functional": [
+    {
+      "case": "keyboard Enter on empty form",
+      "before": "visible",
+      "visibility": "visible",
+      "focus": "stay-checkIn",
+      "status": "Controlla i campi indicati prima di cercare.",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-06-10",
+        "checkOut": "2027-06-13",
+        "guests": "2",
+        "rooms": "1"
+      },
+      "expected": {
+        "status": "3 soluzioni",
+        "focus": "search-feedback",
+        "offers": 3,
+        "price": "405,00"
+      },
+      "status": "3 soluzioni trovate per 2 ospiti in 1 camera, 3 notti.",
+      "offers": 3,
+      "prices": [
+        "405,00 €",
+        "465,00 €",
+        "555,00 €"
+      ],
+      "focus": "search-feedback",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-06-10",
+        "checkOut": "2027-06-13",
+        "guests": "2",
+        "rooms": "1"
+      },
+      "expected": {
+        "status": "3 soluzioni",
+        "focus": "search-feedback",
+        "offers": 3,
+        "price": "405,00"
+      },
+      "status": "3 soluzioni trovate per 2 ospiti in 1 camera, 3 notti.",
+      "offers": 3,
+      "prices": [
+        "405,00 €",
+        "465,00 €",
+        "555,00 €"
+      ],
+      "focus": "search-feedback",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "case": "edit clears stale results",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-06-10",
+        "checkOut": "2027-06-13",
+        "guests": "5",
+        "rooms": "2"
+      },
+      "expected": {
+        "status": "2 soluzioni",
+        "focus": "search-feedback",
+        "price": "960,00"
+      },
+      "status": "2 soluzioni trovate per 5 ospiti in 2 camere, 3 notti.",
+      "offers": 2,
+      "prices": [
+        "960,00 €",
+        "1020,00 €"
+      ],
+      "focus": "search-feedback",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-01-04",
+        "checkOut": "2027-01-05",
+        "guests": "12",
+        "rooms": "5"
+      },
+      "expected": {
+        "status": "12 ospiti in 5 camere, 1 notte",
+        "focus": "search-feedback",
+        "offers": 1,
+        "price": "765,00"
+      },
+      "status": "1 soluzione trovata per 12 ospiti in 5 camere, 1 notte.",
+      "offers": 1,
+      "prices": [
+        "765,00 €"
+      ],
+      "focus": "search-feedback",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-12-31",
+        "checkOut": "2028-01-01",
+        "guests": "1",
+        "rooms": "1"
+      },
+      "expected": {
+        "status": "1 ospite in 1 camera, 1 notte",
+        "focus": "search-feedback"
+      },
+      "status": "3 soluzioni trovate per 1 ospite in 1 camera, 1 notte.",
+      "offers": 3,
+      "prices": [
+        "140,00 €",
+        "160,00 €",
+        "190,00 €"
+      ],
+      "focus": "search-feedback",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-06-01",
+        "checkOut": "2027-06-15",
+        "guests": "1",
+        "rooms": "1"
+      },
+      "expected": {
+        "status": "14 notti",
+        "focus": "search-feedback",
+        "price": "1810,00"
+      },
+      "status": "2 soluzioni trovate per 1 ospite in 1 camera, 14 notti.",
+      "offers": 2,
+      "prices": [
+        "1810,00 €",
+        "2090,00 €"
+      ],
+      "focus": "search-feedback",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-06-01",
+        "checkOut": "2027-06-16",
+        "guests": "2",
+        "rooms": "1"
+      },
+      "expected": {
+        "status": "Controlla",
+        "focus": "stay-checkOut",
+        "offers": 0
+      },
+      "status": "Controlla i campi indicati prima di cercare.",
+      "offers": 0,
+      "prices": [],
+      "focus": "stay-checkOut",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-06-10",
+        "checkOut": "2027-06-10",
+        "guests": "2",
+        "rooms": "1"
+      },
+      "expected": {
+        "status": "Controlla",
+        "focus": "stay-checkOut",
+        "offers": 0
+      },
+      "status": "Controlla i campi indicati prima di cercare.",
+      "offers": 0,
+      "prices": [],
+      "focus": "stay-checkOut",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-06-10",
+        "checkOut": "2027-06-09",
+        "guests": "2",
+        "rooms": "1"
+      },
+      "expected": {
+        "status": "Controlla",
+        "focus": "stay-checkOut",
+        "offers": 0
+      },
+      "status": "Controlla i campi indicati prima di cercare.",
+      "offers": 0,
+      "prices": [],
+      "focus": "stay-checkOut",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-06-10",
+        "checkOut": "2027-06-13",
+        "guests": "1",
+        "rooms": "2"
+      },
+      "expected": {
+        "status": "Controlla",
+        "focus": "stay-guests",
+        "offers": 0
+      },
+      "status": "Controlla i campi indicati prima di cercare.",
+      "offers": 0,
+      "prices": [],
+      "focus": "stay-guests",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-11-05",
+        "checkOut": "2027-11-08",
+        "guests": "2",
+        "rooms": "1"
+      },
+      "expected": {
+        "status": "Nessuna soluzione",
+        "focus": "search-feedback",
+        "offers": 0
+      },
+      "status": "Nessuna soluzione disponibile per questa ricerca dimostrativa.",
+      "offers": 0,
+      "prices": [],
+      "focus": "search-feedback",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "draft": {
+        "checkIn": "2027-06-10",
+        "checkOut": "2027-06-13",
+        "guests": "5",
+        "rooms": "5"
+      },
+      "expected": {
+        "status": "Nessuna soluzione",
+        "focus": "search-feedback",
+        "offers": 0
+      },
+      "status": "Nessuna soluzione disponibile per questa ricerca dimostrativa.",
+      "offers": 0,
+      "prices": [],
+      "focus": "search-feedback",
+      "visibility": "visible",
+      "activation": "keyboard Enter",
+      "passed": true
+    },
+    {
+      "case": "room and price details keyboard, edit focus",
+      "roomOpen": true,
+      "priceOpen": true,
+      "editFocus": "stay-checkIn",
+      "passed": true
+    },
+    {
+      "case": "example query then header link resets client state",
+      "values": {
+        "checkIn": "",
+        "checkOut": "",
+        "guests": "2",
+        "rooms": "1"
+      },
+      "passed": true
+    },
+    {
+      "case": "browser back restores example",
+      "offers": 3,
+      "passed": true
+    },
+    {
+      "case": "browser forward restores blank search",
+      "passed": true
+    },
+    {
+      "case": "skip link and mobile menu Enter Tab Escape navigation",
+      "skip": {
+        "text": "Vai al contenuto",
+        "top": 16,
+        "outline": "solid"
+      },
+      "firstLink": "La dimora",
+      "menuFocus": true,
+      "passed": true
+    },
+    {
+      "case": "gallery category anchors via Enter",
+      "anchors": [
+        {
+          "id": "paesaggi",
+          "top": 64.171875
+        },
+        {
+          "id": "camere",
+          "top": 63.875
+        },
+        {
+          "id": "atmosfere",
+          "top": 64.078125
+        }
+      ],
+      "passed": true
+    },
+    {
+      "case": "all FAQs keyboard Space/Enter",
+      "count": 5,
+      "passed": true
+    },
+    {
+      "case": "home photo link to specific room anchor via Enter",
+      "url": "http://127.0.0.1:8947/camere/#ulivo",
+      "passed": true
+    },
+    {
+      "case": "native GET with application scripts blocked",
+      "activation": "DOM button.click; keyboard attempt timed out and is not counted",
+      "defaults": {
+        "checkIn": "",
+        "checkOut": "",
+        "guests": "2",
+        "rooms": "1"
+      },
+      "prices": [
+        "405,00 €",
+        "465,00 €",
+        "555,00 €"
+      ],
+      "values": {
+        "checkIn": "2027-06-10",
+        "checkOut": "2027-06-13",
+        "guests": "5",
+        "rooms": "2"
+      },
+      "mixed": "960,00 €",
+      "container": "paused",
+      "passed": true
+    },
+    {
+      "case": "expanded 14-night price table at 320px",
+      "open": true,
+      "rows": 14,
+      "width": 305,
+      "clientWidth": 305,
+      "passed": true
+    },
+    {
+      "case": "reduced motion preference",
+      "reduced": "auto",
+      "normal": "smooth",
+      "passed": true
+    },
+    {
+      "case": "native GET via Enter with application scripts blocked",
+      "url": "http://127.0.0.1:8947/disponibilita/?checkIn=2027-06-10&checkOut=2027-06-13&guests=2&rooms=1",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "paused": "paused",
+      "pricePresent": true,
+      "passed": true
+    }
+  ],
+  "expectedCspConsoleErrors": [
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-BKZ00VYc.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-ECEGHOGzhypFTmBQXT2l2DUpvXoZkmH4zUCudxZ/oz4='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-CUITuIdR.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-IO36YP35FOMht0Ec0oHwSnW8VtDpAlxm54ShbTNJ4D0='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-+MfxjenN1kF6mUc3LjOWgXEJNQ5JUPXgped4v5ZpXCg='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-7mmMSpYzq/RMWLHmDc8g8EUJL+4SU8gxcfTW+VA4alI='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-BKZ00VYc.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-ECEGHOGzhypFTmBQXT2l2DUpvXoZkmH4zUCudxZ/oz4='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-CUITuIdR.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-IO36YP35FOMht0Ec0oHwSnW8VtDpAlxm54ShbTNJ4D0='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-phqlNRy02KdvLmM0k09mpF8yVr1b8DjidTUU7IrVBHE='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-7mmMSpYzq/RMWLHmDc8g8EUJL+4SU8gxcfTW+VA4alI='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-BKZ00VYc.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-ECEGHOGzhypFTmBQXT2l2DUpvXoZkmH4zUCudxZ/oz4='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-CUITuIdR.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-IO36YP35FOMht0Ec0oHwSnW8VtDpAlxm54ShbTNJ4D0='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-X+9KQ15SnksWhEQGRdBxlKXI86eSwMK3LKu4tuZ6k8I='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-7mmMSpYzq/RMWLHmDc8g8EUJL+4SU8gxcfTW+VA4alI='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-naDMFAHy.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-BKZ00VYc.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-ECEGHOGzhypFTmBQXT2l2DUpvXoZkmH4zUCudxZ/oz4='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Loading the script 'http://127.0.0.1:8947/build/q-CUITuIdR.js' violates the following Content Security Policy directive: \"script-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-IO36YP35FOMht0Ec0oHwSnW8VtDpAlxm54ShbTNJ4D0='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-JubcgeIHDvUlLJ601Rz22PcF7q54BT+fg7puA6kWsGE='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+    "Executing inline script violates the following Content Security Policy directive 'script-src 'none''. Either the 'unsafe-inline' keyword, a hash ('sha256-7mmMSpYzq/RMWLHmDc8g8EUJL+4SU8gxcfTW+VA4alI='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked."
+  ],
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+  "origin": "http://127.0.0.1:8947",
+  "applicationSourceCommit": "bf7029f9a70332a69b850d3fd24f3f2fcdfa20b8",
+  "repositoryBase": "387352853647351e7c90f93a6ef8a618e335c61f",
+  "capturedAt": "2026-11-15T17:18:45.810Z",
+  "captureNotes": [
+    "Full-page JPEG 82, CSS scale; viewport height 900, reduced motion during matrix",
+    "Images forced eager and decoded only by the test driver; application unchanged",
+    "Responsive hero initial full-page paint artifact: recaptured after a viewport screenshot; dedicated hero viewport captures retained",
+    "Initial Enter with hidden document timed out and was not counted; successful keyboard cases brought the tab to front before and after input",
+    "No-script Enter navigation timed out and was not counted; native GET verified by DOM activation, CSP interceptor removed",
+    "Sequential exclusive follow-up: HTTP checked before dedicated tab; 768px Home recaptured after scrolling images into view; Enter without app scripts passed after correcting the driver button selector. Test-only CSP removed and dedicated tab closed.",
+    "Home full-page at 390px retains lower-image paint artifacts (panorama and olive tree) despite DOM decode; these pixels do not prove complete visual acceptance. Hero viewport is painted; equivalent sections visible at 320/768."
+  ],
+  "computedStyles": [
+    {
+      "selector": "body",
+      "color": "rgb(41, 63, 60)",
+      "background": "rgb(250, 244, 231)",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontFamily": "\"Trebuchet MS\", Arial, sans-serif"
+    },
+    {
+      "selector": ".header-cta",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(101, 118, 91)",
+      "fontSize": "10px",
+      "lineHeight": "15px",
+      "fontFamily": "\"Trebuchet MS\", Arial, sans-serif"
+    },
+    {
+      "selector": ".search-field input",
+      "color": "rgb(41, 63, 60)",
+      "background": "rgb(250, 244, 231)",
+      "fontSize": "14px",
+      "lineHeight": "21px",
+      "fontFamily": "\"Trebuchet MS\", Arial, sans-serif"
+    },
+    {
+      "selector": ".search-field label",
+      "color": "rgb(41, 63, 60)",
+      "background": "rgba(0, 0, 0, 0)",
+      "fontSize": "13px",
+      "lineHeight": "19.5px",
+      "fontFamily": "\"Trebuchet MS\", Arial, sans-serif"
+    },
+    {
+      "selector": ".search-help",
+      "color": "rgb(82, 97, 91)",
+      "background": "rgba(0, 0, 0, 0)",
+      "fontSize": "11px",
+      "lineHeight": "24px",
+      "fontFamily": "\"Trebuchet MS\", Arial, sans-serif"
+    },
+    {
+      "selector": ".status-pill",
+      "color": "rgb(41, 63, 60)",
+      "background": "oklab(0.803721 -0.0319003 -0.00944906 / 0.35)",
+      "fontSize": "11px",
+      "lineHeight": "32px",
+      "fontFamily": "\"Trebuchet MS\", Arial, sans-serif"
+    }
+  ],
+  "unexpectedConsoleErrors": [],
+  "completedAt": "2026-11-15T17:29:32.824Z"
+}
